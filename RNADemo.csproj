@@ -66,6 +66,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\MLP.cs" />
+    <Compile Include="Design\frmArchitecture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmArchitecture.Designer.cs">
+      <DependentUpon>frmArchitecture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Design\frmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmTest.Designer.cs">
+      <DependentUpon>frmTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\frmTraining.cs">
       <SubType>Form</SubType>
     </Compile>
