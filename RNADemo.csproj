@@ -65,6 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\MLP.cs" />
     <Compile Include="Design\frmTraining.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,9 +100,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Business\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MathNet.Numerics.MKL.Win.2.3.0\build\MathNet.Numerics.MKL.Win.targets" Condition="Exists('packages\MathNet.Numerics.MKL.Win.2.3.0\build\MathNet.Numerics.MKL.Win.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
