@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchitecture));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbNumCamadas = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -42,8 +43,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnCarregar = new System.Windows.Forms.Button();
+            this.btnContinuar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -126,33 +127,45 @@
             // txtCamada4
             // 
             this.txtCamada4.Enabled = false;
+            this.txtCamada4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCamada4.Location = new System.Drawing.Point(303, 87);
             this.txtCamada4.Name = "txtCamada4";
             this.txtCamada4.Size = new System.Drawing.Size(100, 24);
             this.txtCamada4.TabIndex = 9;
+            this.txtCamada4.Text = "15";
+            this.txtCamada4.Leave += new System.EventHandler(this.txtCamada4_Leave);
             // 
             // txtCamada3
             // 
             this.txtCamada3.Enabled = false;
+            this.txtCamada3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCamada3.Location = new System.Drawing.Point(303, 41);
             this.txtCamada3.Name = "txtCamada3";
             this.txtCamada3.Size = new System.Drawing.Size(100, 24);
             this.txtCamada3.TabIndex = 8;
+            this.txtCamada3.Text = "15";
+            this.txtCamada3.Leave += new System.EventHandler(this.txtCamada3_Leave);
             // 
             // txtCamada2
             // 
             this.txtCamada2.Enabled = false;
+            this.txtCamada2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCamada2.Location = new System.Drawing.Point(95, 87);
             this.txtCamada2.Name = "txtCamada2";
             this.txtCamada2.Size = new System.Drawing.Size(100, 24);
             this.txtCamada2.TabIndex = 7;
+            this.txtCamada2.Text = "15";
+            this.txtCamada2.Leave += new System.EventHandler(this.txtCamada2_Leave);
             // 
             // txtCamada1
             // 
+            this.txtCamada1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCamada1.Location = new System.Drawing.Point(96, 41);
             this.txtCamada1.Name = "txtCamada1";
             this.txtCamada1.Size = new System.Drawing.Size(100, 24);
             this.txtCamada1.TabIndex = 6;
+            this.txtCamada1.Text = "15";
+            this.txtCamada1.Leave += new System.EventHandler(this.txtCamada1_Leave);
             // 
             // label5
             // 
@@ -194,39 +207,41 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Camada 1:";
             // 
-            // button1
+            // btnCarregar
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::RNADemo.Properties.Resources.load;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(12, 343);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 58);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Carregar Pesos";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCarregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarregar.Image = ((System.Drawing.Image)(resources.GetObject("btnCarregar.Image")));
+            this.btnCarregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCarregar.Location = new System.Drawing.Point(12, 343);
+            this.btnCarregar.Name = "btnCarregar";
+            this.btnCarregar.Size = new System.Drawing.Size(113, 58);
+            this.btnCarregar.TabIndex = 2;
+            this.btnCarregar.Text = "Carregar Pesos";
+            this.btnCarregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCarregar.UseVisualStyleBackColor = true;
+            this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
             // 
-            // button3
+            // btnContinuar
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::RNADemo.Properties.Resources.check;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(315, 343);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(113, 58);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Continuar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContinuar.Image = ((System.Drawing.Image)(resources.GetObject("btnContinuar.Image")));
+            this.btnContinuar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnContinuar.Location = new System.Drawing.Point(315, 343);
+            this.btnContinuar.Name = "btnContinuar";
+            this.btnContinuar.Size = new System.Drawing.Size(113, 58);
+            this.btnContinuar.TabIndex = 2;
+            this.btnContinuar.Text = "Continuar";
+            this.btnContinuar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnContinuar.UseVisualStyleBackColor = true;
+            this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
             // frmArchitecture
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(448, 413);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnContinuar);
+            this.Controls.Add(this.btnCarregar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
@@ -258,7 +273,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnCarregar;
+        private System.Windows.Forms.Button btnContinuar;
     }
 }

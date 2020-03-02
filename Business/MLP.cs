@@ -13,18 +13,29 @@ using SharpLearning.Neural.Learners;
 using SharpLearning.Neural.Loss;
 using SharpLearning.DecisionTrees;
 using SharpLearning.DecisionTrees.Models;
+using System.Collections.Generic;
 
 namespace RNADemo.Business
 {
     public class MLP
     {
         private short _numCamadasEscondidas;
-        private short[] _numProcessadoresPorCamada;
+        private List<short> _numProcessadoresPorCamada;
 
         public short this[int index]
         {
-            get { return _numProcessadoresPorCamada[index]; }
-            set { _numProcessadoresPorCamada[index] = value; }
+            get 
+            {
+                try
+                {
+                    return _numProcessadoresPorCamada[index];
+                }
+                catch
+                {
+                    return 0;
+                }
+            }
+            set { _numProcessadoresPorCamada.Add(value); }
         }
 
         public short NumCamadasEscondidas
@@ -36,6 +47,7 @@ namespace RNADemo.Business
         private NeuralNet _mlp;
         public MLP()
         {
+            _numProcessadoresPorCamada = new List<short>();
             // to load
             // var learner = ClassificationNeuralNetModel.
 
