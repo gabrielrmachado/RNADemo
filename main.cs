@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RNADemo.Design;
 
 namespace RNADemo
 {
@@ -16,7 +17,7 @@ namespace RNADemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmTraining());
+            Application.Run(new frmArchitecture());
         }
     }
 }
