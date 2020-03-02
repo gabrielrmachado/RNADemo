@@ -19,8 +19,8 @@ namespace RNADemo.Business
 {
     public class MLP
     {
-        private short _numCamadasEscondidas;
         private List<short> _numProcessadoresPorCamada;
+        private NeuralNet _mlp;
 
         public short this[int index]
         {
@@ -38,13 +38,8 @@ namespace RNADemo.Business
             set { _numProcessadoresPorCamada.Add(value); }
         }
 
-        public short NumCamadasEscondidas
-        {
-            get { return _numCamadasEscondidas; }
-            set { _numCamadasEscondidas = value; }
-        }
+        public short NumCamadasEscondidas { get; set; }
 
-        private NeuralNet _mlp;
         public MLP()
         {
             _numProcessadoresPorCamada = new List<short>();

@@ -13,9 +13,13 @@ namespace RNADemo
 {
     public partial class frmTraining : Form
     {
-        public frmTraining()
+        private MLP _redeNeural;
+
+        public frmTraining(MLP neuralNet)
         {
             InitializeComponent();
+            _redeNeural = neuralNet;
+            MessageBox.Show(string.Format("{0}\n{1}\n{2}\n{3}", _redeNeural[0], _redeNeural[1], _redeNeural[2], _redeNeural[3]));
         }
 
         private void ChangeColor(object sender)

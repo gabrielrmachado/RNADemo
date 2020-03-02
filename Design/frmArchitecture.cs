@@ -95,8 +95,10 @@ namespace RNADemo.Design
             if (txtCamada2.Enabled) redeNeural[1] = short.Parse(txtCamada2.Text);
             if (txtCamada3.Enabled) redeNeural[2] = short.Parse(txtCamada3.Text);
             if (txtCamada4.Enabled) redeNeural[3] = short.Parse(txtCamada4.Text);
-            MessageBox.Show(string.Format("{0}\n{1}\n{2}\n{3}", redeNeural[0], redeNeural[1], redeNeural[2], redeNeural[3]));
 
+            this.Hide();
+            new frmTraining(redeNeural).ShowDialog();            
+            this.Close();
         }
 
         private void btnCarregar_Click(object sender, EventArgs e)
