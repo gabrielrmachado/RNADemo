@@ -44,9 +44,10 @@ namespace RNADemo.Business
         {
             _numProcessadoresPorCamada = new List<short>();
             // to load
-            // var learner = ClassificationNeuralNetModel.
+            //var learner = ClassificationNeuralNetModel().
+            //var learner = new ClassificationNeuralNetLearner()
 
-            // learn the model
+            //// learn the model
             //var model = learner.learn(observations, targets);
 
             // use the model for predicting new observations

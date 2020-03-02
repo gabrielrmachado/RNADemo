@@ -16,26 +16,27 @@ namespace RNADemo.Design
         private MLP redeNeural;
         public frmArchitecture()
         {
-            redeNeural = new MLP();
             InitializeComponent();
             cmbNumCamadas.Items.AddRange(new object[] { 1, 2, 3, 4 });
+            cmbOtimizacao.Items.AddRange(new object[] { "SGD", "Adam", "AdaMax", "Nadam", "Adagrad", "Adadelta", "Netsterov", "RMSProp" });
             cmbNumCamadas.SelectedIndex = 0;
+            cmbOtimizacao.SelectedIndex = 0;
         }
 
-        private void MensagemErro(TextBox txtComponente)
+        private void MensagemErro(TextBox txtComponente, double menor, double maior)
         {
             try
             {
-                if (Convert.ToInt16(txtComponente.Text) < 1 || Convert.ToInt16(txtComponente.Text) > 50)
+                if (Convert.ToDouble(txtComponente.Text) < menor || Convert.ToDouble(txtComponente.Text) > maior)
                 {
-                    MessageBox.Show("Escolha um número de processadores entre 1 e 50.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(string.Format("Escolha um valor para o parâmetro entre {0:0.000} e {1:0.000}.", menor, maior), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtComponente.Focus();
                     txtComponente.SelectAll();
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Escolha um número de processadores entre 1 e 50.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(string.Format("Escolha um valor para o parâmetro entre {0:0.000} e {1:0.000}.", menor, maior), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtComponente.Focus();
                 txtComponente.SelectAll();
             }            
@@ -43,8 +44,8 @@ namespace RNADemo.Design
 
         private void cmbNumCamadas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            redeNeural.NumCamadasEscondidas = Convert.ToInt16(cmbNumCamadas.SelectedItem);
-            switch (redeNeural.NumCamadasEscondidas)
+            var numCamadasEscondidas = Convert.ToInt16(cmbNumCamadas.SelectedItem);
+            switch (numCamadasEscondidas)
             {
                 case 1:
                     txtCamada2.Enabled = false;
@@ -71,26 +72,29 @@ namespace RNADemo.Design
 
         private void txtCamada2_Leave(object sender, EventArgs e)
         {
-            MensagemErro(txtCamada2);
+            MensagemErro(txtCamada2, 1, 50);
         }
 
         private void txtCamada3_Leave(object sender, EventArgs e)
         {
-            MensagemErro(txtCamada3);
+            MensagemErro(txtCamada3, 1, 50);
         }
 
         private void txtCamada4_Leave(object sender, EventArgs e)
         {
-            MensagemErro(txtCamada4);
+            MensagemErro(txtCamada4, 1, 50);
         }
 
         private void txtCamada1_Leave(object sender, EventArgs e)
         {
-            MensagemErro(txtCamada1);
+            MensagemErro(txtCamada1, 1, 50);
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
+            redeNeural = new MLP();
+            redeNeural.NumCamadasEscondidas = Convert.ToInt16(cmbNumCamadas.SelectedItem);
+
             if (txtCamada1.Enabled) redeNeural[0] = short.Parse(txtCamada1.Text);
             if (txtCamada2.Enabled) redeNeural[1] = short.Parse(txtCamada2.Text);
             if (txtCamada3.Enabled) redeNeural[2] = short.Parse(txtCamada3.Text);
@@ -104,6 +108,21 @@ namespace RNADemo.Design
         private void btnCarregar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtEpocas_Leave(object sender, EventArgs e)
+        {
+            MensagemErro(txtEpocas, 100, 1000);
+        }
+
+        private void txtAprendizado_Leave(object sender, EventArgs e)
+        {
+            MensagemErro(txtAprendizado, 0.001, 0.5);
+        }
+
+        private void txtMomento_Leave(object sender, EventArgs e)
+        {
+            MensagemErro(txtMomento, 0.1, 1);
         }
     }
 }
