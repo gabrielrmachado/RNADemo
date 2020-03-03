@@ -81,6 +81,11 @@ namespace RNADemo.Design
             if (txtCamada3.Enabled) redeNeural[2] = short.Parse(txtCamada3.Text);
             if (txtCamada4.Enabled) redeNeural[3] = short.Parse(txtCamada4.Text);
 
+            redeNeural.NumEpocas = short.Parse(txtEpocas.Text);
+            redeNeural.TaxaAprendizado = double.Parse(txtAprendizado.Text);
+            redeNeural.TaxaMomento = double.Parse(txtMomento.Text);
+            redeNeural.AlgoritmoOtimizador = short.Parse(cmbOtimizacao.SelectedIndex.ToString());
+
             this.Hide();
             new frmNumeroPadroes(redeNeural).ShowDialog();            
             this.Close();
