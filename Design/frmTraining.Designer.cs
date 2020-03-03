@@ -340,7 +340,7 @@
             this.grpClasses.Size = new System.Drawing.Size(253, 249);
             this.grpClasses.TabIndex = 1;
             this.grpClasses.TabStop = false;
-            this.grpClasses.Text = "Classe Correspondente";
+            this.grpClasses.Text = "Saída Ativada";
             // 
             // radioButton6
             // 
@@ -348,10 +348,10 @@
             this.radioButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton6.Location = new System.Drawing.Point(144, 212);
             this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(78, 20);
+            this.radioButton6.Size = new System.Drawing.Size(72, 20);
             this.radioButton6.TabIndex = 9;
             this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Classe 9";
+            this.radioButton6.Text = "Saída 9";
             this.radioButton6.UseVisualStyleBackColor = true;
             // 
             // radioButton7
@@ -360,10 +360,10 @@
             this.radioButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton7.Location = new System.Drawing.Point(144, 171);
             this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(78, 20);
+            this.radioButton7.Size = new System.Drawing.Size(72, 20);
             this.radioButton7.TabIndex = 8;
             this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Classe 8";
+            this.radioButton7.Text = "Saída 8";
             this.radioButton7.UseVisualStyleBackColor = true;
             // 
             // radioButton8
@@ -372,10 +372,10 @@
             this.radioButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton8.Location = new System.Drawing.Point(144, 131);
             this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(78, 20);
+            this.radioButton8.Size = new System.Drawing.Size(72, 20);
             this.radioButton8.TabIndex = 7;
             this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "Classe 7";
+            this.radioButton8.Text = "Saída 7";
             this.radioButton8.UseVisualStyleBackColor = true;
             // 
             // radioButton9
@@ -384,10 +384,10 @@
             this.radioButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton9.Location = new System.Drawing.Point(144, 91);
             this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(78, 20);
+            this.radioButton9.Size = new System.Drawing.Size(72, 20);
             this.radioButton9.TabIndex = 6;
             this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Classe 6";
+            this.radioButton9.Text = "Saída 6";
             this.radioButton9.UseVisualStyleBackColor = true;
             // 
             // radioButton10
@@ -396,10 +396,10 @@
             this.radioButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton10.Location = new System.Drawing.Point(144, 51);
             this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(78, 20);
+            this.radioButton10.Size = new System.Drawing.Size(72, 20);
             this.radioButton10.TabIndex = 5;
             this.radioButton10.TabStop = true;
-            this.radioButton10.Text = "Classe 5";
+            this.radioButton10.Text = "Saída 5";
             this.radioButton10.UseVisualStyleBackColor = true;
             // 
             // radioButton5
@@ -408,10 +408,10 @@
             this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton5.Location = new System.Drawing.Point(22, 212);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(78, 20);
+            this.radioButton5.Size = new System.Drawing.Size(72, 20);
             this.radioButton5.TabIndex = 4;
             this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Classe 4";
+            this.radioButton5.Text = "Saída 4";
             this.radioButton5.UseVisualStyleBackColor = true;
             // 
             // radioButton4
@@ -420,10 +420,10 @@
             this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton4.Location = new System.Drawing.Point(22, 171);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(78, 20);
+            this.radioButton4.Size = new System.Drawing.Size(72, 20);
             this.radioButton4.TabIndex = 3;
             this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Classe 3";
+            this.radioButton4.Text = "Saída 3";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // radioButton3
@@ -432,10 +432,10 @@
             this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton3.Location = new System.Drawing.Point(22, 131);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(78, 20);
+            this.radioButton3.Size = new System.Drawing.Size(72, 20);
             this.radioButton3.TabIndex = 2;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Classe 2";
+            this.radioButton3.Text = "Saída 2";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton2
@@ -444,10 +444,10 @@
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.Location = new System.Drawing.Point(22, 91);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(78, 20);
+            this.radioButton2.Size = new System.Drawing.Size(72, 20);
             this.radioButton2.TabIndex = 1;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Classe 1";
+            this.radioButton2.Text = "Saída 1";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
@@ -456,10 +456,10 @@
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.Location = new System.Drawing.Point(22, 51);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(78, 20);
+            this.radioButton1.Size = new System.Drawing.Size(72, 20);
             this.radioButton1.TabIndex = 0;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Classe 0";
+            this.radioButton1.Text = "Saída 0";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // txtAmostraEnsinada

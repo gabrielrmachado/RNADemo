@@ -21,30 +21,27 @@ namespace RNADemo
             _redeNeural = neuralNet;
             txtQtdAmostrasRestantes.Text = _redeNeural.NumeroAmostrasTreinamento.ToString();
             txtQtdAmostrasFornecidas.Text = "0";
-            grpClasses.MouseClick += GrpClasses_MouseClick;
 
             foreach (PictureBox pixel in grpAmostra.Controls)
             {
                 pixel.Click += Pixel_Click; 
             }
+
+            foreach (RadioButton radio in grpClasses.Controls)
+            {
+                radio.Click += Radio_Click;
+            }
+        }
+
+        private void Radio_Click(object sender, EventArgs e)
+        {
+            RadioButton rdButton = (sender as RadioButton);
+            txtAmostraEnsinada.Text = rdButton.Text.Substring(rdButton.Text.IndexOf(' '));
         }
 
         private void Pixel_Click(object sender, EventArgs e)
         {
             ChangeColor(sender);
-        }
-
-        private void GrpClasses_MouseClick(object sender, MouseEventArgs e)
-        {
-            try
-            {
-                RadioButton rdButton = grpClasses.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
-                txtAmostraEnsinada.Text = rdButton.Text.Substring(rdButton.Text.IndexOf(' '));
-            }
-            catch
-            {
-                txtAmostraEnsinada.Text = "0";
-            }
         }
 
         private void ChangeColor(object sender)
@@ -61,11 +58,25 @@ namespace RNADemo
         {
             foreach (PictureBox pixel in grpAmostra.Controls)
                 pixel.BackColor = Color.White;
+
+            radioButton1.Checked = true;
+            txtAmostraEnsinada.Text = "0";
         }
 
         private void btnAssociar_Click(object sender, EventArgs e)
         {
+            LimparControles();
+            int numPadroesFornecidos = int.Parse(txtQtdAmostrasFornecidas.Text) + 1;
+            int numPadroesRestantes = int.Parse(txtQtdAmostrasRestantes.Text) - 1;
 
+            if (numPadroesFornecidos == _redeNeural.NumeroAmostrasTreinamento)
+            {
+                btnAssociar.Enabled = false;
+                btnProsseguirTeste.Enabled = true;
+            }
+
+            txtQtdAmostrasFornecidas.Text = numPadroesFornecidos.ToString();
+            txtQtdAmostrasRestantes.Text = numPadroesRestantes.ToString();
         }
     }
 }
