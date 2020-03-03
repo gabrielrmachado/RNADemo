@@ -28,6 +28,7 @@ namespace RNADemo.Design
         private void btnProsseguirPadroes_Click(object sender, EventArgs e)
         {
             _redeNeural.NumeroAmostrasTreinamento = short.Parse(txtNumPadroes.Text);
+            _redeNeural.AmostrasTreinamento = new int[_redeNeural.NumeroAmostrasTreinamento, 21]; // 20 pixels mais a classe correspondente.
             this.Hide();
             new frmTraining(_redeNeural).ShowDialog();
             this.Close();

@@ -65,9 +65,18 @@ namespace RNADemo
 
         private void btnAssociar_Click(object sender, EventArgs e)
         {
-            LimparControles();
             int numPadroesFornecidos = int.Parse(txtQtdAmostrasFornecidas.Text) + 1;
             int numPadroesRestantes = int.Parse(txtQtdAmostrasRestantes.Text) - 1;
+
+            for (int i = 0; i < grpAmostra.Controls.Count; i++)
+            {
+                PictureBox pb = grpAmostra.Controls[i] as PictureBox;
+                _redeNeural.AmostrasTreinamento[numPadroesFornecidos-1, i] = pb.BackColor == Color.White ? 0 : 1;
+            }
+
+            _redeNeural.AmostrasTreinamento[numPadroesFornecidos - 1, 20] = int.Parse(txtAmostraEnsinada.Text);
+
+            LimparControles();            
 
             if (numPadroesFornecidos == _redeNeural.NumeroAmostrasTreinamento)
             {

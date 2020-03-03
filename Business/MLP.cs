@@ -22,6 +22,7 @@ namespace RNADemo.Business
     {
         private List<short> _numProcessadoresPorCamada;
         private NeuralNet _mlp;
+        public int[,] AmostrasTreinamento;
 
         public short this[int index]
         {
