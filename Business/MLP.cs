@@ -27,14 +27,8 @@ namespace RNADemo.Business
         {
             get 
             {
-                try
-                {
-                    return _numProcessadoresPorCamada[index];
-                }
-                catch
-                {
-                    return 0;
-                }
+                try { return _numProcessadoresPorCamada[index]; }
+                catch { return 0; }
             }
             set { _numProcessadoresPorCamada.Add(value); }
         }

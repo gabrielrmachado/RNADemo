@@ -19,7 +19,32 @@ namespace RNADemo
         {
             InitializeComponent();
             _redeNeural = neuralNet;
-            MessageBox.Show(string.Format("{0}\n{1}\n{2}\n{3}", _redeNeural[0], _redeNeural[1], _redeNeural[2], _redeNeural[3]));
+            txtQtdAmostrasRestantes.Text = _redeNeural.NumeroAmostrasTreinamento.ToString();
+            txtQtdAmostrasFornecidas.Text = "0";
+            grpClasses.MouseClick += GrpClasses_MouseClick;
+
+            foreach (PictureBox pixel in grpAmostra.Controls)
+            {
+                pixel.Click += Pixel_Click; 
+            }
+        }
+
+        private void Pixel_Click(object sender, EventArgs e)
+        {
+            ChangeColor(sender);
+        }
+
+        private void GrpClasses_MouseClick(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                RadioButton rdButton = grpClasses.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+                txtAmostraEnsinada.Text = rdButton.Text.Substring(rdButton.Text.IndexOf(' '));
+            }
+            catch
+            {
+                txtAmostraEnsinada.Text = "0";
+            }
         }
 
         private void ChangeColor(object sender)
@@ -32,104 +57,15 @@ namespace RNADemo
                 pb.BackColor = Color.Black;
         }
 
-        private void pb11_Click(object sender, EventArgs e)
+        private void LimparControles()
         {
-            ChangeColor(sender);
+            foreach (PictureBox pixel in grpAmostra.Controls)
+                pixel.BackColor = Color.White;
         }
 
-        private void pb19_Click(object sender, EventArgs e)
+        private void btnAssociar_Click(object sender, EventArgs e)
         {
-            ChangeColor(sender);
-        }
 
-        private void pb18_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb17_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb16_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb15_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb14_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb13_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb12_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb20_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb10_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb9_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb4_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb3_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb2_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb1_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb8_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb7_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb6_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void pb5_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
         }
     }
 }

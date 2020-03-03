@@ -47,6 +47,7 @@
             // 
             // btnProsseguirPadroes
             // 
+            this.btnProsseguirPadroes.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnProsseguirPadroes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProsseguirPadroes.Image = global::RNADemo.Properties.Resources.check;
             this.btnProsseguirPadroes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -61,6 +62,7 @@
             // 
             // btnCarregarPadroes
             // 
+            this.btnCarregarPadroes.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCarregarPadroes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCarregarPadroes.Image = global::RNADemo.Properties.Resources.load;
             this.btnCarregarPadroes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -95,6 +97,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmNumeroPadroes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Número de Padrões";
             this.ResumeLayout(false);
             this.PerformLayout();
