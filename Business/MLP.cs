@@ -39,6 +39,7 @@ namespace RNADemo.Business
         }
 
         public short NumCamadasEscondidas { get; set; }
+        public short NumeroAmostrasTreinamento { get; set; }
 
         public MLP()
         {

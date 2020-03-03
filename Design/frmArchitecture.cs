@@ -23,25 +23,6 @@ namespace RNADemo.Design
             cmbOtimizacao.SelectedIndex = 0;
         }
 
-        private void MensagemErro(TextBox txtComponente, double menor, double maior)
-        {
-            try
-            {
-                if (Convert.ToDouble(txtComponente.Text) < menor || Convert.ToDouble(txtComponente.Text) > maior)
-                {
-                    MessageBox.Show(string.Format("Escolha um valor para o parâmetro entre {0:0.000} e {1:0.000}.", menor, maior), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtComponente.Focus();
-                    txtComponente.SelectAll();
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(string.Format("Escolha um valor para o parâmetro entre {0:0.000} e {1:0.000}.", menor, maior), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtComponente.Focus();
-                txtComponente.SelectAll();
-            }            
-        }
-
         private void cmbNumCamadas_SelectedIndexChanged(object sender, EventArgs e)
         {
             var numCamadasEscondidas = Convert.ToInt16(cmbNumCamadas.SelectedItem);
@@ -72,22 +53,22 @@ namespace RNADemo.Design
 
         private void txtCamada2_Leave(object sender, EventArgs e)
         {
-            MensagemErro(txtCamada2, 1, 50);
+            (sender as TextBox).MensagemErro(1, 50);
         }
 
         private void txtCamada3_Leave(object sender, EventArgs e)
         {
-            MensagemErro(txtCamada3, 1, 50);
+            (sender as TextBox).MensagemErro(1, 50);
         }
 
         private void txtCamada4_Leave(object sender, EventArgs e)
         {
-            MensagemErro(txtCamada4, 1, 50);
+            (sender as TextBox).MensagemErro(1, 50);
         }
 
         private void txtCamada1_Leave(object sender, EventArgs e)
         {
-            MensagemErro(txtCamada1, 1, 50);
+            (sender as TextBox).MensagemErro(1, 50);
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)
@@ -101,28 +82,28 @@ namespace RNADemo.Design
             if (txtCamada4.Enabled) redeNeural[3] = short.Parse(txtCamada4.Text);
 
             this.Hide();
-            new frmTraining(redeNeural).ShowDialog();            
+            new frmNumeroPadroes(redeNeural).ShowDialog();            
             this.Close();
         }
 
         private void btnCarregar_Click(object sender, EventArgs e)
         {
-
+            //
         }
 
         private void txtEpocas_Leave(object sender, EventArgs e)
         {
-            MensagemErro(txtEpocas, 100, 1000);
+            (sender as TextBox).MensagemErro(100, 1000);
         }
 
         private void txtAprendizado_Leave(object sender, EventArgs e)
         {
-            MensagemErro(txtAprendizado, 0.001, 0.5);
+            (sender as TextBox).MensagemErro(0.001, 0.5);
         }
 
         private void txtMomento_Leave(object sender, EventArgs e)
         {
-            MensagemErro(txtMomento, 0.1, 1);
+            (sender as TextBox).MensagemErro(0.1, 1);
         }
     }
 }
