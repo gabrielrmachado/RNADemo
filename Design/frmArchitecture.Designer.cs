@@ -314,7 +314,7 @@
             this.txtEpocas.Name = "txtEpocas";
             this.txtEpocas.Size = new System.Drawing.Size(91, 24);
             this.txtEpocas.TabIndex = 6;
-            this.txtEpocas.Text = "100";
+            this.txtEpocas.Text = "10";
             this.txtEpocas.Leave += new System.EventHandler(this.txtEpocas_Leave);
             // 
             // frmArchitecture

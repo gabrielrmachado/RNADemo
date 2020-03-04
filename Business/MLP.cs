@@ -21,8 +21,9 @@ namespace RNADemo.Business
     public class MLP
     {
         private List<short> _numProcessadoresPorCamada;
-        private NeuralNet _mlp;
-        public int[,] AmostrasTreinamento;
+        private NeuralNet _net;
+        public F64Matrix AmostrasTreinamento, AmostrasTeste;
+        public double[] ClassesTreinamento, ClassesTeste;
 
         public short this[int index]
         {
@@ -44,6 +45,7 @@ namespace RNADemo.Business
         public MLP()
         {
             _numProcessadoresPorCamada = new List<short>();
+            _net = new NeuralNet();
             // to load
             // var learner = ClassificationNeuralNetModel().
             // var learner = new ClassificationNeuralNetLearner()
@@ -55,6 +57,34 @@ namespace RNADemo.Business
 
             // save the model for use with another application
             //model.Save(() => new StreamWriter("randomforest.xml"));
+        }
+
+        public void ConstruirRede()
+        {
+            AmostrasTreinamento = new F64Matrix(NumeroAmostrasTreinamento, 20);
+            ClassesTreinamento = new double[NumeroAmostrasTreinamento];
+
+            _net.Add(new InputLayer(width: 4, height: 5, depth: 1));
+            _net.Add(new DenseLayer(_numProcessadoresPorCamada[0], Activation.Relu));
+            _net.Add(new SoftMaxLayer(10));
+            //_net.Add(new DropoutLayer(0.2));
+            //foreach (var camada in _numProcessadoresPorCamada)
+            //{
+
+            //    //_net.Add(new DropoutLayer(0.5));
+            //}
+        }
+
+        public void TreinarRede()
+        {
+            var opt = (OptimizerMethod)AlgoritmoOtimizador;
+
+            var learner = new ClassificationNeuralNetLearner(_net, loss: new AccuracyLoss(), learningRate: TaxaAprendizado, iterations: NumEpocas,
+                batchSize: 1, optimizerMethod: opt, momentum: TaxaMomento);
+
+            var model = learner.Learn(AmostrasTreinamento, ClassesTreinamento);
+            var metric = new TotalErrorClassificationMetric<double>();
+            
         }
     }
 }
@@ -75,8 +105,7 @@ namespace RNADemo.Business
 //        .EnumerateRows(featureNames)
 //        .ToF64Matrix();
 //    // read classification targets (training)
-//    var trainingTargets = trainingParser.EnumerateRows(targetName)
-//        .ToF64Vector();
+   //var trainingTargets = trainingParser.EnumerateRows(targetName).ToF64Vector();
 
 //    // read feature matrix (test) 
 //    var testObservations = testParser

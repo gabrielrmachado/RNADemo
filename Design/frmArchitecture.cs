@@ -98,7 +98,7 @@ namespace RNADemo.Design
 
         private void txtEpocas_Leave(object sender, EventArgs e)
         {
-            (sender as TextBox).MensagemErro(100, 1000);
+            (sender as TextBox).MensagemErro(10, 1000);
         }
 
         private void txtAprendizado_Leave(object sender, EventArgs e)

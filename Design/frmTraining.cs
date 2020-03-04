@@ -74,18 +74,25 @@ namespace RNADemo
                 _redeNeural.AmostrasTreinamento[numPadroesFornecidos-1, i] = pb.BackColor == Color.White ? 0 : 1;
             }
 
-            _redeNeural.AmostrasTreinamento[numPadroesFornecidos - 1, 20] = int.Parse(txtAmostraEnsinada.Text);
+            _redeNeural.ClassesTreinamento[numPadroesFornecidos - 1] = double.Parse(txtAmostraEnsinada.Text);
 
             LimparControles();            
 
             if (numPadroesFornecidos == _redeNeural.NumeroAmostrasTreinamento)
             {
                 btnAssociar.Enabled = false;
-                btnProsseguirTeste.Enabled = true;
+                btnTreinarRede.Enabled = true;
             }
 
             txtQtdAmostrasFornecidas.Text = numPadroesFornecidos.ToString();
             txtQtdAmostrasRestantes.Text = numPadroesRestantes.ToString();
+        }
+
+        private void btnTreinarRede_Click(object sender, EventArgs e)
+        {
+            btnCarregasAmostras.Enabled = false;
+            btnProsseguirTeste.Enabled = true;
+            _redeNeural.TreinarRede();
         }
     }
 }

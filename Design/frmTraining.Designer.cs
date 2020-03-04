@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTraining));
             this.grpAmostra = new System.Windows.Forms.GroupBox();
             this.pb20 = new System.Windows.Forms.PictureBox();
             this.pb19 = new System.Windows.Forms.PictureBox();
@@ -66,8 +67,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnTreinarRede = new System.Windows.Forms.Button();
             this.btnProsseguirTeste = new System.Windows.Forms.Button();
             this.btnAssociar = new System.Windows.Forms.Button();
+            this.btnCarregasAmostras = new System.Windows.Forms.Button();
             this.grpAmostra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb19)).BeginInit();
@@ -534,15 +537,30 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Amostras Restantes:";
             // 
+            // btnTreinarRede
+            // 
+            this.btnTreinarRede.Enabled = false;
+            this.btnTreinarRede.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTreinarRede.Image = ((System.Drawing.Image)(resources.GetObject("btnTreinarRede.Image")));
+            this.btnTreinarRede.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnTreinarRede.Location = new System.Drawing.Point(300, 334);
+            this.btnTreinarRede.Name = "btnTreinarRede";
+            this.btnTreinarRede.Size = new System.Drawing.Size(157, 56);
+            this.btnTreinarRede.TabIndex = 10;
+            this.btnTreinarRede.Text = "Treinar Rede";
+            this.btnTreinarRede.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTreinarRede.UseVisualStyleBackColor = true;
+            this.btnTreinarRede.Click += new System.EventHandler(this.btnTreinarRede_Click);
+            // 
             // btnProsseguirTeste
             // 
             this.btnProsseguirTeste.Enabled = false;
             this.btnProsseguirTeste.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProsseguirTeste.Image = global::RNADemo.Properties.Resources.check;
             this.btnProsseguirTeste.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnProsseguirTeste.Location = new System.Drawing.Point(626, 301);
+            this.btnProsseguirTeste.Location = new System.Drawing.Point(575, 334);
             this.btnProsseguirTeste.Name = "btnProsseguirTeste";
-            this.btnProsseguirTeste.Size = new System.Drawing.Size(109, 56);
+            this.btnProsseguirTeste.Size = new System.Drawing.Size(157, 56);
             this.btnProsseguirTeste.TabIndex = 9;
             this.btnProsseguirTeste.Text = "Prosseguir";
             this.btnProsseguirTeste.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -562,11 +580,26 @@
             this.btnAssociar.UseVisualStyleBackColor = true;
             this.btnAssociar.Click += new System.EventHandler(this.btnAssociar_Click);
             // 
+            // btnCarregasAmostras
+            // 
+            this.btnCarregasAmostras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarregasAmostras.Image = global::RNADemo.Properties.Resources.load;
+            this.btnCarregasAmostras.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCarregasAmostras.Location = new System.Drawing.Point(29, 334);
+            this.btnCarregasAmostras.Name = "btnCarregasAmostras";
+            this.btnCarregasAmostras.Size = new System.Drawing.Size(157, 56);
+            this.btnCarregasAmostras.TabIndex = 12;
+            this.btnCarregasAmostras.Text = "Carregar Amostras";
+            this.btnCarregasAmostras.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCarregasAmostras.UseVisualStyleBackColor = true;
+            // 
             // frmTraining
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 380);
+            this.ClientSize = new System.Drawing.Size(768, 402);
+            this.Controls.Add(this.btnCarregasAmostras);
+            this.Controls.Add(this.btnTreinarRede);
             this.Controls.Add(this.btnProsseguirTeste);
             this.Controls.Add(this.btnAssociar);
             this.Controls.Add(this.label3);
@@ -652,6 +685,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAssociar;
         private System.Windows.Forms.Button btnProsseguirTeste;
+        private System.Windows.Forms.Button btnTreinarRede;
+        private System.Windows.Forms.Button btnCarregasAmostras;
     }
 }
 
