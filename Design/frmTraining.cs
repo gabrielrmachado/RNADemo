@@ -1,30 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using RNADemo.Business;
+using System;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using RNADemo.Business;
 
 namespace RNADemo
 {
     public partial class frmTraining : Form
     {
-        private MLP _redeNeural;
+        private MLP redeNeural;
 
         public frmTraining(MLP neuralNet)
         {
             InitializeComponent();
-            _redeNeural = neuralNet;
-            txtQtdAmostrasRestantes.Text = _redeNeural.NumeroAmostrasTreinamento.ToString();
+            redeNeural = neuralNet;
+            txtQtdAmostrasRestantes.Text = redeNeural.NumeroAmostrasTreinamento.ToString();
             txtQtdAmostrasFornecidas.Text = "0";
 
             foreach (PictureBox pixel in grpAmostra.Controls)
             {
-                pixel.Click += Pixel_Click; 
+                pixel.Click += Pixel_Click;
             }
 
             foreach (RadioButton radio in grpClasses.Controls)
@@ -71,14 +66,14 @@ namespace RNADemo
             for (int i = 0; i < grpAmostra.Controls.Count; i++)
             {
                 PictureBox pb = grpAmostra.Controls[i] as PictureBox;
-                _redeNeural.AmostrasTreinamento[numPadroesFornecidos-1, i] = pb.BackColor == Color.White ? 0 : 1;
+                redeNeural.AmostrasTreinamento[numPadroesFornecidos - 1, i] = (pb.BackColor == Color.White ? 0.0 : 1.0);
             }
 
-            _redeNeural.ClassesTreinamento[numPadroesFornecidos - 1] = double.Parse(txtAmostraEnsinada.Text);
+            redeNeural.ClassesTreinamento[numPadroesFornecidos - 1] = double.Parse(txtAmostraEnsinada.Text);
 
-            LimparControles();            
+            LimparControles();
 
-            if (numPadroesFornecidos == _redeNeural.NumeroAmostrasTreinamento)
+            if (numPadroesFornecidos == redeNeural.NumeroAmostrasTreinamento)
             {
                 btnAssociar.Enabled = false;
                 btnTreinarRede.Enabled = true;
@@ -92,7 +87,17 @@ namespace RNADemo
         {
             btnCarregasAmostras.Enabled = false;
             btnProsseguirTeste.Enabled = true;
-            _redeNeural.TreinarRede();
+            redeNeural.TreinarRede();
+        }
+
+        private void btnSalvarAmostras_Click(object sender, EventArgs e)
+        {
+            redeNeural.SalvarAmostras();
+        }       
+
+        private void btnCarregarAmostras_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

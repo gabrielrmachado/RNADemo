@@ -5,6 +5,8 @@ using SharpLearning.Containers.Matrices;
 using SharpLearning.CrossValidation.TrainingTestSplitters;
 using SharpLearning.InputOutput.Csv;
 using SharpLearning.Metrics.Classification;
+using SharpLearning.InputOutput.Csv;
+using RNADemo.Properties;
 using SharpLearning.Neural.Models;
 using SharpLearning.Neural;
 using SharpLearning.Neural.Optimizers;
@@ -15,17 +17,19 @@ using SharpLearning.Neural.Loss;
 using SharpLearning.DecisionTrees;
 using SharpLearning.DecisionTrees.Models;
 using System.Collections.Generic;
+using System;
 
 namespace RNADemo.Business
 {
     public class MLP
     {
-        private List<short> _numProcessadoresPorCamada;
+        private List<int> _numProcessadoresPorCamada;
         private NeuralNet _net;
+        public ClassificationNeuralNetModel modelo;
         public F64Matrix AmostrasTreinamento, AmostrasTeste;
         public double[] ClassesTreinamento, ClassesTeste;
 
-        public short this[int index]
+        public int this[int index]
         {
             get 
             {
@@ -44,19 +48,8 @@ namespace RNADemo.Business
 
         public MLP()
         {
-            _numProcessadoresPorCamada = new List<short>();
+            _numProcessadoresPorCamada = new List<int>();
             _net = new NeuralNet();
-            // to load
-            // var learner = ClassificationNeuralNetModel().
-            // var learner = new ClassificationNeuralNetLearner()
-
-            //// learn the model
-            //var model = learner.learn(observations, targets);
-
-            // use the model for predicting new observations
-
-            // save the model for use with another application
-            //model.Save(() => new StreamWriter("randomforest.xml"));
         }
 
         public void ConstruirRede()
@@ -64,27 +57,50 @@ namespace RNADemo.Business
             AmostrasTreinamento = new F64Matrix(NumeroAmostrasTreinamento, 20);
             ClassesTreinamento = new double[NumeroAmostrasTreinamento];
 
-            _net.Add(new InputLayer(width: 4, height: 5, depth: 1));
-            _net.Add(new DenseLayer(_numProcessadoresPorCamada[0], Activation.Relu));
-            _net.Add(new SoftMaxLayer(10));
-            //_net.Add(new DropoutLayer(0.2));
-            //foreach (var camada in _numProcessadoresPorCamada)
-            //{
+            _net.Add(new InputLayer(20));
 
-            //    //_net.Add(new DropoutLayer(0.5));
-            //}
+            foreach (var numProcessadores in _numProcessadoresPorCamada)
+                _net.Add(new DenseLayer(numProcessadores, Activation.Relu));
         }
 
         public void TreinarRede()
         {
-            var opt = (OptimizerMethod)AlgoritmoOtimizador;
+            _net.Add(new SoftMaxLayer(ClassesTreinamento.Distinct().Count()));
 
             var learner = new ClassificationNeuralNetLearner(_net, loss: new AccuracyLoss(), learningRate: TaxaAprendizado, iterations: NumEpocas,
-                batchSize: 1, optimizerMethod: opt, momentum: TaxaMomento);
+                        batchSize: 1, optimizerMethod: (OptimizerMethod)AlgoritmoOtimizador, momentum: TaxaMomento);
 
-            var model = learner.Learn(AmostrasTreinamento, ClassesTreinamento);
-            var metric = new TotalErrorClassificationMetric<double>();
-            
+            modelo = learner.Learn(AmostrasTreinamento, ClassesTreinamento);
+        }
+
+        public void SalvarAmostras()
+        {
+            using (StreamWriter outfile = new StreamWriter(@"../Amostras/amostrasTreinamento.csv"))
+            {
+                for (int i = 0; i < AmostrasTreinamento.RowCount; i++)
+                {
+                    string content = "";
+                    for (int j = 0; j < AmostrasTreinamento.ColumnCount; j++)
+                    {
+                        if (j < AmostrasTreinamento.ColumnCount-1)
+                            content += AmostrasTreinamento[i, j].ToString() + ";";
+                        else
+                            content += AmostrasTreinamento[i, j].ToString();
+                    }
+                    outfile.WriteLine(content);
+                }
+            }
+
+            using (StreamWriter outfile = new StreamWriter(@"../Amostras/classesTreinamento.csv"))
+            {
+                for (int i = 0; i < ClassesTreinamento.Length; i++)
+                {
+                    string content = "";
+                    content += ClassesTreinamento[i].ToString();
+                    
+                    outfile.WriteLine(content);
+                }
+            }
         }
     }
 }
