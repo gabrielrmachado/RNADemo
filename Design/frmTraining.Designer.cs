@@ -68,7 +68,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSalvarAmostras = new System.Windows.Forms.Button();
-            this.btnCarregasAmostras = new System.Windows.Forms.Button();
             this.btnTreinarRede = new System.Windows.Forms.Button();
             this.btnProsseguirTeste = new System.Windows.Forms.Button();
             this.btnAssociar = new System.Windows.Forms.Button();
@@ -544,7 +543,7 @@
             this.btnSalvarAmostras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarAmostras.Image = global::RNADemo.Properties.Resources.disquete;
             this.btnSalvarAmostras.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvarAmostras.Location = new System.Drawing.Point(211, 334);
+            this.btnSalvarAmostras.Location = new System.Drawing.Point(29, 334);
             this.btnSalvarAmostras.Name = "btnSalvarAmostras";
             this.btnSalvarAmostras.Size = new System.Drawing.Size(157, 56);
             this.btnSalvarAmostras.TabIndex = 13;
@@ -553,27 +552,13 @@
             this.btnSalvarAmostras.UseVisualStyleBackColor = true;
             this.btnSalvarAmostras.Click += new System.EventHandler(this.btnSalvarAmostras_Click);
             // 
-            // btnCarregasAmostras
-            // 
-            this.btnCarregasAmostras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCarregasAmostras.Image = global::RNADemo.Properties.Resources.load;
-            this.btnCarregasAmostras.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCarregasAmostras.Location = new System.Drawing.Point(29, 334);
-            this.btnCarregasAmostras.Name = "btnCarregasAmostras";
-            this.btnCarregasAmostras.Size = new System.Drawing.Size(157, 56);
-            this.btnCarregasAmostras.TabIndex = 12;
-            this.btnCarregasAmostras.Text = "Carregar Amostras";
-            this.btnCarregasAmostras.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCarregasAmostras.UseVisualStyleBackColor = true;
-            this.btnCarregasAmostras.Click += new System.EventHandler(this.btnCarregarAmostras_Click);
-            // 
             // btnTreinarRede
             // 
             this.btnTreinarRede.Enabled = false;
             this.btnTreinarRede.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTreinarRede.Image = ((System.Drawing.Image)(resources.GetObject("btnTreinarRede.Image")));
             this.btnTreinarRede.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTreinarRede.Location = new System.Drawing.Point(393, 334);
+            this.btnTreinarRede.Location = new System.Drawing.Point(300, 334);
             this.btnTreinarRede.Name = "btnTreinarRede";
             this.btnTreinarRede.Size = new System.Drawing.Size(157, 56);
             this.btnTreinarRede.TabIndex = 10;
@@ -616,7 +601,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(768, 402);
             this.Controls.Add(this.btnSalvarAmostras);
-            this.Controls.Add(this.btnCarregasAmostras);
             this.Controls.Add(this.btnTreinarRede);
             this.Controls.Add(this.btnProsseguirTeste);
             this.Controls.Add(this.btnAssociar);
@@ -704,7 +688,6 @@
         private System.Windows.Forms.Button btnAssociar;
         private System.Windows.Forms.Button btnProsseguirTeste;
         private System.Windows.Forms.Button btnTreinarRede;
-        private System.Windows.Forms.Button btnCarregasAmostras;
         private System.Windows.Forms.Button btnSalvarAmostras;
     }
 }

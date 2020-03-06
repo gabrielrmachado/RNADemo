@@ -8,13 +8,14 @@ namespace RNADemo
 {
     public partial class frmTraining : Form
     {
-        private MLP redeNeural;
+        private MLP _redeNeural;
 
-        public frmTraining(MLP neuralNet)
+        public frmTraining(MLP neuralNet, bool carregouAmostras)
         {
             InitializeComponent();
-            redeNeural = neuralNet;
-            txtQtdAmostrasRestantes.Text = redeNeural.NumeroAmostrasTreinamento.ToString();
+            _redeNeural = neuralNet;
+
+            txtQtdAmostrasRestantes.Text = _redeNeural.NumeroAmostrasTreinamento.ToString();
             txtQtdAmostrasFornecidas.Text = "0";
 
             foreach (PictureBox pixel in grpAmostra.Controls)
@@ -26,6 +27,14 @@ namespace RNADemo
             {
                 radio.Click += Radio_Click;
             }
+
+            if (carregouAmostras)
+            {
+                txtQtdAmostrasFornecidas.Text = _redeNeural.AmostrasTreinamento.RowCount.ToString();
+                txtQtdAmostrasRestantes.Text = "0";
+                btnTreinarRede.Enabled = true;
+                btnAssociar.Enabled = false;
+            } 
         }
 
         private void Radio_Click(object sender, EventArgs e)
@@ -66,14 +75,14 @@ namespace RNADemo
             for (int i = 0; i < grpAmostra.Controls.Count; i++)
             {
                 PictureBox pb = grpAmostra.Controls[i] as PictureBox;
-                redeNeural.AmostrasTreinamento[numPadroesFornecidos - 1, i] = (pb.BackColor == Color.White ? 0.0 : 1.0);
+                _redeNeural.AmostrasTreinamento[numPadroesFornecidos - 1, i] = (pb.BackColor == Color.White ? 0.0 : 1.0);
             }
 
-            redeNeural.ClassesTreinamento[numPadroesFornecidos - 1] = double.Parse(txtAmostraEnsinada.Text);
+            _redeNeural.ClassesTreinamento[numPadroesFornecidos - 1] = double.Parse(txtAmostraEnsinada.Text);
 
             LimparControles();
 
-            if (numPadroesFornecidos == redeNeural.NumeroAmostrasTreinamento)
+            if (numPadroesFornecidos == _redeNeural.NumeroAmostrasTreinamento)
             {
                 btnAssociar.Enabled = false;
                 btnTreinarRede.Enabled = true;
@@ -86,16 +95,15 @@ namespace RNADemo
 
         private void btnTreinarRede_Click(object sender, EventArgs e)
         {
-            btnCarregasAmostras.Enabled = false;
             btnProsseguirTeste.Enabled = true;
             try
             {
-                redeNeural.TreinarRede();
+                _redeNeural.TreinarRede();
                 MessageBox.Show("Rede treinada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao treinar a rede neural: {0}\nPilha de Chamadas:", ex.Message, ex.StackTrace), "Erro",
+                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao treinar a rede neural: {0}\nPilha de Chamadas: {1}", ex.Message, ex.StackTrace), "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -104,29 +112,14 @@ namespace RNADemo
         {
             try
             {
-                redeNeural.SalvarAmostras();
+                _redeNeural.SalvarAmostras();
                 MessageBox.Show("Amostras salvas com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao salvar as amostras: {0}\nPilha de Chamadas:", ex.Message, ex.StackTrace), "Erro",
+                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao salvar as amostras: {0}\nPilha de Chamadas: {1}", ex.Message, ex.StackTrace), "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }       
-
-        private void btnCarregarAmostras_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                redeNeural.CarregarAmostras();
-                MessageBox.Show("Amostras carregadas com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnTreinarRede.Enabled = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao carregar as amostras: {0}\nPilha de Chamadas:", ex.Message, ex.StackTrace), "Erro",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
     }
 }
