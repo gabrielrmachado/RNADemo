@@ -73,9 +73,9 @@ namespace RNADemo.Business
             modelo = learner.Learn(AmostrasTreinamento, ClassesTreinamento);
         }
 
-        public void SalvarAmostras()
+        public void SalvarAmostras(string path)
         {
-            using (StreamWriter outfile = new StreamWriter(@"../Amostras/amostrasTreinamento.csv"))
+            using (StreamWriter outfile = new StreamWriter(Path.Combine(path, "amostrasTreinamento.csv")))
             {
                 for (int i = 0; i < AmostrasTreinamento.RowCount; i++)
                 {
@@ -91,7 +91,7 @@ namespace RNADemo.Business
                 }
             }
 
-            using (StreamWriter outfile = new StreamWriter(@"../Amostras/classesTreinamento.csv"))
+            using (StreamWriter outfile = new StreamWriter(Path.Combine(path, "classesTreinamento.csv")))
             {
                 string content = "";
                 for (int i = 0; i < ClassesTreinamento.Length; i++)
@@ -105,9 +105,12 @@ namespace RNADemo.Business
             }
         }
 
-        public void CarregarAmostras()
+        public void CarregarAmostras(string[] paths)
         {
-            using (StreamReader reader = new StreamReader(@"../Amostras/amostrasTreinamento.csv"))
+            if (paths.Length != 2)
+                throw new ArgumentException("Devem ser fornecidos dois arquivos .CSV, correspondentes às amostras e às classes.");
+
+            using (StreamReader reader = new StreamReader(paths[0]))
             {
                 int i = 0;
                 while (!reader.EndOfStream)
@@ -121,7 +124,7 @@ namespace RNADemo.Business
                 }
             }
 
-            using (StreamReader reader = new StreamReader(@"../Amostras/classesTreinamento.csv"))
+            using (StreamReader reader = new StreamReader(paths[1]))
             {
                 var classesAmostra = reader.ReadLine().Split(';');
                 

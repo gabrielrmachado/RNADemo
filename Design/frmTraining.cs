@@ -112,8 +112,15 @@ namespace RNADemo
         {
             try
             {
-                _redeNeural.SalvarAmostras();
-                MessageBox.Show("Amostras salvas com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                FolderBrowserDialog fbd = new FolderBrowserDialog();
+                fbd.Description = "Selecione um local para salvamento:";
+
+                if (fbd.ShowDialog() == DialogResult.OK)
+                {
+                    string sSelectedPath = fbd.SelectedPath;
+                    _redeNeural.SalvarAmostras(sSelectedPath);
+                    MessageBox.Show("Amostras salvas com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {

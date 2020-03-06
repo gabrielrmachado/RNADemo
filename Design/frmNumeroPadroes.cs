@@ -47,8 +47,18 @@ namespace RNADemo.Design
             {
                 _redeNeural.NumeroAmostrasTreinamento = short.Parse(txtNumPadroes.Text);
                 _redeNeural.ConstruirRede();
-                _redeNeural.CarregarAmostras();
-                _carregouAmostras = true;
+
+                OpenFileDialog choofdlog = new OpenFileDialog();
+                choofdlog.Filter = "CSV Files (*.csv)|*.csv";
+                choofdlog.FilterIndex = 1;
+                choofdlog.Multiselect = true;
+
+                if (choofdlog.ShowDialog() == DialogResult.OK)
+                {
+                    string[] arrAllFiles = choofdlog.FileNames; //used when Multiselect = true  
+                    _redeNeural.CarregarAmostras(arrAllFiles);
+                    _carregouAmostras = true;
+                }                
 
                 MessageBox.Show("Amostras carregadas com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
