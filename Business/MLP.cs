@@ -93,13 +93,40 @@ namespace RNADemo.Business
 
             using (StreamWriter outfile = new StreamWriter(@"../Amostras/classesTreinamento.csv"))
             {
+                string content = "";
                 for (int i = 0; i < ClassesTreinamento.Length; i++)
                 {
-                    string content = "";
-                    content += ClassesTreinamento[i].ToString();
-                    
-                    outfile.WriteLine(content);
+                    if (i < ClassesTreinamento.Length - 1)
+                            content += ClassesTreinamento[i].ToString() + ";";
+                        else
+                        content += ClassesTreinamento[i].ToString();
                 }
+                outfile.WriteLine(content);
+            }
+        }
+
+        public void CarregarAmostras()
+        {
+            using (StreamReader reader = new StreamReader(@"../Amostras/amostrasTreinamento.csv"))
+            {
+                int i = 0;
+                while (!reader.EndOfStream)
+                {
+                    var valoresAmostra = reader.ReadLine().Split(';');
+                    
+                    for (int j = 0; j < valoresAmostra.Length; j++)
+                        AmostrasTreinamento[i, j] = double.Parse(valoresAmostra[j]);
+
+                    i++;                    
+                }
+            }
+
+            using (StreamReader reader = new StreamReader(@"../Amostras/classesTreinamento.csv"))
+            {
+                var classesAmostra = reader.ReadLine().Split(';');
+                
+                for (int i = 0; i < classesAmostra.Length; i++)
+                    ClassesTreinamento[i] = double.Parse(classesAmostra[i]);
             }
         }
     }

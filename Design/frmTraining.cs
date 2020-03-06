@@ -77,6 +77,7 @@ namespace RNADemo
             {
                 btnAssociar.Enabled = false;
                 btnTreinarRede.Enabled = true;
+                btnSalvarAmostras.Enabled = true;
             }
 
             txtQtdAmostrasFornecidas.Text = numPadroesFornecidos.ToString();
@@ -87,17 +88,45 @@ namespace RNADemo
         {
             btnCarregasAmostras.Enabled = false;
             btnProsseguirTeste.Enabled = true;
-            redeNeural.TreinarRede();
+            try
+            {
+                redeNeural.TreinarRede();
+                MessageBox.Show("Rede treinada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao treinar a rede neural: {0}\nPilha de Chamadas:", ex.Message, ex.StackTrace), "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnSalvarAmostras_Click(object sender, EventArgs e)
         {
-            redeNeural.SalvarAmostras();
+            try
+            {
+                redeNeural.SalvarAmostras();
+                MessageBox.Show("Amostras salvas com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao salvar as amostras: {0}\nPilha de Chamadas:", ex.Message, ex.StackTrace), "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }       
 
         private void btnCarregarAmostras_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                redeNeural.CarregarAmostras();
+                MessageBox.Show("Amostras carregadas com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnTreinarRede.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao carregar as amostras: {0}\nPilha de Chamadas:", ex.Message, ex.StackTrace), "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
