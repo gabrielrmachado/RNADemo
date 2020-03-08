@@ -111,6 +111,12 @@
     <Compile Include="Design\frmTest.Designer.cs">
       <DependentUpon>frmTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Design\frmTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\frmTeste.Designer.cs">
+      <DependentUpon>frmTeste.cs</DependentUpon>
+    </Compile>
     <Compile Include="Design\frmTraining.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Design\frmNumeroPadroes.resx">
       <DependentUpon>frmNumeroPadroes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Design\frmTeste.resx">
+      <DependentUpon>frmTeste.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\frmTraining.resx">
       <DependentUpon>frmTraining.cs</DependentUpon>

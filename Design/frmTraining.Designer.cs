@@ -580,6 +580,7 @@
             this.btnProsseguirTeste.Text = "Prosseguir";
             this.btnProsseguirTeste.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProsseguirTeste.UseVisualStyleBackColor = true;
+            this.btnProsseguirTeste.Click += new System.EventHandler(this.btnProsseguirTeste_Click);
             // 
             // btnAssociar
             // 

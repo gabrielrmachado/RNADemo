@@ -127,6 +127,11 @@ namespace RNADemo
                 MessageBox.Show(string.Format("Ocorreu o seguinte erro ao salvar as amostras: {0}\nPilha de Chamadas: {1}", ex.Message, ex.StackTrace), "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }       
+        }
+
+        private void btnProsseguirTeste_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
