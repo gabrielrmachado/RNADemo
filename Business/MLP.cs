@@ -60,7 +60,7 @@ namespace RNADemo.Business
             _net.Add(new InputLayer(20));
 
             foreach (var numProcessadores in _numProcessadoresPorCamada)
-                _net.Add(new DenseLayer(numProcessadores, Activation.Relu));
+                _net.Add(new DenseLayer(numProcessadores, Activation.Sigmoid));
         }
 
         public void TreinarRede()
