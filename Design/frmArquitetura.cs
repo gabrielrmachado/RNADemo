@@ -99,8 +99,6 @@ namespace RNADemo.Design
             choofdlog.FilterIndex = 1;
             choofdlog.Multiselect = false;
 
-
-
             if (choofdlog.ShowDialog() == DialogResult.OK)
             {
                 string arrAllFile = choofdlog.FileName; 
@@ -109,7 +107,7 @@ namespace RNADemo.Design
 
             MessageBox.Show("Rede carregada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Hide();
-            new frmTeste(_redeNeural).ShowDialog();
+            new frmTeste(_redeNeural, true).ShowDialog();
             this.Close();
         }
 

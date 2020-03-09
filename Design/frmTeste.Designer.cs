@@ -599,7 +599,7 @@
             this.grpDadosRedeNeural.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDadosRedeNeural.Location = new System.Drawing.Point(12, 278);
             this.grpDadosRedeNeural.Name = "grpDadosRedeNeural";
-            this.grpDadosRedeNeural.Size = new System.Drawing.Size(480, 287);
+            this.grpDadosRedeNeural.Size = new System.Drawing.Size(479, 287);
             this.grpDadosRedeNeural.TabIndex = 3;
             this.grpDadosRedeNeural.TabStop = false;
             this.grpDadosRedeNeural.Text = "Dados da Rede Neural";
@@ -787,9 +787,10 @@
             // btnSalvarRede
             // 
             this.btnSalvarRede.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalvarRede.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalvarRede.FlatAppearance.BorderSize = 0;
+            this.btnSalvarRede.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalvarRede.Image = global::RNADemo.Properties.Resources.disquete;
-            this.btnSalvarRede.Location = new System.Drawing.Point(451, 0);
+            this.btnSalvarRede.Location = new System.Drawing.Point(449, 10);
             this.btnSalvarRede.Name = "btnSalvarRede";
             this.btnSalvarRede.Size = new System.Drawing.Size(29, 28);
             this.btnSalvarRede.TabIndex = 1;

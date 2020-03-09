@@ -17,16 +17,21 @@ namespace RNADemo.Design
         private double[] _amostraTeste;
         private TextBox maiorTextBox;
 
-        public frmTeste(MLP redeNeural)
+        public frmTeste(MLP redeNeural, bool carregouRede = false)
         {
             InitializeComponent();
             _redeNeural = redeNeural;
-            
-            lblNumÉpocas.Text = _redeNeural.NumEpocas.ToString();
-            lblTaxaAprendizado.Text = _redeNeural.TaxaAprendizado.ToString();
-            lblTaxaMomento.Text = _redeNeural.TaxaMomento.ToString();
-            lblAlgoritmoOtimizacao.Text = _redeNeural.getNomeAlgoritmoOtimizacao();
-            lblTopologia.Text = _redeNeural.getTopologiaRedeNeural();
+
+            if (!carregouRede)
+            {
+                lblNumÉpocas.Text = _redeNeural.NumEpocas.ToString();
+                lblTaxaAprendizado.Text = _redeNeural.TaxaAprendizado.ToString();
+                lblTaxaMomento.Text = _redeNeural.TaxaMomento.ToString();
+                lblAlgoritmoOtimizacao.Text = _redeNeural.getNomeAlgoritmoOtimizacao();
+                lblTopologia.Text = _redeNeural.getTopologiaRedeNeural();
+            }
+
+            else grpDadosRedeNeural.Visible = false;
 
             _amostraTeste = new double[20];
             btnNovaAmostra.Enabled = false;
