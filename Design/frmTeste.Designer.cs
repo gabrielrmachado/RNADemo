@@ -30,7 +30,16 @@
         {
             this.grpAmostra = new System.Windows.Forms.GroupBox();
             this.grpSaidaProcessadores = new System.Windows.Forms.GroupBox();
-            this.txt0 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox0 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -41,15 +50,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.grpDadosRedeNeural = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblTopologia = new System.Windows.Forms.Label();
+            this.lblNumÉpocas = new System.Windows.Forms.Label();
+            this.lblTaxaAprendizado = new System.Windows.Forms.Label();
+            this.lblTaxaMomento = new System.Windows.Forms.Label();
+            this.lblAlgoritmoOtimizacao = new System.Windows.Forms.Label();
+            this.btnNovaAmostra = new System.Windows.Forms.Button();
+            this.btnEncerrar = new System.Windows.Forms.Button();
+            this.btnAvaliar = new System.Windows.Forms.Button();
             this.pb20 = new System.Windows.Forms.PictureBox();
             this.pb19 = new System.Windows.Forms.PictureBox();
             this.pb18 = new System.Windows.Forms.PictureBox();
@@ -70,20 +85,10 @@
             this.pb7 = new System.Windows.Forms.PictureBox();
             this.pb6 = new System.Windows.Forms.PictureBox();
             this.pb5 = new System.Windows.Forms.PictureBox();
-            this.grpDadosRedeNeural = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lblTopologia = new System.Windows.Forms.Label();
-            this.lblNumÉpocas = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.grpAmostra.SuspendLayout();
             this.grpSaidaProcessadores.SuspendLayout();
+            this.grpDadosRedeNeural.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb18)).BeginInit();
@@ -104,8 +109,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb5)).BeginInit();
-            this.grpDadosRedeNeural.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpAmostra
@@ -149,7 +152,7 @@
             this.grpSaidaProcessadores.Controls.Add(this.textBox3);
             this.grpSaidaProcessadores.Controls.Add(this.textBox2);
             this.grpSaidaProcessadores.Controls.Add(this.textBox1);
-            this.grpSaidaProcessadores.Controls.Add(this.txt0);
+            this.grpSaidaProcessadores.Controls.Add(this.textBox0);
             this.grpSaidaProcessadores.Controls.Add(this.label10);
             this.grpSaidaProcessadores.Controls.Add(this.label9);
             this.grpSaidaProcessadores.Controls.Add(this.label8);
@@ -161,22 +164,132 @@
             this.grpSaidaProcessadores.Controls.Add(this.label2);
             this.grpSaidaProcessadores.Controls.Add(this.label1);
             this.grpSaidaProcessadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpSaidaProcessadores.Location = new System.Drawing.Point(288, 23);
+            this.grpSaidaProcessadores.Location = new System.Drawing.Point(261, 23);
             this.grpSaidaProcessadores.Name = "grpSaidaProcessadores";
             this.grpSaidaProcessadores.Size = new System.Drawing.Size(447, 249);
             this.grpSaidaProcessadores.TabIndex = 2;
             this.grpSaidaProcessadores.TabStop = false;
             this.grpSaidaProcessadores.Text = "Saída dos Processadores";
             // 
-            // txt0
+            // textBox9
             // 
-            this.txt0.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt0.Location = new System.Drawing.Point(56, 36);
-            this.txt0.Name = "txt0";
-            this.txt0.ReadOnly = true;
-            this.txt0.Size = new System.Drawing.Size(148, 24);
-            this.txt0.TabIndex = 3;
-            this.txt0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox9.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox9.ForeColor = System.Drawing.Color.Blue;
+            this.textBox9.Location = new System.Drawing.Point(282, 214);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(148, 24);
+            this.textBox9.TabIndex = 19;
+            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.ForeColor = System.Drawing.Color.Blue;
+            this.textBox8.Location = new System.Drawing.Point(282, 168);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(148, 24);
+            this.textBox8.TabIndex = 18;
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.ForeColor = System.Drawing.Color.Blue;
+            this.textBox7.Location = new System.Drawing.Point(282, 123);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(148, 24);
+            this.textBox7.TabIndex = 17;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox6
+            // 
+            this.textBox6.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.ForeColor = System.Drawing.Color.Blue;
+            this.textBox6.Location = new System.Drawing.Point(282, 78);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(148, 24);
+            this.textBox6.TabIndex = 4;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.ForeColor = System.Drawing.Color.Blue;
+            this.textBox5.Location = new System.Drawing.Point(282, 36);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(148, 24);
+            this.textBox5.TabIndex = 4;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.Color.Blue;
+            this.textBox4.Location = new System.Drawing.Point(56, 211);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(148, 24);
+            this.textBox4.TabIndex = 16;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.ForeColor = System.Drawing.Color.Blue;
+            this.textBox3.Location = new System.Drawing.Point(56, 165);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(148, 24);
+            this.textBox3.TabIndex = 15;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.ForeColor = System.Drawing.Color.Blue;
+            this.textBox2.Location = new System.Drawing.Point(56, 120);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(148, 24);
+            this.textBox2.TabIndex = 14;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.Blue;
+            this.textBox1.Location = new System.Drawing.Point(56, 78);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(148, 24);
+            this.textBox1.TabIndex = 13;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox0
+            // 
+            this.textBox0.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox0.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox0.ForeColor = System.Drawing.Color.Blue;
+            this.textBox0.Location = new System.Drawing.Point(56, 36);
+            this.textBox0.Name = "textBox0";
+            this.textBox0.ReadOnly = true;
+            this.textBox0.Size = new System.Drawing.Size(148, 24);
+            this.textBox0.TabIndex = 3;
+            this.textBox0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -278,95 +391,196 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "0 ->";
             // 
-            // textBox1
+            // grpDadosRedeNeural
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(56, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(148, 24);
-            this.textBox1.TabIndex = 13;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.grpDadosRedeNeural.Controls.Add(this.tableLayoutPanel1);
+            this.grpDadosRedeNeural.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpDadosRedeNeural.Location = new System.Drawing.Point(12, 278);
+            this.grpDadosRedeNeural.Name = "grpDadosRedeNeural";
+            this.grpDadosRedeNeural.Size = new System.Drawing.Size(480, 287);
+            this.grpDadosRedeNeural.TabIndex = 3;
+            this.grpDadosRedeNeural.TabStop = false;
+            this.grpDadosRedeNeural.Text = "Dados da Rede Neural";
             // 
-            // textBox2
+            // tableLayoutPanel1
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(56, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(148, 24);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblTopologia, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblNumÉpocas, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblTaxaAprendizado, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblTaxaMomento, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblAlgoritmoOtimizacao, 1, 4);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 23);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(468, 258);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // textBox3
+            // label15
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(56, 165);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(148, 24);
-            this.textBox3.TabIndex = 15;
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(6, 222);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(194, 18);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Algoritmo de Otimização";
             // 
-            // textBox4
+            // label11
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(56, 211);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(148, 24);
-            this.textBox4.TabIndex = 16;
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 18);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(83, 18);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Topologia";
             // 
-            // textBox5
+            // label13
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(282, 36);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(148, 24);
-            this.textBox5.TabIndex = 4;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 69);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(111, 18);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Nº de Épocas";
             // 
-            // textBox6
+            // label12
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(282, 78);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(148, 24);
-            this.textBox6.TabIndex = 4;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(6, 120);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(165, 18);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Taxa de Aprendizado";
             // 
-            // textBox7
+            // label14
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(282, 123);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(148, 24);
-            this.textBox7.TabIndex = 17;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(6, 171);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(143, 18);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Taxa de Momento";
             // 
-            // textBox8
+            // lblTopologia
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(282, 168);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(148, 24);
-            this.textBox8.TabIndex = 18;
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblTopologia.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTopologia.AutoSize = true;
+            this.lblTopologia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopologia.ForeColor = System.Drawing.Color.Blue;
+            this.lblTopologia.Location = new System.Drawing.Point(209, 18);
+            this.lblTopologia.Name = "lblTopologia";
+            this.lblTopologia.Size = new System.Drawing.Size(0, 18);
+            this.lblTopologia.TabIndex = 6;
             // 
-            // textBox9
+            // lblNumÉpocas
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(282, 214);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(148, 24);
-            this.textBox9.TabIndex = 19;
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblNumÉpocas.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNumÉpocas.AutoSize = true;
+            this.lblNumÉpocas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumÉpocas.ForeColor = System.Drawing.Color.Blue;
+            this.lblNumÉpocas.Location = new System.Drawing.Point(209, 69);
+            this.lblNumÉpocas.Name = "lblNumÉpocas";
+            this.lblNumÉpocas.Size = new System.Drawing.Size(0, 18);
+            this.lblNumÉpocas.TabIndex = 7;
+            // 
+            // lblTaxaAprendizado
+            // 
+            this.lblTaxaAprendizado.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTaxaAprendizado.AutoSize = true;
+            this.lblTaxaAprendizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaxaAprendizado.ForeColor = System.Drawing.Color.Blue;
+            this.lblTaxaAprendizado.Location = new System.Drawing.Point(209, 120);
+            this.lblTaxaAprendizado.Name = "lblTaxaAprendizado";
+            this.lblTaxaAprendizado.Size = new System.Drawing.Size(0, 18);
+            this.lblTaxaAprendizado.TabIndex = 8;
+            // 
+            // lblTaxaMomento
+            // 
+            this.lblTaxaMomento.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTaxaMomento.AutoSize = true;
+            this.lblTaxaMomento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTaxaMomento.ForeColor = System.Drawing.Color.Blue;
+            this.lblTaxaMomento.Location = new System.Drawing.Point(209, 171);
+            this.lblTaxaMomento.Name = "lblTaxaMomento";
+            this.lblTaxaMomento.Size = new System.Drawing.Size(0, 18);
+            this.lblTaxaMomento.TabIndex = 9;
+            // 
+            // lblAlgoritmoOtimizacao
+            // 
+            this.lblAlgoritmoOtimizacao.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAlgoritmoOtimizacao.AutoSize = true;
+            this.lblAlgoritmoOtimizacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlgoritmoOtimizacao.ForeColor = System.Drawing.Color.Blue;
+            this.lblAlgoritmoOtimizacao.Location = new System.Drawing.Point(209, 222);
+            this.lblAlgoritmoOtimizacao.Name = "lblAlgoritmoOtimizacao";
+            this.lblAlgoritmoOtimizacao.Size = new System.Drawing.Size(0, 18);
+            this.lblAlgoritmoOtimizacao.TabIndex = 10;
+            // 
+            // btnNovaAmostra
+            // 
+            this.btnNovaAmostra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovaAmostra.Image = global::RNADemo.Properties.Resources.plus;
+            this.btnNovaAmostra.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnNovaAmostra.Location = new System.Drawing.Point(566, 400);
+            this.btnNovaAmostra.Name = "btnNovaAmostra";
+            this.btnNovaAmostra.Size = new System.Drawing.Size(125, 64);
+            this.btnNovaAmostra.TabIndex = 6;
+            this.btnNovaAmostra.Text = "Nova Amostra";
+            this.btnNovaAmostra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnNovaAmostra.UseVisualStyleBackColor = true;
+            this.btnNovaAmostra.Click += new System.EventHandler(this.btnNovaAmostra_Click);
+            // 
+            // btnEncerrar
+            // 
+            this.btnEncerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEncerrar.Image = global::RNADemo.Properties.Resources.pare;
+            this.btnEncerrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEncerrar.Location = new System.Drawing.Point(566, 495);
+            this.btnEncerrar.Name = "btnEncerrar";
+            this.btnEncerrar.Size = new System.Drawing.Size(125, 64);
+            this.btnEncerrar.TabIndex = 5;
+            this.btnEncerrar.Text = "Encerrar";
+            this.btnEncerrar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEncerrar.UseVisualStyleBackColor = true;
+            this.btnEncerrar.Click += new System.EventHandler(this.btnEncerrar_Click);
+            // 
+            // btnAvaliar
+            // 
+            this.btnAvaliar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvaliar.Image = global::RNADemo.Properties.Resources.evaluate;
+            this.btnAvaliar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAvaliar.Location = new System.Drawing.Point(566, 301);
+            this.btnAvaliar.Name = "btnAvaliar";
+            this.btnAvaliar.Size = new System.Drawing.Size(125, 64);
+            this.btnAvaliar.TabIndex = 4;
+            this.btnAvaliar.Text = "Avaliar";
+            this.btnAvaliar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAvaliar.UseVisualStyleBackColor = true;
+            this.btnAvaliar.Click += new System.EventHandler(this.btnAvaliar_Click);
             // 
             // pb20
             // 
@@ -568,160 +782,14 @@
             this.pb5.TabIndex = 20;
             this.pb5.TabStop = false;
             // 
-            // grpDadosRedeNeural
-            // 
-            this.grpDadosRedeNeural.Controls.Add(this.tableLayoutPanel1);
-            this.grpDadosRedeNeural.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpDadosRedeNeural.Location = new System.Drawing.Point(12, 278);
-            this.grpDadosRedeNeural.Name = "grpDadosRedeNeural";
-            this.grpDadosRedeNeural.Size = new System.Drawing.Size(480, 287);
-            this.grpDadosRedeNeural.TabIndex = 3;
-            this.grpDadosRedeNeural.TabStop = false;
-            this.grpDadosRedeNeural.Text = "Dados da Rede Neural";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetPartial;
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.label15, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.label11, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label13, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label12, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label14, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblTopologia, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lblNumÉpocas, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label18, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label19, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.label20, 1, 4);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 23);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(468, 258);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 18);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 18);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Topologia";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(6, 120);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(165, 18);
-            this.label12.TabIndex = 2;
-            this.label12.Text = "Taxa de Aprendizado";
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(6, 69);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(111, 18);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Nº de Épocas";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(6, 171);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(143, 18);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "Taxa de Momento";
-            // 
-            // label15
-            // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(6, 222);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(194, 18);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Algoritmo de Otimização";
-            // 
-            // lblTopologia
-            // 
-            this.lblTopologia.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblTopologia.AutoSize = true;
-            this.lblTopologia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopologia.ForeColor = System.Drawing.Color.Blue;
-            this.lblTopologia.Location = new System.Drawing.Point(209, 18);
-            this.lblTopologia.Name = "lblTopologia";
-            this.lblTopologia.Size = new System.Drawing.Size(0, 18);
-            this.lblTopologia.TabIndex = 6;
-            // 
-            // lblNumÉpocas
-            // 
-            this.lblNumÉpocas.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblNumÉpocas.AutoSize = true;
-            this.lblNumÉpocas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumÉpocas.ForeColor = System.Drawing.Color.Blue;
-            this.lblNumÉpocas.Location = new System.Drawing.Point(209, 69);
-            this.lblNumÉpocas.Name = "lblNumÉpocas";
-            this.lblNumÉpocas.Size = new System.Drawing.Size(0, 18);
-            this.lblNumÉpocas.TabIndex = 7;
-            // 
-            // label18
-            // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(209, 120);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(83, 18);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "Topologia";
-            // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(209, 171);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(83, 18);
-            this.label19.TabIndex = 9;
-            this.label19.Text = "Topologia";
-            // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(209, 222);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(83, 18);
-            this.label20.TabIndex = 10;
-            this.label20.Text = "Topologia";
-            // 
             // frmTeste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 577);
+            this.ClientSize = new System.Drawing.Size(717, 577);
+            this.Controls.Add(this.btnNovaAmostra);
+            this.Controls.Add(this.btnEncerrar);
+            this.Controls.Add(this.btnAvaliar);
             this.Controls.Add(this.grpDadosRedeNeural);
             this.Controls.Add(this.grpSaidaProcessadores);
             this.Controls.Add(this.grpAmostra);
@@ -733,6 +801,9 @@
             this.grpAmostra.ResumeLayout(false);
             this.grpSaidaProcessadores.ResumeLayout(false);
             this.grpSaidaProcessadores.PerformLayout();
+            this.grpDadosRedeNeural.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb18)).EndInit();
@@ -753,9 +824,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb5)).EndInit();
-            this.grpDadosRedeNeural.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -784,7 +852,7 @@
         private System.Windows.Forms.PictureBox pb6;
         private System.Windows.Forms.PictureBox pb5;
         private System.Windows.Forms.GroupBox grpSaidaProcessadores;
-        private System.Windows.Forms.TextBox txt0;
+        private System.Windows.Forms.TextBox textBox0;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -813,8 +881,11 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label lblTopologia;
         private System.Windows.Forms.Label lblNumÉpocas;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblTaxaAprendizado;
+        private System.Windows.Forms.Label lblTaxaMomento;
+        private System.Windows.Forms.Label lblAlgoritmoOtimizacao;
+        private System.Windows.Forms.Button btnAvaliar;
+        private System.Windows.Forms.Button btnEncerrar;
+        private System.Windows.Forms.Button btnNovaAmostra;
     }
 }

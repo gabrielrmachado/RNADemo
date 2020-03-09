@@ -1,16 +1,15 @@
 ﻿using RNADemo.Business;
 using System;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
-namespace RNADemo
+namespace RNADemo.Design
 {
-    public partial class frmTraining : Form
+    public partial class frmTreinamento : Form
     {
         private MLP _redeNeural;
 
-        public frmTraining(MLP neuralNet, bool carregouAmostras)
+        public frmTreinamento(MLP neuralNet, bool carregouAmostras)
         {
             InitializeComponent();
             _redeNeural = neuralNet;
@@ -20,7 +19,7 @@ namespace RNADemo
 
             foreach (PictureBox pixel in grpAmostra.Controls)
             {
-                pixel.Click += Pixel_Click;
+                pixel.Click += Utils.MudarCorPixel;
             }
 
             foreach (RadioButton radio in grpClasses.Controls)
@@ -43,30 +42,6 @@ namespace RNADemo
             txtAmostraEnsinada.Text = rdButton.Text.Substring(rdButton.Text.IndexOf(' '));
         }
 
-        private void Pixel_Click(object sender, EventArgs e)
-        {
-            ChangeColor(sender);
-        }
-
-        private void ChangeColor(object sender)
-        {
-            var pb = (PictureBox)sender;
-
-            if (pb.BackColor == Color.Black)
-                pb.BackColor = Color.White;
-            else
-                pb.BackColor = Color.Black;
-        }
-
-        private void LimparControles()
-        {
-            foreach (PictureBox pixel in grpAmostra.Controls)
-                pixel.BackColor = Color.White;
-
-            radioButton1.Checked = true;
-            txtAmostraEnsinada.Text = "0";
-        }
-
         private void btnAssociar_Click(object sender, EventArgs e)
         {
             int numPadroesFornecidos = int.Parse(txtQtdAmostrasFornecidas.Text) + 1;
@@ -80,7 +55,9 @@ namespace RNADemo
 
             _redeNeural.ClassesTreinamento[numPadroesFornecidos - 1] = double.Parse(txtAmostraEnsinada.Text);
 
-            LimparControles();
+            grpAmostra.LimparGrid();
+            radioButton1.Checked = true;
+            txtAmostraEnsinada.Text = "0";
 
             if (numPadroesFornecidos == _redeNeural.NumeroAmostrasTreinamento)
             {
@@ -131,7 +108,9 @@ namespace RNADemo
 
         private void btnProsseguirTeste_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            new frmTeste(_redeNeural).ShowDialog();
+            this.Close();
         }
     }
 }

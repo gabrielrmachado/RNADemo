@@ -73,6 +73,11 @@ namespace RNADemo.Business
             modelo = learner.Learn(AmostrasTreinamento, ClassesTreinamento);
         }
 
+        public Dictionary<double,double> AvaliarAmostra(double[] amostra)
+        {
+            return modelo.PredictProbability(amostra).Probabilities;
+        }
+
         public void SalvarAmostras(string path)
         {
             using (StreamWriter outfile = new StreamWriter(Path.Combine(path, "amostrasTreinamento.csv")))
@@ -131,6 +136,21 @@ namespace RNADemo.Business
                 for (int i = 0; i < classesAmostra.Length; i++)
                     ClassesTreinamento[i] = double.Parse(classesAmostra[i]);
             }
+        }
+
+        public string getNomeAlgoritmoOtimizacao()
+        {
+            return Enum.GetName(typeof(OptimizerMethod), AlgoritmoOtimizador).ToUpper();
+        }
+
+        public string getTopologiaRedeNeural()
+        {
+            string topologia = "20 - ";
+            foreach (var camada in _numProcessadoresPorCamada)
+            {
+                topologia += string.Format("{0} - ", camada);
+            }
+            return topologia += "10";
         }
     }
 }

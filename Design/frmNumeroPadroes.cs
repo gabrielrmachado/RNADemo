@@ -37,7 +37,7 @@ namespace RNADemo.Design
                 _redeNeural.ConstruirRede();
 
             this.Hide();
-            new frmTraining(_redeNeural, _carregouAmostras).ShowDialog();
+            new frmTreinamento(_redeNeural, _carregouAmostras).ShowDialog();
             this.Close();
         }
 
@@ -63,7 +63,7 @@ namespace RNADemo.Design
                 MessageBox.Show("Amostras carregadas com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide();
-                new frmTraining(_redeNeural, _carregouAmostras).ShowDialog();
+                new frmTreinamento(_redeNeural, _carregouAmostras).ShowDialog();
                 this.Close();
             }
             catch (Exception ex)

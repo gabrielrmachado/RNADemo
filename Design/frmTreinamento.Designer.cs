@@ -1,6 +1,6 @@
-﻿namespace RNADemo
+﻿namespace RNADemo.Design
 {
-    partial class frmTraining
+    partial class frmTreinamento
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTraining));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTreinamento));
             this.grpAmostra = new System.Windows.Forms.GroupBox();
             this.pb20 = new System.Windows.Forms.PictureBox();
             this.pb19 = new System.Windows.Forms.PictureBox();

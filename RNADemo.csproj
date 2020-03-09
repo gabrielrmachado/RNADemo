@@ -93,11 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\MLP.cs" />
-    <Compile Include="Design\frmArchitecture.cs">
+    <Compile Include="Business\Utils.cs" />
+    <Compile Include="Design\frmArquitetura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Design\frmArchitecture.Designer.cs">
-      <DependentUpon>frmArchitecture.cs</DependentUpon>
+    <Compile Include="Design\frmArquitetura.Designer.cs">
+      <DependentUpon>frmArquitetura.cs</DependentUpon>
     </Compile>
     <Compile Include="Design\frmNumeroPadroes.cs">
       <SubType>Form</SubType>
@@ -105,28 +106,22 @@
     <Compile Include="Design\frmNumeroPadroes.Designer.cs">
       <DependentUpon>frmNumeroPadroes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\frmTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Design\frmTest.Designer.cs">
-      <DependentUpon>frmTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Design\frmTeste.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Design\frmTeste.Designer.cs">
       <DependentUpon>frmTeste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Design\frmTraining.cs">
+    <Compile Include="Design\frmTreinamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Design\frmTraining.Designer.cs">
-      <DependentUpon>frmTraining.cs</DependentUpon>
+    <Compile Include="Design\frmTreinamento.Designer.cs">
+      <DependentUpon>frmTreinamento.cs</DependentUpon>
     </Compile>
     <Compile Include="main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Design\frmArchitecture.resx">
-      <DependentUpon>frmArchitecture.cs</DependentUpon>
+    <EmbeddedResource Include="Design\frmArquitetura.resx">
+      <DependentUpon>frmArquitetura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Design\frmNumeroPadroes.resx">
       <DependentUpon>frmNumeroPadroes.cs</DependentUpon>
@@ -134,8 +129,8 @@
     <EmbeddedResource Include="Design\frmTeste.resx">
       <DependentUpon>frmTeste.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Design\frmTraining.resx">
-      <DependentUpon>frmTraining.cs</DependentUpon>
+    <EmbeddedResource Include="Design\frmTreinamento.resx">
+      <DependentUpon>frmTreinamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -173,7 +168,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\evaluate.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\right.png" />
   </ItemGroup>
@@ -182,6 +179,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\disquete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MathNet.Numerics.MKL.Win.2.3.0\build\MathNet.Numerics.MKL.Win.targets" Condition="Exists('packages\MathNet.Numerics.MKL.Win.2.3.0\build\MathNet.Numerics.MKL.Win.targets')" />

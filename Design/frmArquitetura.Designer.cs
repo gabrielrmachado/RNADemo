@@ -1,6 +1,6 @@
 ﻿namespace RNADemo.Design
 {
-    partial class frmArchitecture
+    partial class frmArquitetura
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArchitecture));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArquitetura));
             this.label1 = new System.Windows.Forms.Label();
             this.cmbNumCamadas = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();

@@ -11,10 +11,10 @@ using RNADemo.Business;
 
 namespace RNADemo.Design
 {
-    public partial class frmArchitecture : Form
+    public partial class frmArquitetura : Form
     {
         private MLP redeNeural;
-        public frmArchitecture()
+        public frmArquitetura()
         {
             InitializeComponent();
             cmbNumCamadas.Items.AddRange(new object[] { 1, 2, 3, 4 });
