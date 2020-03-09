@@ -15,6 +15,7 @@ namespace RNADemo.Design
     {
         private MLP _redeNeural;
         private double[] _amostraTeste;
+        private TextBox maiorTextBox;
 
         public frmTeste(MLP redeNeural)
         {
@@ -28,6 +29,7 @@ namespace RNADemo.Design
             lblTopologia.Text = _redeNeural.getTopologiaRedeNeural();
 
             _amostraTeste = new double[20];
+            btnNovaAmostra.Enabled = false;
 
             foreach (PictureBox pixel in grpAmostra.Controls)
             {
@@ -38,6 +40,9 @@ namespace RNADemo.Design
         private void btnAvaliar_Click(object sender, EventArgs e)
         {
             int i = 0;
+            btnNovaAmostra.Enabled = true;
+            btnAvaliar.Enabled = false;
+
             foreach (PictureBox pb in grpAmostra.Controls)
             {
                 _amostraTeste[i] = (pb.BackColor == Color.White ? 0.0 : 1.0);
@@ -45,15 +50,18 @@ namespace RNADemo.Design
             }
 
             var predicoes = _redeNeural.AvaliarAmostra(_amostraTeste);
-            var maxChave = predicoes.Keys.Max();
+            var maxChave = predicoes.FirstOrDefault(x => x.Value == predicoes.Values.Max()).Key;
             
             i = 0;
-            foreach (TextBox textBox in grpSaidaProcessadores.Controls.OfType<TextBox>())
+            foreach (var textBox in grpSaidaProcessadores.Controls.OfType<TextBox>().OrderBy(x => x.Name))
             {
-                textBox.Text = string.Format("{0:E1}", predicoes[i]);
-                
+                textBox.Text = string.Format("{0:0.00000}", predicoes[i]);
+
                 if (i == maxChave)
+                {
                     textBox.ForeColor = Color.Red;
+                    maiorTextBox = textBox;
+                }
                 i++;
             }
         }
@@ -66,6 +74,11 @@ namespace RNADemo.Design
         private void btnNovaAmostra_Click(object sender, EventArgs e)
         {
             grpAmostra.LimparGrid();
+            maiorTextBox.ForeColor = Color.Blue;
+            btnAvaliar.Enabled = true;
+            
+            foreach (TextBox textBox in grpSaidaProcessadores.Controls.OfType<TextBox>())
+                textBox.Text = "";
         }
     }
 }
