@@ -596,7 +596,7 @@
             this.btnAssociar.UseVisualStyleBackColor = true;
             this.btnAssociar.Click += new System.EventHandler(this.btnAssociar_Click);
             // 
-            // frmTraining
+            // frmTreinamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -613,9 +613,10 @@
             this.Controls.Add(this.txtAmostraEnsinada);
             this.Controls.Add(this.grpClasses);
             this.Controls.Add(this.grpAmostra);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmTraining";
+            this.Name = "frmTreinamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuração e Treinamento da Rede Neural";
             this.grpAmostra.ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNumeroPadroes));
             this.label1 = new System.Windows.Forms.Label();
             this.btnProsseguirPadroes = new System.Windows.Forms.Button();
             this.btnCarregarPadroes = new System.Windows.Forms.Button();
@@ -95,6 +96,7 @@
             this.Controls.Add(this.btnCarregarPadroes);
             this.Controls.Add(this.btnProsseguirPadroes);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmNumeroPadroes";
