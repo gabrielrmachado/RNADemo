@@ -29,6 +29,26 @@
         private void InitializeComponent()
         {
             this.grpAmostra = new System.Windows.Forms.GroupBox();
+            this.pb20 = new System.Windows.Forms.PictureBox();
+            this.pb19 = new System.Windows.Forms.PictureBox();
+            this.pb18 = new System.Windows.Forms.PictureBox();
+            this.pb17 = new System.Windows.Forms.PictureBox();
+            this.pb16 = new System.Windows.Forms.PictureBox();
+            this.pb15 = new System.Windows.Forms.PictureBox();
+            this.pb14 = new System.Windows.Forms.PictureBox();
+            this.pb13 = new System.Windows.Forms.PictureBox();
+            this.pb12 = new System.Windows.Forms.PictureBox();
+            this.pb11 = new System.Windows.Forms.PictureBox();
+            this.pb10 = new System.Windows.Forms.PictureBox();
+            this.pb9 = new System.Windows.Forms.PictureBox();
+            this.pb4 = new System.Windows.Forms.PictureBox();
+            this.pb3 = new System.Windows.Forms.PictureBox();
+            this.pb2 = new System.Windows.Forms.PictureBox();
+            this.pb1 = new System.Windows.Forms.PictureBox();
+            this.pb8 = new System.Windows.Forms.PictureBox();
+            this.pb7 = new System.Windows.Forms.PictureBox();
+            this.pb6 = new System.Windows.Forms.PictureBox();
+            this.pb5 = new System.Windows.Forms.PictureBox();
             this.grpSaidaProcessadores = new System.Windows.Forms.GroupBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -65,30 +85,8 @@
             this.btnNovaAmostra = new System.Windows.Forms.Button();
             this.btnEncerrar = new System.Windows.Forms.Button();
             this.btnAvaliar = new System.Windows.Forms.Button();
-            this.pb20 = new System.Windows.Forms.PictureBox();
-            this.pb19 = new System.Windows.Forms.PictureBox();
-            this.pb18 = new System.Windows.Forms.PictureBox();
-            this.pb17 = new System.Windows.Forms.PictureBox();
-            this.pb16 = new System.Windows.Forms.PictureBox();
-            this.pb15 = new System.Windows.Forms.PictureBox();
-            this.pb14 = new System.Windows.Forms.PictureBox();
-            this.pb13 = new System.Windows.Forms.PictureBox();
-            this.pb12 = new System.Windows.Forms.PictureBox();
-            this.pb11 = new System.Windows.Forms.PictureBox();
-            this.pb10 = new System.Windows.Forms.PictureBox();
-            this.pb9 = new System.Windows.Forms.PictureBox();
-            this.pb4 = new System.Windows.Forms.PictureBox();
-            this.pb3 = new System.Windows.Forms.PictureBox();
-            this.pb2 = new System.Windows.Forms.PictureBox();
-            this.pb1 = new System.Windows.Forms.PictureBox();
-            this.pb8 = new System.Windows.Forms.PictureBox();
-            this.pb7 = new System.Windows.Forms.PictureBox();
-            this.pb6 = new System.Windows.Forms.PictureBox();
-            this.pb5 = new System.Windows.Forms.PictureBox();
+            this.btnSalvarRede = new System.Windows.Forms.Button();
             this.grpAmostra.SuspendLayout();
-            this.grpSaidaProcessadores.SuspendLayout();
-            this.grpDadosRedeNeural.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb18)).BeginInit();
@@ -109,6 +107,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb5)).BeginInit();
+            this.grpSaidaProcessadores.SuspendLayout();
+            this.grpDadosRedeNeural.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpAmostra
@@ -140,6 +141,206 @@
             this.grpAmostra.TabIndex = 1;
             this.grpAmostra.TabStop = false;
             this.grpAmostra.Text = "Padrão para Treinamento";
+            // 
+            // pb20
+            // 
+            this.pb20.BackColor = System.Drawing.Color.White;
+            this.pb20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb20.Location = new System.Drawing.Point(170, 171);
+            this.pb20.Name = "pb20";
+            this.pb20.Size = new System.Drawing.Size(30, 30);
+            this.pb20.TabIndex = 39;
+            this.pb20.TabStop = false;
+            // 
+            // pb19
+            // 
+            this.pb19.BackColor = System.Drawing.Color.White;
+            this.pb19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb19.Location = new System.Drawing.Point(141, 171);
+            this.pb19.Name = "pb19";
+            this.pb19.Size = new System.Drawing.Size(30, 30);
+            this.pb19.TabIndex = 38;
+            this.pb19.TabStop = false;
+            // 
+            // pb18
+            // 
+            this.pb18.BackColor = System.Drawing.Color.White;
+            this.pb18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb18.Location = new System.Drawing.Point(112, 171);
+            this.pb18.Name = "pb18";
+            this.pb18.Size = new System.Drawing.Size(30, 30);
+            this.pb18.TabIndex = 37;
+            this.pb18.TabStop = false;
+            // 
+            // pb17
+            // 
+            this.pb17.BackColor = System.Drawing.Color.White;
+            this.pb17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb17.Location = new System.Drawing.Point(83, 171);
+            this.pb17.Name = "pb17";
+            this.pb17.Size = new System.Drawing.Size(30, 30);
+            this.pb17.TabIndex = 36;
+            this.pb17.TabStop = false;
+            // 
+            // pb16
+            // 
+            this.pb16.BackColor = System.Drawing.Color.White;
+            this.pb16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb16.Location = new System.Drawing.Point(170, 141);
+            this.pb16.Name = "pb16";
+            this.pb16.Size = new System.Drawing.Size(30, 30);
+            this.pb16.TabIndex = 35;
+            this.pb16.TabStop = false;
+            // 
+            // pb15
+            // 
+            this.pb15.BackColor = System.Drawing.Color.White;
+            this.pb15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb15.Location = new System.Drawing.Point(141, 141);
+            this.pb15.Name = "pb15";
+            this.pb15.Size = new System.Drawing.Size(30, 30);
+            this.pb15.TabIndex = 34;
+            this.pb15.TabStop = false;
+            // 
+            // pb14
+            // 
+            this.pb14.BackColor = System.Drawing.Color.White;
+            this.pb14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb14.Location = new System.Drawing.Point(112, 141);
+            this.pb14.Name = "pb14";
+            this.pb14.Size = new System.Drawing.Size(30, 30);
+            this.pb14.TabIndex = 33;
+            this.pb14.TabStop = false;
+            // 
+            // pb13
+            // 
+            this.pb13.BackColor = System.Drawing.Color.White;
+            this.pb13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb13.Location = new System.Drawing.Point(83, 141);
+            this.pb13.Name = "pb13";
+            this.pb13.Size = new System.Drawing.Size(30, 30);
+            this.pb13.TabIndex = 32;
+            this.pb13.TabStop = false;
+            // 
+            // pb12
+            // 
+            this.pb12.BackColor = System.Drawing.Color.White;
+            this.pb12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb12.Location = new System.Drawing.Point(170, 111);
+            this.pb12.Name = "pb12";
+            this.pb12.Size = new System.Drawing.Size(30, 30);
+            this.pb12.TabIndex = 31;
+            this.pb12.TabStop = false;
+            // 
+            // pb11
+            // 
+            this.pb11.BackColor = System.Drawing.Color.White;
+            this.pb11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb11.Location = new System.Drawing.Point(141, 111);
+            this.pb11.Name = "pb11";
+            this.pb11.Size = new System.Drawing.Size(30, 30);
+            this.pb11.TabIndex = 30;
+            this.pb11.TabStop = false;
+            // 
+            // pb10
+            // 
+            this.pb10.BackColor = System.Drawing.Color.White;
+            this.pb10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb10.Location = new System.Drawing.Point(112, 111);
+            this.pb10.Name = "pb10";
+            this.pb10.Size = new System.Drawing.Size(30, 30);
+            this.pb10.TabIndex = 29;
+            this.pb10.TabStop = false;
+            // 
+            // pb9
+            // 
+            this.pb9.BackColor = System.Drawing.Color.White;
+            this.pb9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb9.Location = new System.Drawing.Point(83, 111);
+            this.pb9.Name = "pb9";
+            this.pb9.Size = new System.Drawing.Size(30, 30);
+            this.pb9.TabIndex = 28;
+            this.pb9.TabStop = false;
+            // 
+            // pb4
+            // 
+            this.pb4.BackColor = System.Drawing.Color.White;
+            this.pb4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb4.Location = new System.Drawing.Point(170, 51);
+            this.pb4.Name = "pb4";
+            this.pb4.Size = new System.Drawing.Size(30, 30);
+            this.pb4.TabIndex = 27;
+            this.pb4.TabStop = false;
+            // 
+            // pb3
+            // 
+            this.pb3.BackColor = System.Drawing.Color.White;
+            this.pb3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb3.Location = new System.Drawing.Point(141, 51);
+            this.pb3.Name = "pb3";
+            this.pb3.Size = new System.Drawing.Size(30, 30);
+            this.pb3.TabIndex = 26;
+            this.pb3.TabStop = false;
+            // 
+            // pb2
+            // 
+            this.pb2.BackColor = System.Drawing.Color.White;
+            this.pb2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb2.Location = new System.Drawing.Point(112, 51);
+            this.pb2.Name = "pb2";
+            this.pb2.Size = new System.Drawing.Size(30, 30);
+            this.pb2.TabIndex = 25;
+            this.pb2.TabStop = false;
+            // 
+            // pb1
+            // 
+            this.pb1.BackColor = System.Drawing.Color.White;
+            this.pb1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb1.Location = new System.Drawing.Point(83, 51);
+            this.pb1.Name = "pb1";
+            this.pb1.Size = new System.Drawing.Size(30, 30);
+            this.pb1.TabIndex = 24;
+            this.pb1.TabStop = false;
+            // 
+            // pb8
+            // 
+            this.pb8.BackColor = System.Drawing.Color.White;
+            this.pb8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb8.Location = new System.Drawing.Point(170, 81);
+            this.pb8.Name = "pb8";
+            this.pb8.Size = new System.Drawing.Size(30, 30);
+            this.pb8.TabIndex = 23;
+            this.pb8.TabStop = false;
+            // 
+            // pb7
+            // 
+            this.pb7.BackColor = System.Drawing.Color.White;
+            this.pb7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb7.Location = new System.Drawing.Point(141, 81);
+            this.pb7.Name = "pb7";
+            this.pb7.Size = new System.Drawing.Size(30, 30);
+            this.pb7.TabIndex = 22;
+            this.pb7.TabStop = false;
+            // 
+            // pb6
+            // 
+            this.pb6.BackColor = System.Drawing.Color.White;
+            this.pb6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb6.Location = new System.Drawing.Point(112, 81);
+            this.pb6.Name = "pb6";
+            this.pb6.Size = new System.Drawing.Size(30, 30);
+            this.pb6.TabIndex = 21;
+            this.pb6.TabStop = false;
+            // 
+            // pb5
+            // 
+            this.pb5.BackColor = System.Drawing.Color.White;
+            this.pb5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb5.Location = new System.Drawing.Point(83, 81);
+            this.pb5.Name = "pb5";
+            this.pb5.Size = new System.Drawing.Size(30, 30);
+            this.pb5.TabIndex = 20;
+            this.pb5.TabStop = false;
             // 
             // grpSaidaProcessadores
             // 
@@ -393,6 +594,7 @@
             // 
             // grpDadosRedeNeural
             // 
+            this.grpDadosRedeNeural.Controls.Add(this.btnSalvarRede);
             this.grpDadosRedeNeural.Controls.Add(this.tableLayoutPanel1);
             this.grpDadosRedeNeural.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDadosRedeNeural.Location = new System.Drawing.Point(12, 278);
@@ -582,205 +784,17 @@
             this.btnAvaliar.UseVisualStyleBackColor = true;
             this.btnAvaliar.Click += new System.EventHandler(this.btnAvaliar_Click);
             // 
-            // pb20
+            // btnSalvarRede
             // 
-            this.pb20.BackColor = System.Drawing.Color.White;
-            this.pb20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb20.Location = new System.Drawing.Point(170, 171);
-            this.pb20.Name = "pb20";
-            this.pb20.Size = new System.Drawing.Size(30, 30);
-            this.pb20.TabIndex = 39;
-            this.pb20.TabStop = false;
-            // 
-            // pb19
-            // 
-            this.pb19.BackColor = System.Drawing.Color.White;
-            this.pb19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb19.Location = new System.Drawing.Point(141, 171);
-            this.pb19.Name = "pb19";
-            this.pb19.Size = new System.Drawing.Size(30, 30);
-            this.pb19.TabIndex = 38;
-            this.pb19.TabStop = false;
-            // 
-            // pb18
-            // 
-            this.pb18.BackColor = System.Drawing.Color.White;
-            this.pb18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb18.Location = new System.Drawing.Point(112, 171);
-            this.pb18.Name = "pb18";
-            this.pb18.Size = new System.Drawing.Size(30, 30);
-            this.pb18.TabIndex = 37;
-            this.pb18.TabStop = false;
-            // 
-            // pb17
-            // 
-            this.pb17.BackColor = System.Drawing.Color.White;
-            this.pb17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb17.Location = new System.Drawing.Point(83, 171);
-            this.pb17.Name = "pb17";
-            this.pb17.Size = new System.Drawing.Size(30, 30);
-            this.pb17.TabIndex = 36;
-            this.pb17.TabStop = false;
-            // 
-            // pb16
-            // 
-            this.pb16.BackColor = System.Drawing.Color.White;
-            this.pb16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb16.Location = new System.Drawing.Point(170, 141);
-            this.pb16.Name = "pb16";
-            this.pb16.Size = new System.Drawing.Size(30, 30);
-            this.pb16.TabIndex = 35;
-            this.pb16.TabStop = false;
-            // 
-            // pb15
-            // 
-            this.pb15.BackColor = System.Drawing.Color.White;
-            this.pb15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb15.Location = new System.Drawing.Point(141, 141);
-            this.pb15.Name = "pb15";
-            this.pb15.Size = new System.Drawing.Size(30, 30);
-            this.pb15.TabIndex = 34;
-            this.pb15.TabStop = false;
-            // 
-            // pb14
-            // 
-            this.pb14.BackColor = System.Drawing.Color.White;
-            this.pb14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb14.Location = new System.Drawing.Point(112, 141);
-            this.pb14.Name = "pb14";
-            this.pb14.Size = new System.Drawing.Size(30, 30);
-            this.pb14.TabIndex = 33;
-            this.pb14.TabStop = false;
-            // 
-            // pb13
-            // 
-            this.pb13.BackColor = System.Drawing.Color.White;
-            this.pb13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb13.Location = new System.Drawing.Point(83, 141);
-            this.pb13.Name = "pb13";
-            this.pb13.Size = new System.Drawing.Size(30, 30);
-            this.pb13.TabIndex = 32;
-            this.pb13.TabStop = false;
-            // 
-            // pb12
-            // 
-            this.pb12.BackColor = System.Drawing.Color.White;
-            this.pb12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb12.Location = new System.Drawing.Point(170, 111);
-            this.pb12.Name = "pb12";
-            this.pb12.Size = new System.Drawing.Size(30, 30);
-            this.pb12.TabIndex = 31;
-            this.pb12.TabStop = false;
-            // 
-            // pb11
-            // 
-            this.pb11.BackColor = System.Drawing.Color.White;
-            this.pb11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb11.Location = new System.Drawing.Point(141, 111);
-            this.pb11.Name = "pb11";
-            this.pb11.Size = new System.Drawing.Size(30, 30);
-            this.pb11.TabIndex = 30;
-            this.pb11.TabStop = false;
-            // 
-            // pb10
-            // 
-            this.pb10.BackColor = System.Drawing.Color.White;
-            this.pb10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb10.Location = new System.Drawing.Point(112, 111);
-            this.pb10.Name = "pb10";
-            this.pb10.Size = new System.Drawing.Size(30, 30);
-            this.pb10.TabIndex = 29;
-            this.pb10.TabStop = false;
-            // 
-            // pb9
-            // 
-            this.pb9.BackColor = System.Drawing.Color.White;
-            this.pb9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb9.Location = new System.Drawing.Point(83, 111);
-            this.pb9.Name = "pb9";
-            this.pb9.Size = new System.Drawing.Size(30, 30);
-            this.pb9.TabIndex = 28;
-            this.pb9.TabStop = false;
-            // 
-            // pb4
-            // 
-            this.pb4.BackColor = System.Drawing.Color.White;
-            this.pb4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb4.Location = new System.Drawing.Point(170, 51);
-            this.pb4.Name = "pb4";
-            this.pb4.Size = new System.Drawing.Size(30, 30);
-            this.pb4.TabIndex = 27;
-            this.pb4.TabStop = false;
-            // 
-            // pb3
-            // 
-            this.pb3.BackColor = System.Drawing.Color.White;
-            this.pb3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb3.Location = new System.Drawing.Point(141, 51);
-            this.pb3.Name = "pb3";
-            this.pb3.Size = new System.Drawing.Size(30, 30);
-            this.pb3.TabIndex = 26;
-            this.pb3.TabStop = false;
-            // 
-            // pb2
-            // 
-            this.pb2.BackColor = System.Drawing.Color.White;
-            this.pb2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb2.Location = new System.Drawing.Point(112, 51);
-            this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(30, 30);
-            this.pb2.TabIndex = 25;
-            this.pb2.TabStop = false;
-            // 
-            // pb1
-            // 
-            this.pb1.BackColor = System.Drawing.Color.White;
-            this.pb1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb1.Location = new System.Drawing.Point(83, 51);
-            this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(30, 30);
-            this.pb1.TabIndex = 24;
-            this.pb1.TabStop = false;
-            // 
-            // pb8
-            // 
-            this.pb8.BackColor = System.Drawing.Color.White;
-            this.pb8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb8.Location = new System.Drawing.Point(170, 81);
-            this.pb8.Name = "pb8";
-            this.pb8.Size = new System.Drawing.Size(30, 30);
-            this.pb8.TabIndex = 23;
-            this.pb8.TabStop = false;
-            // 
-            // pb7
-            // 
-            this.pb7.BackColor = System.Drawing.Color.White;
-            this.pb7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb7.Location = new System.Drawing.Point(141, 81);
-            this.pb7.Name = "pb7";
-            this.pb7.Size = new System.Drawing.Size(30, 30);
-            this.pb7.TabIndex = 22;
-            this.pb7.TabStop = false;
-            // 
-            // pb6
-            // 
-            this.pb6.BackColor = System.Drawing.Color.White;
-            this.pb6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb6.Location = new System.Drawing.Point(112, 81);
-            this.pb6.Name = "pb6";
-            this.pb6.Size = new System.Drawing.Size(30, 30);
-            this.pb6.TabIndex = 21;
-            this.pb6.TabStop = false;
-            // 
-            // pb5
-            // 
-            this.pb5.BackColor = System.Drawing.Color.White;
-            this.pb5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb5.Location = new System.Drawing.Point(83, 81);
-            this.pb5.Name = "pb5";
-            this.pb5.Size = new System.Drawing.Size(30, 30);
-            this.pb5.TabIndex = 20;
-            this.pb5.TabStop = false;
+            this.btnSalvarRede.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalvarRede.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSalvarRede.Image = global::RNADemo.Properties.Resources.disquete;
+            this.btnSalvarRede.Location = new System.Drawing.Point(451, 0);
+            this.btnSalvarRede.Name = "btnSalvarRede";
+            this.btnSalvarRede.Size = new System.Drawing.Size(29, 28);
+            this.btnSalvarRede.TabIndex = 1;
+            this.btnSalvarRede.UseVisualStyleBackColor = false;
+            this.btnSalvarRede.Click += new System.EventHandler(this.btnSalvarRede_Click);
             // 
             // frmTeste
             // 
@@ -799,11 +813,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Teste da Rede Neural";
             this.grpAmostra.ResumeLayout(false);
-            this.grpSaidaProcessadores.ResumeLayout(false);
-            this.grpSaidaProcessadores.PerformLayout();
-            this.grpDadosRedeNeural.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb18)).EndInit();
@@ -824,6 +833,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb5)).EndInit();
+            this.grpSaidaProcessadores.ResumeLayout(false);
+            this.grpSaidaProcessadores.PerformLayout();
+            this.grpDadosRedeNeural.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -887,5 +901,6 @@
         private System.Windows.Forms.Button btnAvaliar;
         private System.Windows.Forms.Button btnEncerrar;
         private System.Windows.Forms.Button btnNovaAmostra;
+        private System.Windows.Forms.Button btnSalvarRede;
     }
 }

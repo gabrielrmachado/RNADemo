@@ -80,5 +80,26 @@ namespace RNADemo.Design
             foreach (TextBox textBox in grpSaidaProcessadores.Controls.OfType<TextBox>())
                 textBox.Text = "";
         }
+
+        private void btnSalvarRede_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FolderBrowserDialog fbd = new FolderBrowserDialog();
+                fbd.Description = "Selecione um local para salvamento:";
+
+                if (fbd.ShowDialog() == DialogResult.OK)
+                {
+                    string sSelectedPath = fbd.SelectedPath;
+                    _redeNeural.SalvarRede(sSelectedPath);
+                    MessageBox.Show("Rede Neural salva com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao salvar a RNA: {0}\nPilha de Chamadas: {1}", ex.Message, ex.StackTrace), "Erro",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace RNADemo.Design
 {
     public partial class frmArquitetura : Form
     {
-        private MLP redeNeural;
+        private MLP _redeNeural;
         public frmArquitetura()
         {
             InitializeComponent();
@@ -21,6 +21,8 @@ namespace RNADemo.Design
             cmbOtimizacao.Items.AddRange(new object[] { "SGD", "Adam", "AdaMax", "Nadam", "Adagrad", "Adadelta", "Netsterov", "RMSProp" });
             cmbNumCamadas.SelectedIndex = 0;
             cmbOtimizacao.SelectedIndex = 0;
+
+            _redeNeural = new MLP();
         }
 
         private void cmbNumCamadas_SelectedIndexChanged(object sender, EventArgs e)
@@ -73,27 +75,42 @@ namespace RNADemo.Design
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-            redeNeural = new MLP();
-            redeNeural.NumCamadasEscondidas = Convert.ToInt16(cmbNumCamadas.SelectedItem);
+            _redeNeural.NumCamadasEscondidas = Convert.ToInt16(cmbNumCamadas.SelectedItem);
 
-            if (txtCamada1.Enabled) redeNeural[0] = short.Parse(txtCamada1.Text);
-            if (txtCamada2.Enabled) redeNeural[1] = short.Parse(txtCamada2.Text);
-            if (txtCamada3.Enabled) redeNeural[2] = short.Parse(txtCamada3.Text);
-            if (txtCamada4.Enabled) redeNeural[3] = short.Parse(txtCamada4.Text);
+            if (txtCamada1.Enabled) _redeNeural[0] = short.Parse(txtCamada1.Text);
+            if (txtCamada2.Enabled) _redeNeural[1] = short.Parse(txtCamada2.Text);
+            if (txtCamada3.Enabled) _redeNeural[2] = short.Parse(txtCamada3.Text);
+            if (txtCamada4.Enabled) _redeNeural[3] = short.Parse(txtCamada4.Text);
 
-            redeNeural.NumEpocas = short.Parse(txtEpocas.Text);
-            redeNeural.TaxaAprendizado = double.Parse(txtAprendizado.Text);
-            redeNeural.TaxaMomento = double.Parse(txtMomento.Text);
-            redeNeural.AlgoritmoOtimizador = short.Parse(cmbOtimizacao.SelectedIndex.ToString());
+            _redeNeural.NumEpocas = short.Parse(txtEpocas.Text);
+            _redeNeural.TaxaAprendizado = double.Parse(txtAprendizado.Text);
+            _redeNeural.TaxaMomento = double.Parse(txtMomento.Text);
+            _redeNeural.AlgoritmoOtimizador = short.Parse(cmbOtimizacao.SelectedIndex.ToString());
 
             this.Hide();
-            new frmNumeroPadroes(redeNeural).ShowDialog();            
+            new frmNumeroPadroes(_redeNeural).ShowDialog();            
             this.Close();
         }
 
         private void btnCarregar_Click(object sender, EventArgs e)
         {
-            //
+            OpenFileDialog choofdlog = new OpenFileDialog();
+            choofdlog.Filter = "XML Files (*.xml)|*.xml";
+            choofdlog.FilterIndex = 1;
+            choofdlog.Multiselect = false;
+
+
+
+            if (choofdlog.ShowDialog() == DialogResult.OK)
+            {
+                string arrAllFile = choofdlog.FileName; 
+                _redeNeural.Modelo = _redeNeural.CarregarRede(arrAllFile);
+            }
+
+            MessageBox.Show("Rede carregada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Hide();
+            new frmTeste(_redeNeural).ShowDialog();
+            this.Close();
         }
 
         private void txtEpocas_Leave(object sender, EventArgs e)

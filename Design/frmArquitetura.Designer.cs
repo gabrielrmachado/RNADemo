@@ -210,7 +210,7 @@
             this.btnCarregar.Name = "btnCarregar";
             this.btnCarregar.Size = new System.Drawing.Size(113, 58);
             this.btnCarregar.TabIndex = 2;
-            this.btnCarregar.Text = "Carregar Pesos";
+            this.btnCarregar.Text = "Carregar Rede";
             this.btnCarregar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCarregar.UseVisualStyleBackColor = true;
             this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
@@ -317,7 +317,7 @@
             this.txtEpocas.Text = "10";
             this.txtEpocas.Leave += new System.EventHandler(this.txtEpocas_Leave);
             // 
-            // frmArchitecture
+            // frmArquitetura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -329,7 +329,7 @@
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmArchitecture";
+            this.Name = "frmArquitetura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Arquitetura da Rede Neural";
             this.groupBox1.ResumeLayout(false);

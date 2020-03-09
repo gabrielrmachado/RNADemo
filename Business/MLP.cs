@@ -25,7 +25,7 @@ namespace RNADemo.Business
     {
         private List<int> _numProcessadoresPorCamada;
         private NeuralNet _net;
-        public ClassificationNeuralNetModel modelo;
+        public ClassificationNeuralNetModel Modelo;
         public F64Matrix AmostrasTreinamento, AmostrasTeste;
         public double[] ClassesTreinamento, ClassesTeste;
 
@@ -70,12 +70,12 @@ namespace RNADemo.Business
             var learner = new ClassificationNeuralNetLearner(_net, loss: new AccuracyLoss(), learningRate: TaxaAprendizado, iterations: NumEpocas,
                         batchSize: 1, optimizerMethod: (OptimizerMethod)AlgoritmoOtimizador, momentum: TaxaMomento);
 
-            modelo = learner.Learn(AmostrasTreinamento, ClassesTreinamento);
+            Modelo = learner.Learn(AmostrasTreinamento, ClassesTreinamento);
         }
 
         public Dictionary<double,double> AvaliarAmostra(double[] amostra)
         {
-            return modelo.PredictProbability(amostra).Probabilities;
+            return Modelo.PredictProbability(amostra).Probabilities;
         }
 
         public void SalvarAmostras(string path)
@@ -108,6 +108,12 @@ namespace RNADemo.Business
                 }
                 outfile.WriteLine(content);
             }
+        }
+
+        public ClassificationNeuralNetModel CarregarRede(string path)
+        {
+            var modelo = ClassificationNeuralNetModel.Load(() => new StreamReader(path));
+            return modelo;
         }
 
         public void CarregarAmostras(string[] paths)
@@ -152,59 +158,10 @@ namespace RNADemo.Business
             }
             return topologia += "10";
         }
+
+        public void SalvarRede(string path)
+        {
+            Modelo.Save(() => new StreamWriter(Path.Combine(path, "rede.xml")));
+        }
     }
 }
-
-//public void Classification_Standard_Neural_Net()
-//{
-//    #region Read Data
-//    // Use StreamReader(filepath) when running from filesystem
-//    var trainingParser = new CsvParser(() => new StringReader(Resources.mnist_small_train));
-//    var testParser = new CsvParser(() => new StringReader(Resources.mnist_small_test));
-
-//    var targetName = "Class";
-
-//    var featureNames = trainingParser.EnumerateRows(c => c != targetName).First().ColumnNameToIndex.Keys.ToArray();
-
-//    // read feature matrix (training)
-//    var trainingObservations = trainingParser
-//        .EnumerateRows(featureNames)
-//        .ToF64Matrix();
-//    // read classification targets (training)
-   //var trainingTargets = trainingParser.EnumerateRows(targetName).ToF64Vector();
-
-//    // read feature matrix (test) 
-//    var testObservations = testParser
-//        .EnumerateRows(featureNames)
-//        .ToF64Matrix();
-//    // read classification targets (test)
-//    var testTargets = testParser.EnumerateRows(targetName)
-//        .ToF64Vector();
-//    #endregion
-
-//    // transform pixel values to be between 0 and 1.
-//    trainingObservations.Map(p => p / 255);
-//    testObservations.Map(p => p / 255);
-
-//    // the output layer must know the number of classes.
-//    var numberOfClasses = trainingTargets.Distinct().Count();
-
-//    var net = new NeuralNet();
-//    net.Add(new InputLayer(width: 28, height: 28, depth: 1)); // MNIST data is 28x28x1.
-//    net.Add(new DropoutLayer(0.2));
-//    net.Add(new DenseLayer(800, Activation.Relu));
-//    net.Add(new DropoutLayer(0.5));
-//    net.Add(new DenseLayer(800, Activation.Relu));
-//    net.Add(new DropoutLayer(0.5));
-//    net.Add(new SoftMaxLayer(numberOfClasses));
-
-//    // using only 10 iteration to make the example run faster.
-//    // using classification accuracy as error metric. This is only used for reporting progress.
-//    var learner = new ClassificationNeuralNetLearner(net, iterations: 10, loss: new AccuracyLoss());
-//    var model = learner.Learn(trainingObservations, trainingTargets);
-
-//    var metric = new TotalErrorClassificationMetric<double>();
-//    var predictions = model.Predict(testObservations);
-
-//    Trace.WriteLine("Test Error: " + metric.Error(testTargets, predictions));
-//}
