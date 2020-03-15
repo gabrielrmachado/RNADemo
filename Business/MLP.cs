@@ -40,7 +40,7 @@ namespace RNADemo.Business
         }
 
         public short NumCamadasEscondidas { get; set; }
-        public short NumeroAmostrasTreinamento { get; set; }
+        public int NumeroAmostrasTreinamento { get; set; }
         public short NumEpocas { get; set; }
         public double TaxaAprendizado { get; set; }
         public double TaxaMomento { get; set; }
@@ -54,8 +54,7 @@ namespace RNADemo.Business
 
         public void ConstruirRede()
         {
-            AmostrasTreinamento = new F64Matrix(NumeroAmostrasTreinamento, 20);
-            ClassesTreinamento = new double[NumeroAmostrasTreinamento];
+            
 
             _net.Add(new InputLayer(20));
 
@@ -121,6 +120,18 @@ namespace RNADemo.Business
             if (paths.Length != 2)
                 throw new ArgumentException("Devem ser fornecidos dois arquivos .CSV, correspondentes às amostras e às classes.");
 
+            using (StreamReader reader = new StreamReader(paths[1]))
+            {
+                var classesAmostra = reader.ReadLine().Split(';');
+                
+                NumeroAmostrasTreinamento = classesAmostra.Length;
+                AmostrasTreinamento = new F64Matrix(NumeroAmostrasTreinamento, 20);
+                ClassesTreinamento = new double[NumeroAmostrasTreinamento];
+
+                for (int i = 0; i < classesAmostra.Length; i++)
+                    ClassesTreinamento[i] = double.Parse(classesAmostra[i]);
+            }
+
             using (StreamReader reader = new StreamReader(paths[0]))
             {
                 int i = 0;
@@ -133,14 +144,6 @@ namespace RNADemo.Business
 
                     i++;                    
                 }
-            }
-
-            using (StreamReader reader = new StreamReader(paths[1]))
-            {
-                var classesAmostra = reader.ReadLine().Split(';');
-                
-                for (int i = 0; i < classesAmostra.Length; i++)
-                    ClassesTreinamento[i] = double.Parse(classesAmostra[i]);
             }
         }
 

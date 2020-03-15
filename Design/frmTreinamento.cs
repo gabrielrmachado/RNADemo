@@ -80,7 +80,7 @@ namespace RNADemo.Design
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao treinar a rede neural: {0}\nPilha de Chamadas: {1}", ex.Message, ex.StackTrace), "Erro",
+                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao treinar a rede neural: {0}", ex.Message), "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -101,7 +101,7 @@ namespace RNADemo.Design
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao salvar as amostras: {0}\nPilha de Chamadas: {1}", ex.Message, ex.StackTrace), "Erro",
+                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao salvar as amostras: {0}", ex.Message), "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

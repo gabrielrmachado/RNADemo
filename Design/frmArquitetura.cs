@@ -87,9 +87,8 @@ namespace RNADemo.Design
             _redeNeural.TaxaMomento = double.Parse(txtMomento.Text);
             _redeNeural.AlgoritmoOtimizador = short.Parse(cmbOtimizacao.SelectedIndex.ToString());
 
+            new frmNumeroPadroes(_redeNeural).Show();
             this.Hide();
-            new frmNumeroPadroes(_redeNeural).ShowDialog();            
-            this.Close();
         }
 
         private void btnCarregar_Click(object sender, EventArgs e)
@@ -103,12 +102,10 @@ namespace RNADemo.Design
             {
                 string arrAllFile = choofdlog.FileName; 
                 _redeNeural.Modelo = _redeNeural.CarregarRede(arrAllFile);
-            }
-
-            MessageBox.Show("Rede carregada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Hide();
-            new frmTeste(_redeNeural, true).ShowDialog();
-            this.Close();
+                MessageBox.Show("Rede carregada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                new frmTeste(_redeNeural, true).Show();
+                this.Hide();
+            }    
         }
 
         private void txtEpocas_Leave(object sender, EventArgs e)

@@ -36,18 +36,14 @@ namespace RNADemo.Design
             if (!_carregouAmostras) 
                 _redeNeural.ConstruirRede();
 
+            new frmTreinamento(_redeNeural, _carregouAmostras).Show();
             this.Hide();
-            new frmTreinamento(_redeNeural, _carregouAmostras).ShowDialog();
-            this.Close();
         }
 
         private void btnCarregarPadroes_Click(object sender, EventArgs e)
         {
             try
             {
-                _redeNeural.NumeroAmostrasTreinamento = short.Parse(txtNumPadroes.Text);
-                _redeNeural.ConstruirRede();
-
                 OpenFileDialog choofdlog = new OpenFileDialog();
                 choofdlog.Filter = "CSV Files (*.csv)|*.csv";
                 choofdlog.FilterIndex = 1;
@@ -55,20 +51,22 @@ namespace RNADemo.Design
 
                 if (choofdlog.ShowDialog() == DialogResult.OK)
                 {
-                    string[] arrAllFiles = choofdlog.FileNames; //used when Multiselect = true  
+                    string[] arrAllFiles = choofdlog.FileNames; 
                     _redeNeural.CarregarAmostras(arrAllFiles);
                     _carregouAmostras = true;
-                }                
 
-                MessageBox.Show("Amostras carregadas com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _redeNeural.ConstruirRede();
 
-                this.Hide();
-                new frmTreinamento(_redeNeural, _carregouAmostras).ShowDialog();
-                this.Close();
+                    MessageBox.Show(string.Format("{0} amostras carregadas com sucesso!", _redeNeural.NumeroAmostrasTreinamento),
+                        "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    new frmTreinamento(_redeNeural, _carregouAmostras).ShowDialog();
+                    this.Hide();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao carregar as amostras: {0}.\nPilha de Chamadas: {1}", ex.Message, ex.StackTrace), "Erro",
+                MessageBox.Show(string.Format("Ocorreu o seguinte erro ao carregar as amostras: {0}", ex.Message), "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
