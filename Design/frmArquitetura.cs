@@ -23,6 +23,8 @@ namespace RNADemo.Design
             cmbOtimizacao.SelectedIndex = 0;
 
             _redeNeural = new MLP();
+
+            this.FormClosing += Utils.FecharFormulario;
         }
 
         private void cmbNumCamadas_SelectedIndexChanged(object sender, EventArgs e)

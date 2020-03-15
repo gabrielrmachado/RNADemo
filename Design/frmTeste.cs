@@ -29,6 +29,8 @@ namespace RNADemo.Design
                 lblTaxaMomento.Text = _redeNeural.TaxaMomento.ToString();
                 lblAlgoritmoOtimizacao.Text = _redeNeural.getNomeAlgoritmoOtimizacao();
                 lblTopologia.Text = _redeNeural.getTopologiaRedeNeural();
+
+                this.FormClosing += Utils.FecharFormulario;
             }
 
             else grpDadosRedeNeural.Visible = false;
@@ -73,7 +75,7 @@ namespace RNADemo.Design
 
         private void btnEncerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void btnNovaAmostra_Click(object sender, EventArgs e)

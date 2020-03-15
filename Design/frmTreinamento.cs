@@ -1,6 +1,7 @@
 ﻿using RNADemo.Business;
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace RNADemo.Design
@@ -13,6 +14,7 @@ namespace RNADemo.Design
         {
             InitializeComponent();
             _redeNeural = neuralNet;
+            this.FormClosing += Utils.FecharFormulario;
 
             txtQtdAmostrasRestantes.Text = _redeNeural.NumeroAmostrasTreinamento.ToString();
             txtQtdAmostrasFornecidas.Text = "0";
@@ -22,7 +24,7 @@ namespace RNADemo.Design
                 pixel.Click += Utils.MudarCorPixel;
             }
 
-            foreach (RadioButton radio in grpClasses.Controls)
+            foreach (RadioButton radio in grpClasses.Controls.OfType<RadioButton>())
             {
                 radio.Click += Radio_Click;
             }
@@ -33,6 +35,7 @@ namespace RNADemo.Design
                 txtQtdAmostrasRestantes.Text = "0";
                 btnTreinarRede.Enabled = true;
                 btnAssociar.Enabled = false;
+                grpAmostra.Enabled = false;
             } 
         }
 
@@ -108,9 +111,8 @@ namespace RNADemo.Design
 
         private void btnProsseguirTeste_Click(object sender, EventArgs e)
         {
+            new frmTeste(_redeNeural).Show();
             this.Hide();
-            new frmTeste(_redeNeural).ShowDialog();
-            this.Close();
         }
     }
 }

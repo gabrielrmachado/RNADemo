@@ -61,6 +61,26 @@ namespace RNADemo.Business
             }
         }
 
+        public static void FecharFormulario(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Deseja realmente fechar o RNADemo?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
         public static void LimparGrid(this GroupBox groupBox)
         {
             foreach (PictureBox pixel in groupBox.Controls)

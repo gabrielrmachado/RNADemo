@@ -22,6 +22,7 @@ namespace RNADemo.Design
             InitializeComponent();
             _redeNeural = network;
             _carregouAmostras = false;
+            this.FormClosing += Utils.FecharFormulario;
         }
 
         private void txtNumPadroes_Leave(object sender, EventArgs e)

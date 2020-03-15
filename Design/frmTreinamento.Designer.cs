@@ -71,6 +71,16 @@
             this.btnTreinarRede = new System.Windows.Forms.Button();
             this.btnProsseguirTeste = new System.Windows.Forms.Button();
             this.btnAssociar = new System.Windows.Forms.Button();
+            this.lblCnt0 = new System.Windows.Forms.Label();
+            this.lblCnt1 = new System.Windows.Forms.Label();
+            this.lblCnt2 = new System.Windows.Forms.Label();
+            this.lblCnt3 = new System.Windows.Forms.Label();
+            this.lblCnt4 = new System.Windows.Forms.Label();
+            this.lblCnt9 = new System.Windows.Forms.Label();
+            this.lblCnt8 = new System.Windows.Forms.Label();
+            this.lblCnt7 = new System.Windows.Forms.Label();
+            this.lblCnt6 = new System.Windows.Forms.Label();
+            this.lblCnt5 = new System.Windows.Forms.Label();
             this.grpAmostra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb19)).BeginInit();
@@ -327,6 +337,16 @@
             // 
             // grpClasses
             // 
+            this.grpClasses.Controls.Add(this.lblCnt9);
+            this.grpClasses.Controls.Add(this.lblCnt8);
+            this.grpClasses.Controls.Add(this.lblCnt7);
+            this.grpClasses.Controls.Add(this.lblCnt6);
+            this.grpClasses.Controls.Add(this.lblCnt5);
+            this.grpClasses.Controls.Add(this.lblCnt4);
+            this.grpClasses.Controls.Add(this.lblCnt3);
+            this.grpClasses.Controls.Add(this.lblCnt2);
+            this.grpClasses.Controls.Add(this.lblCnt1);
+            this.grpClasses.Controls.Add(this.lblCnt0);
             this.grpClasses.Controls.Add(this.radioButton6);
             this.grpClasses.Controls.Add(this.radioButton7);
             this.grpClasses.Controls.Add(this.radioButton8);
@@ -340,7 +360,7 @@
             this.grpClasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpClasses.Location = new System.Drawing.Point(482, 35);
             this.grpClasses.Name = "grpClasses";
-            this.grpClasses.Size = new System.Drawing.Size(253, 249);
+            this.grpClasses.Size = new System.Drawing.Size(278, 249);
             this.grpClasses.TabIndex = 1;
             this.grpClasses.TabStop = false;
             this.grpClasses.Text = "Saída Ativada";
@@ -558,7 +578,7 @@
             this.btnTreinarRede.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTreinarRede.Image = ((System.Drawing.Image)(resources.GetObject("btnTreinarRede.Image")));
             this.btnTreinarRede.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTreinarRede.Location = new System.Drawing.Point(300, 334);
+            this.btnTreinarRede.Location = new System.Drawing.Point(333, 334);
             this.btnTreinarRede.Name = "btnTreinarRede";
             this.btnTreinarRede.Size = new System.Drawing.Size(157, 56);
             this.btnTreinarRede.TabIndex = 10;
@@ -573,7 +593,7 @@
             this.btnProsseguirTeste.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProsseguirTeste.Image = global::RNADemo.Properties.Resources.check;
             this.btnProsseguirTeste.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnProsseguirTeste.Location = new System.Drawing.Point(578, 334);
+            this.btnProsseguirTeste.Location = new System.Drawing.Point(603, 334);
             this.btnProsseguirTeste.Name = "btnProsseguirTeste";
             this.btnProsseguirTeste.Size = new System.Drawing.Size(157, 56);
             this.btnProsseguirTeste.TabIndex = 9;
@@ -596,11 +616,121 @@
             this.btnAssociar.UseVisualStyleBackColor = true;
             this.btnAssociar.Click += new System.EventHandler(this.btnAssociar_Click);
             // 
+            // lblCnt0
+            // 
+            this.lblCnt0.AutoSize = true;
+            this.lblCnt0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCnt0.ForeColor = System.Drawing.Color.Blue;
+            this.lblCnt0.Location = new System.Drawing.Point(93, 53);
+            this.lblCnt0.Name = "lblCnt0";
+            this.lblCnt0.Size = new System.Drawing.Size(14, 15);
+            this.lblCnt0.TabIndex = 10;
+            this.lblCnt0.Text = "0";
+            // 
+            // lblCnt1
+            // 
+            this.lblCnt1.AutoSize = true;
+            this.lblCnt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCnt1.ForeColor = System.Drawing.Color.Blue;
+            this.lblCnt1.Location = new System.Drawing.Point(93, 93);
+            this.lblCnt1.Name = "lblCnt1";
+            this.lblCnt1.Size = new System.Drawing.Size(14, 15);
+            this.lblCnt1.TabIndex = 11;
+            this.lblCnt1.Text = "0";
+            // 
+            // lblCnt2
+            // 
+            this.lblCnt2.AutoSize = true;
+            this.lblCnt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCnt2.ForeColor = System.Drawing.Color.Blue;
+            this.lblCnt2.Location = new System.Drawing.Point(93, 133);
+            this.lblCnt2.Name = "lblCnt2";
+            this.lblCnt2.Size = new System.Drawing.Size(14, 15);
+            this.lblCnt2.TabIndex = 12;
+            this.lblCnt2.Text = "0";
+            // 
+            // lblCnt3
+            // 
+            this.lblCnt3.AutoSize = true;
+            this.lblCnt3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCnt3.ForeColor = System.Drawing.Color.Blue;
+            this.lblCnt3.Location = new System.Drawing.Point(93, 173);
+            this.lblCnt3.Name = "lblCnt3";
+            this.lblCnt3.Size = new System.Drawing.Size(14, 15);
+            this.lblCnt3.TabIndex = 13;
+            this.lblCnt3.Text = "0";
+            // 
+            // lblCnt4
+            // 
+            this.lblCnt4.AutoSize = true;
+            this.lblCnt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCnt4.ForeColor = System.Drawing.Color.Blue;
+            this.lblCnt4.Location = new System.Drawing.Point(93, 214);
+            this.lblCnt4.Name = "lblCnt4";
+            this.lblCnt4.Size = new System.Drawing.Size(14, 15);
+            this.lblCnt4.TabIndex = 14;
+            this.lblCnt4.Text = "0";
+            // 
+            // lblCnt9
+            // 
+            this.lblCnt9.AutoSize = true;
+            this.lblCnt9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCnt9.ForeColor = System.Drawing.Color.Blue;
+            this.lblCnt9.Location = new System.Drawing.Point(222, 214);
+            this.lblCnt9.Name = "lblCnt9";
+            this.lblCnt9.Size = new System.Drawing.Size(14, 15);
+            this.lblCnt9.TabIndex = 19;
+            this.lblCnt9.Text = "0";
+            // 
+            // lblCnt8
+            // 
+            this.lblCnt8.AutoSize = true;
+            this.lblCnt8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCnt8.ForeColor = System.Drawing.Color.Blue;
+            this.lblCnt8.Location = new System.Drawing.Point(222, 173);
+            this.lblCnt8.Name = "lblCnt8";
+            this.lblCnt8.Size = new System.Drawing.Size(14, 15);
+            this.lblCnt8.TabIndex = 18;
+            this.lblCnt8.Text = "0";
+            // 
+            // lblCnt7
+            // 
+            this.lblCnt7.AutoSize = true;
+            this.lblCnt7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCnt7.ForeColor = System.Drawing.Color.Blue;
+            this.lblCnt7.Location = new System.Drawing.Point(222, 133);
+            this.lblCnt7.Name = "lblCnt7";
+            this.lblCnt7.Size = new System.Drawing.Size(14, 15);
+            this.lblCnt7.TabIndex = 17;
+            this.lblCnt7.Text = "0";
+            // 
+            // lblCnt6
+            // 
+            this.lblCnt6.AutoSize = true;
+            this.lblCnt6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCnt6.ForeColor = System.Drawing.Color.Blue;
+            this.lblCnt6.Location = new System.Drawing.Point(222, 93);
+            this.lblCnt6.Name = "lblCnt6";
+            this.lblCnt6.Size = new System.Drawing.Size(14, 15);
+            this.lblCnt6.TabIndex = 16;
+            this.lblCnt6.Text = "0";
+            // 
+            // lblCnt5
+            // 
+            this.lblCnt5.AutoSize = true;
+            this.lblCnt5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCnt5.ForeColor = System.Drawing.Color.Blue;
+            this.lblCnt5.Location = new System.Drawing.Point(222, 53);
+            this.lblCnt5.Name = "lblCnt5";
+            this.lblCnt5.Size = new System.Drawing.Size(14, 15);
+            this.lblCnt5.TabIndex = 15;
+            this.lblCnt5.Text = "0";
+            // 
             // frmTreinamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 402);
+            this.ClientSize = new System.Drawing.Size(789, 402);
             this.Controls.Add(this.btnSalvarAmostras);
             this.Controls.Add(this.btnTreinarRede);
             this.Controls.Add(this.btnProsseguirTeste);
@@ -691,6 +821,16 @@
         private System.Windows.Forms.Button btnProsseguirTeste;
         private System.Windows.Forms.Button btnTreinarRede;
         private System.Windows.Forms.Button btnSalvarAmostras;
+        private System.Windows.Forms.Label lblCnt9;
+        private System.Windows.Forms.Label lblCnt8;
+        private System.Windows.Forms.Label lblCnt7;
+        private System.Windows.Forms.Label lblCnt6;
+        private System.Windows.Forms.Label lblCnt5;
+        private System.Windows.Forms.Label lblCnt4;
+        private System.Windows.Forms.Label lblCnt3;
+        private System.Windows.Forms.Label lblCnt2;
+        private System.Windows.Forms.Label lblCnt1;
+        private System.Windows.Forms.Label lblCnt0;
     }
 }
 
