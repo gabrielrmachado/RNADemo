@@ -56,12 +56,12 @@ namespace RNADemo.Design
                     _redeNeural.CarregarAmostras(arrAllFiles);
                     _carregouAmostras = true;
 
-                    _redeNeural.ConstruirRede();
+                    _redeNeural.ConstruirRede(true);
 
                     MessageBox.Show(string.Format("{0} amostras carregadas com sucesso!", _redeNeural.NumeroAmostrasTreinamento),
                         "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    new frmTreinamento(_redeNeural, _carregouAmostras).ShowDialog();
+                    new frmTreinamento(_redeNeural, _carregouAmostras).Show();
                     this.Hide();
                 }
             }

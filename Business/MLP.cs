@@ -52,9 +52,13 @@ namespace RNADemo.Business
             _net = new NeuralNet();
         }
 
-        public void ConstruirRede()
+        public void ConstruirRede(bool carregouAmostras = false)
         {
-            
+            if (!carregouAmostras)
+            {
+                AmostrasTreinamento = new F64Matrix(NumeroAmostrasTreinamento, 20);
+                ClassesTreinamento = new double[NumeroAmostrasTreinamento];
+            }
 
             _net.Add(new InputLayer(20));
 

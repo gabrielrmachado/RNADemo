@@ -62,7 +62,14 @@ namespace RNADemo.Design
             i = 0;
             foreach (var textBox in grpSaidaProcessadores.Controls.OfType<TextBox>().OrderBy(x => x.Name))
             {
-                textBox.Text = string.Format("{0:0.00000}", predicoes[i]);
+                try
+                {
+                    textBox.Text = string.Format("{0:0.00000}", predicoes[i]);
+                }
+                catch (KeyNotFoundException)
+                {
+                    textBox.Text = string.Format("{0:0.00000}", 0);
+                }
 
                 if (i == maxChave)
                 {
@@ -75,7 +82,7 @@ namespace RNADemo.Design
 
         private void btnEncerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(0);
         }
 
         private void btnNovaAmostra_Click(object sender, EventArgs e)
