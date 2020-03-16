@@ -36,6 +36,16 @@ namespace RNADemo.Design
                 btnTreinarRede.Enabled = true;
                 btnAssociar.Enabled = false;
                 grpAmostra.Enabled = false;
+
+                var query = _redeNeural.ClassesTreinamento.GroupBy(x => x).Where(g => g.Count() >= 1)
+                    .Select(y => new { Element = y.Key, Counter = y.Count()}).ToList();
+
+                int i = 0;
+                foreach (var item in query)
+                {
+                    grpClasses.Controls.Find("lblCnt" + i, true)[0].Text = item.Counter.ToString();
+                    i++;
+                }
             } 
         }
 
@@ -58,19 +68,20 @@ namespace RNADemo.Design
 
             _redeNeural.ClassesTreinamento[numPadroesFornecidos - 1] = double.Parse(txtAmostraEnsinada.Text);
 
-            grpAmostra.LimparGrid();
-            radioButton1.Checked = true;
-            txtAmostraEnsinada.Text = "0";
-
             if (numPadroesFornecidos == _redeNeural.NumeroAmostrasTreinamento)
             {
                 btnAssociar.Enabled = false;
                 btnTreinarRede.Enabled = true;
                 btnSalvarAmostras.Enabled = true;
             }
+            var label = grpClasses.Controls.Find("lblCnt" + txtAmostraEnsinada.Text.Trim(), true)[0];
+            label.Text = (int.Parse(label.Text) + 1).ToString();
 
             txtQtdAmostrasFornecidas.Text = numPadroesFornecidos.ToString();
             txtQtdAmostrasRestantes.Text = numPadroesRestantes.ToString();
+            grpAmostra.LimparGrid();
+            radioButton1.Checked = true;
+            txtAmostraEnsinada.Text = "0";
         }
 
         private void btnTreinarRede_Click(object sender, EventArgs e)

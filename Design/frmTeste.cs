@@ -20,6 +20,7 @@ namespace RNADemo.Design
         public frmTeste(MLP redeNeural, bool carregouRede = false)
         {
             InitializeComponent();
+            this.FormClosing += Utils.FecharFormulario;
             _redeNeural = redeNeural;
 
             if (!carregouRede)
@@ -29,8 +30,6 @@ namespace RNADemo.Design
                 lblTaxaMomento.Text = _redeNeural.TaxaMomento.ToString();
                 lblAlgoritmoOtimizacao.Text = _redeNeural.getNomeAlgoritmoOtimizacao();
                 lblTopologia.Text = _redeNeural.getTopologiaRedeNeural();
-
-                this.FormClosing += Utils.FecharFormulario;
             }
 
             else grpDadosRedeNeural.Visible = false;

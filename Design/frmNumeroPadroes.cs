@@ -27,7 +27,7 @@ namespace RNADemo.Design
 
         private void txtNumPadroes_Leave(object sender, EventArgs e)
         {
-            (sender as TextBox).MensagemErro(1);
+            (sender as TextBox).MensagemErro(2);
         }
 
         private void btnProsseguirPadroes_Click(object sender, EventArgs e)
