@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using RNADemo.Business;
 
@@ -16,7 +16,12 @@ namespace RNADemo.Design
         private MLP _redeNeural;
         public frmArquitetura()
         {
+            Thread t = new Thread(new ThreadStart(() => Application.Run(new frmSplash())));
+            t.Start();
+            Thread.Sleep(4000);
+
             InitializeComponent();
+
             cmbNumCamadas.Items.AddRange(new object[] { 1, 2, 3, 4 });
             cmbOtimizacao.Items.AddRange(new object[] { "SGD", "Adam", "AdaMax", "Nadam", "Adagrad", "Adadelta", "Netsterov", "RMSProp" });
             cmbNumCamadas.SelectedIndex = 0;
@@ -25,6 +30,8 @@ namespace RNADemo.Design
             _redeNeural = new MLP();
 
             this.FormClosing += Utils.FecharFormulario;
+
+            t.Abort();
         }
 
         private void cmbNumCamadas_SelectedIndexChanged(object sender, EventArgs e)
