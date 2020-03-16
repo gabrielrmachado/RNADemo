@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RNADemo.Design;
@@ -17,6 +18,12 @@ namespace RNADemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            var splash = new frmSplash();
+            splash.Show();
+            Application.DoEvents();
+            Thread.Sleep(5000);
+            splash.Dispose();
             Application.Run(new frmArquitetura());
         }
     }

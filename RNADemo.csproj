@@ -25,6 +25,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>https://github.com/gabrielrmachado/RNADemo</SupportUrl>
+    <ErrorReportUrl>https://github.com/gabrielrmachado/RNADemo</ErrorReportUrl>
     <TargetCulture>pt-BR</TargetCulture>
     <ProductName>RNADemo</ProductName>
     <PublisherName>Gabriel Resende Machado</PublisherName>

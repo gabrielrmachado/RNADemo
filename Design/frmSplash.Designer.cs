@@ -60,7 +60,7 @@
             // 
             this.lblVersao.AutoSize = true;
             this.lblVersao.Font = new System.Drawing.Font("Arial Narrow", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVersao.Location = new System.Drawing.Point(327, 125);
+            this.lblVersao.Location = new System.Drawing.Point(320, 125);
             this.lblVersao.Name = "lblVersao";
             this.lblVersao.Size = new System.Drawing.Size(75, 25);
             this.lblVersao.TabIndex = 2;
@@ -72,9 +72,9 @@
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(263, 199);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(213, 16);
+            this.label2.Size = new System.Drawing.Size(209, 16);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Desenvolvido por: Gabriel R. Machado.";
+            this.label2.Text = "Desenvolvido por Gabriel R. Machado.";
             // 
             // linkLabel1
             // 

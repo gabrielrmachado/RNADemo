@@ -14,24 +14,21 @@ namespace RNADemo.Design
     public partial class frmArquitetura : Form
     {
         private MLP _redeNeural;
+        private void IniciarSplash()
+        {
+            Application.Run(new frmSplash());
+        }
+
         public frmArquitetura()
         {
-            Thread t = new Thread(new ThreadStart(() => Application.Run(new frmSplash())));
-            t.Start();
-            Thread.Sleep(4000);
-
             InitializeComponent();
-
             cmbNumCamadas.Items.AddRange(new object[] { 1, 2, 3, 4 });
             cmbOtimizacao.Items.AddRange(new object[] { "SGD", "Adam", "AdaMax", "Nadam", "Adagrad", "Adadelta", "Netsterov", "RMSProp" });
             cmbNumCamadas.SelectedIndex = 0;
             cmbOtimizacao.SelectedIndex = 0;
-
-            _redeNeural = new MLP();
-
             this.FormClosing += Utils.FecharFormulario;
 
-            t.Abort();
+            _redeNeural = new MLP();
         }
 
         private void cmbNumCamadas_SelectedIndexChanged(object sender, EventArgs e)
