@@ -18,12 +18,6 @@ namespace RNADemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            var splash = new frmSplash();
-            splash.Show();
-            Application.DoEvents();
-            Thread.Sleep(5000);
-            splash.Dispose();
             Application.Run(new frmArquitetura());
         }
     }

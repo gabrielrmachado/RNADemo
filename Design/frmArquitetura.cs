@@ -21,7 +21,13 @@ namespace RNADemo.Design
 
         public frmArquitetura()
         {
+            var thread = new Thread(new ThreadStart(() => Application.Run(new frmSplash())));
+            thread.Start();
+            Thread.Sleep(5000);
+            
             InitializeComponent();
+            thread.Abort();
+
             cmbNumCamadas.Items.AddRange(new object[] { 1, 2, 3, 4 });
             cmbOtimizacao.Items.AddRange(new object[] { "SGD", "Adam", "AdaMax", "Nadam", "Adagrad", "Adadelta", "Netsterov", "RMSProp" });
             cmbNumCamadas.SelectedIndex = 0;

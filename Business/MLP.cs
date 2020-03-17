@@ -5,7 +5,6 @@ using SharpLearning.Containers.Matrices;
 using SharpLearning.CrossValidation.TrainingTestSplitters;
 using SharpLearning.InputOutput.Csv;
 using SharpLearning.Metrics.Classification;
-using SharpLearning.InputOutput.Csv;
 using RNADemo.Properties;
 using SharpLearning.Neural.Models;
 using SharpLearning.Neural;

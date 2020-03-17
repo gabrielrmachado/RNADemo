@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RNADemo", "RNADemo.csproj", "{D7E0A5B3-07C5-4F50-B94D-4EB2A893D2DD}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InstaladorRNADemo", "..\InstaladorRNADemo\InstaladorRNADemo.vdproj", "{F1A1B521-131C-499F-984D-F81267E86E53}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "RNADemoSetup", "..\RNADemoSetup\RNADemoSetup.vdproj", "{2F97D2D3-E0FB-4613-B9A5-2D9C4C373957}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{D7E0A5B3-07C5-4F50-B94D-4EB2A893D2DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7E0A5B3-07C5-4F50-B94D-4EB2A893D2DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7E0A5B3-07C5-4F50-B94D-4EB2A893D2DD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F1A1B521-131C-499F-984D-F81267E86E53}.Debug|Any CPU.ActiveCfg = Debug
-		{F1A1B521-131C-499F-984D-F81267E86E53}.Release|Any CPU.ActiveCfg = Release
+		{2F97D2D3-E0FB-4613-B9A5-2D9C4C373957}.Debug|Any CPU.ActiveCfg = Debug
+		{2F97D2D3-E0FB-4613-B9A5-2D9C4C373957}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
