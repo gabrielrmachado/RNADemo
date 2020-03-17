@@ -35,7 +35,6 @@ namespace RNADemo.Design
             else grpDadosRedeNeural.Visible = false;
 
             _amostraTeste = new double[20];
-            //btnNovaAmostra.Enabled = false;
 
             foreach (PictureBox pixel in grpAmostra.Controls)
             {
@@ -85,16 +84,6 @@ namespace RNADemo.Design
             Environment.Exit(0);
         }
 
-        //private void btnNovaAmostra_Click(object sender, EventArgs e)
-        //{
-        //    grpAmostra.LimparGrid();
-        //    maiorTextBox.ForeColor = Color.Blue;
-        //    btnAvaliar.Enabled = true;
-            
-        //    foreach (TextBox textBox in grpSaidaProcessadores.Controls.OfType<TextBox>())
-        //        textBox.Text = "";
-        //}
-
         private void btnSalvarRede_Click(object sender, EventArgs e)
         {
             try
@@ -119,7 +108,6 @@ namespace RNADemo.Design
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             grpAmostra.LimparGrid();
-            //    maiorTextBox.ForeColor = Color.Blue;
 
             foreach (TextBox textBox in grpSaidaProcessadores.Controls.OfType<TextBox>())
                 textBox.Text = "";
