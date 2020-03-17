@@ -10,6 +10,19 @@ namespace RNADemo.Business
 {
     public static class Utils
     {
+        public static void AlterarLabelCntAmostras(this Label labelCntAmostras, int padraoAtual, int totalPadroes)
+        {
+            if (labelCntAmostras.Name == "lblCntPadrao")
+            {
+                var formato = string.Format("{0}/{1}", padraoAtual, totalPadroes);
+                labelCntAmostras.Text = formato;
+            }
+            else
+            {
+                throw new Exception("Esta funcionalidade muda apenas o label 'lblCntPadrao', que realiza de contagem de amostras do formulário de treinamento.");
+            }
+        }
+
         public static void MensagemErro(this TextBox txtComponente, double menor)
         {
             var sMenor = string.Format("{0:0.000}", menor);
@@ -83,7 +96,7 @@ namespace RNADemo.Business
 
         public static void LimparGrid(this GroupBox groupBox)
         {
-            foreach (PictureBox pixel in groupBox.Controls)
+            foreach (PictureBox pixel in groupBox.Controls.OfType<PictureBox>())
                 pixel.BackColor = Color.White;
         }
 

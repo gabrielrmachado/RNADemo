@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTreinamento));
             this.grpAmostra = new System.Windows.Forms.GroupBox();
+            this.lblCntPadrao = new System.Windows.Forms.Label();
             this.btnUltimo = new System.Windows.Forms.Button();
             this.btnPrimeiro = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();
@@ -85,7 +86,6 @@
             this.btnTreinarRede = new System.Windows.Forms.Button();
             this.btnProsseguirTeste = new System.Windows.Forms.Button();
             this.btnAssociar = new System.Windows.Forms.Button();
-            this.lblCntPadrao = new System.Windows.Forms.Label();
             this.grpAmostra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb19)).BeginInit();
@@ -145,13 +145,26 @@
             this.grpAmostra.TabStop = false;
             this.grpAmostra.Text = "Padrão para Treinamento";
             // 
+            // lblCntPadrao
+            // 
+            this.lblCntPadrao.AutoSize = true;
+            this.lblCntPadrao.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCntPadrao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblCntPadrao.Location = new System.Drawing.Point(122, 212);
+            this.lblCntPadrao.Name = "lblCntPadrao";
+            this.lblCntPadrao.Size = new System.Drawing.Size(32, 23);
+            this.lblCntPadrao.TabIndex = 44;
+            this.lblCntPadrao.Text = "0/0";
+            this.lblCntPadrao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnUltimo
             // 
             this.btnUltimo.BackColor = System.Drawing.Color.Transparent;
+            this.btnUltimo.Enabled = false;
             this.btnUltimo.FlatAppearance.BorderSize = 0;
             this.btnUltimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUltimo.Image = global::RNADemo.Properties.Resources.double_right;
-            this.btnUltimo.Location = new System.Drawing.Point(229, 88);
+            this.btnUltimo.Location = new System.Drawing.Point(229, 108);
             this.btnUltimo.Name = "btnUltimo";
             this.btnUltimo.Size = new System.Drawing.Size(29, 28);
             this.btnUltimo.TabIndex = 43;
@@ -161,10 +174,11 @@
             // btnPrimeiro
             // 
             this.btnPrimeiro.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrimeiro.Enabled = false;
             this.btnPrimeiro.FlatAppearance.BorderSize = 0;
             this.btnPrimeiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrimeiro.Image = global::RNADemo.Properties.Resources.double_left;
-            this.btnPrimeiro.Location = new System.Drawing.Point(15, 89);
+            this.btnPrimeiro.Location = new System.Drawing.Point(15, 108);
             this.btnPrimeiro.Name = "btnPrimeiro";
             this.btnPrimeiro.Size = new System.Drawing.Size(29, 28);
             this.btnPrimeiro.TabIndex = 42;
@@ -174,10 +188,11 @@
             // btnProximo
             // 
             this.btnProximo.BackColor = System.Drawing.Color.Transparent;
+            this.btnProximo.Enabled = false;
             this.btnProximo.FlatAppearance.BorderSize = 0;
             this.btnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProximo.Image = global::RNADemo.Properties.Resources.direita;
-            this.btnProximo.Location = new System.Drawing.Point(200, 88);
+            this.btnProximo.Location = new System.Drawing.Point(200, 107);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(29, 28);
             this.btnProximo.TabIndex = 41;
@@ -187,10 +202,11 @@
             // btnAnterior
             // 
             this.btnAnterior.BackColor = System.Drawing.Color.Transparent;
+            this.btnAnterior.Enabled = false;
             this.btnAnterior.FlatAppearance.BorderSize = 0;
             this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnterior.Image = global::RNADemo.Properties.Resources.esquerda;
-            this.btnAnterior.Location = new System.Drawing.Point(43, 89);
+            this.btnAnterior.Location = new System.Drawing.Point(43, 108);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(29, 28);
             this.btnAnterior.TabIndex = 40;
@@ -787,17 +803,6 @@
             this.btnAssociar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAssociar.UseVisualStyleBackColor = true;
             this.btnAssociar.Click += new System.EventHandler(this.btnAssociar_Click);
-            // 
-            // lblCntPadrao
-            // 
-            this.lblCntPadrao.AutoSize = true;
-            this.lblCntPadrao.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCntPadrao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lblCntPadrao.Location = new System.Drawing.Point(122, 212);
-            this.lblCntPadrao.Name = "lblCntPadrao";
-            this.lblCntPadrao.Size = new System.Drawing.Size(32, 23);
-            this.lblCntPadrao.TabIndex = 44;
-            this.lblCntPadrao.Text = "0/0";
             // 
             // frmTreinamento
             // 

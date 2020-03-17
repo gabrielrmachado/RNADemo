@@ -19,7 +19,7 @@ namespace RNADemo.Design
             txtQtdAmostrasRestantes.Text = _redeNeural.NumeroAmostrasTreinamento.ToString();
             txtQtdAmostrasFornecidas.Text = "0";
 
-            foreach (PictureBox pixel in grpAmostra.Controls)
+            foreach (PictureBox pixel in grpAmostra.Controls.OfType<PictureBox>())
             {
                 pixel.Click += Utils.MudarCorPixel;
             }
@@ -35,7 +35,14 @@ namespace RNADemo.Design
                 txtQtdAmostrasRestantes.Text = "0";
                 btnTreinarRede.Enabled = true;
                 btnAssociar.Enabled = false;
-                grpAmostra.Enabled = false;
+
+                foreach (var item in grpAmostra.Controls.OfType<PictureBox>())
+                    item.Enabled = false;
+                
+                btnUltimo.Enabled = true;
+                btnProximo.Enabled = true;
+
+                lblCntPadrao.AlterarLabelCntAmostras(0, int.Parse(txtQtdAmostrasFornecidas.Text));
 
                 var query = _redeNeural.ClassesTreinamento.GroupBy(x => x).Where(g => g.Count() >= 1)
                     .Select(y => new { Element = y.Key, Counter = y.Count()}).ToList();
@@ -60,10 +67,11 @@ namespace RNADemo.Design
             int numPadroesFornecidos = int.Parse(txtQtdAmostrasFornecidas.Text) + 1;
             int numPadroesRestantes = int.Parse(txtQtdAmostrasRestantes.Text) - 1;
 
-            for (int i = 0; i < grpAmostra.Controls.Count; i++)
+            int i = 0;
+            foreach (var pb in grpAmostra.Controls.OfType<PictureBox>())
             {
-                PictureBox pb = grpAmostra.Controls[i] as PictureBox;
                 _redeNeural.AmostrasTreinamento[numPadroesFornecidos - 1, i] = (pb.BackColor == Color.White ? 0.0 : 1.0);
+                i++;
             }
 
             _redeNeural.ClassesTreinamento[numPadroesFornecidos - 1] = double.Parse(txtAmostraEnsinada.Text);
