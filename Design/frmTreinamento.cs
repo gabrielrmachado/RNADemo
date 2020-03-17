@@ -43,7 +43,7 @@ namespace RNADemo.Design
                 int i = 0;
                 foreach (var item in query)
                 {
-                    grpClasses.Controls.Find("lblCnt" + i, true)[0].Text = item.Counter.ToString();
+                    grpClasses.Controls.Find("lblCnt" + item.Element.ToString(), true)[0].Text = item.Counter.ToString();
                     i++;
                 }
             } 

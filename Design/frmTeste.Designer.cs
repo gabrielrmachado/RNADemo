@@ -141,7 +141,7 @@
             this.grpAmostra.Size = new System.Drawing.Size(243, 249);
             this.grpAmostra.TabIndex = 1;
             this.grpAmostra.TabStop = false;
-            this.grpAmostra.Text = "Padrão para Treinamento";
+            this.grpAmostra.Text = "Padrão para Teste";
             // 
             // pb20
             // 
