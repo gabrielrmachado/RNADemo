@@ -35,7 +35,7 @@ namespace RNADemo.Design
             else grpDadosRedeNeural.Visible = false;
 
             _amostraTeste = new double[20];
-            btnNovaAmostra.Enabled = false;
+            //btnNovaAmostra.Enabled = false;
 
             foreach (PictureBox pixel in grpAmostra.Controls)
             {
@@ -45,9 +45,10 @@ namespace RNADemo.Design
 
         private void btnAvaliar_Click(object sender, EventArgs e)
         {
+            foreach (var textBox in grpSaidaProcessadores.Controls.OfType<TextBox>().OrderBy(x => x.Name))
+                textBox.ForeColor = Color.Blue;
+
             int i = 0;
-            btnNovaAmostra.Enabled = true;
-            btnAvaliar.Enabled = false;
 
             foreach (PictureBox pb in grpAmostra.Controls)
             {
@@ -84,15 +85,15 @@ namespace RNADemo.Design
             Environment.Exit(0);
         }
 
-        private void btnNovaAmostra_Click(object sender, EventArgs e)
-        {
-            grpAmostra.LimparGrid();
-            maiorTextBox.ForeColor = Color.Blue;
-            btnAvaliar.Enabled = true;
+        //private void btnNovaAmostra_Click(object sender, EventArgs e)
+        //{
+        //    grpAmostra.LimparGrid();
+        //    maiorTextBox.ForeColor = Color.Blue;
+        //    btnAvaliar.Enabled = true;
             
-            foreach (TextBox textBox in grpSaidaProcessadores.Controls.OfType<TextBox>())
-                textBox.Text = "";
-        }
+        //    foreach (TextBox textBox in grpSaidaProcessadores.Controls.OfType<TextBox>())
+        //        textBox.Text = "";
+        //}
 
         private void btnSalvarRede_Click(object sender, EventArgs e)
         {
@@ -113,6 +114,15 @@ namespace RNADemo.Design
                 MessageBox.Show(string.Format("Ocorreu o seguinte erro ao salvar a RNA: {0}\nPilha de Chamadas: {1}", ex.Message, ex.StackTrace), "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            grpAmostra.LimparGrid();
+            //    maiorTextBox.ForeColor = Color.Blue;
+
+            foreach (TextBox textBox in grpSaidaProcessadores.Controls.OfType<TextBox>())
+                textBox.Text = "";
         }
     }
 }
