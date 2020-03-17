@@ -126,32 +126,23 @@ namespace RNADemo.Design
             this.Hide();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        
+        private void btnPrimeiro_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void txtAmostraEnsinada_TextChanged(object sender, EventArgs e)
+        private void btnAnterior_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btnProximo_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void txtQtdAmostrasFornecidas_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtQtdAmostrasRestantes_TextChanged(object sender, EventArgs e)
+        private void btnUltimo_Click(object sender, EventArgs e)
         {
 
         }

@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTreinamento));
             this.grpAmostra = new System.Windows.Forms.GroupBox();
-            this.brnUltimo = new System.Windows.Forms.Button();
+            this.btnUltimo = new System.Windows.Forms.Button();
             this.btnPrimeiro = new System.Windows.Forms.Button();
             this.btnProximo = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
@@ -113,7 +113,7 @@
             // grpAmostra
             // 
             this.grpAmostra.Controls.Add(this.lblCntPadrao);
-            this.grpAmostra.Controls.Add(this.brnUltimo);
+            this.grpAmostra.Controls.Add(this.btnUltimo);
             this.grpAmostra.Controls.Add(this.btnPrimeiro);
             this.grpAmostra.Controls.Add(this.btnProximo);
             this.grpAmostra.Controls.Add(this.btnAnterior);
@@ -145,17 +145,18 @@
             this.grpAmostra.TabStop = false;
             this.grpAmostra.Text = "Padrão para Treinamento";
             // 
-            // brnUltimo
+            // btnUltimo
             // 
-            this.brnUltimo.BackColor = System.Drawing.Color.Transparent;
-            this.brnUltimo.FlatAppearance.BorderSize = 0;
-            this.brnUltimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.brnUltimo.Image = global::RNADemo.Properties.Resources.double_right;
-            this.brnUltimo.Location = new System.Drawing.Point(227, 88);
-            this.brnUltimo.Name = "brnUltimo";
-            this.brnUltimo.Size = new System.Drawing.Size(29, 28);
-            this.brnUltimo.TabIndex = 43;
-            this.brnUltimo.UseVisualStyleBackColor = false;
+            this.btnUltimo.BackColor = System.Drawing.Color.Transparent;
+            this.btnUltimo.FlatAppearance.BorderSize = 0;
+            this.btnUltimo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUltimo.Image = global::RNADemo.Properties.Resources.double_right;
+            this.btnUltimo.Location = new System.Drawing.Point(229, 88);
+            this.btnUltimo.Name = "btnUltimo";
+            this.btnUltimo.Size = new System.Drawing.Size(29, 28);
+            this.btnUltimo.TabIndex = 43;
+            this.btnUltimo.UseVisualStyleBackColor = false;
+            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
             // 
             // btnPrimeiro
             // 
@@ -163,11 +164,12 @@
             this.btnPrimeiro.FlatAppearance.BorderSize = 0;
             this.btnPrimeiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPrimeiro.Image = global::RNADemo.Properties.Resources.double_left;
-            this.btnPrimeiro.Location = new System.Drawing.Point(11, 89);
+            this.btnPrimeiro.Location = new System.Drawing.Point(15, 89);
             this.btnPrimeiro.Name = "btnPrimeiro";
             this.btnPrimeiro.Size = new System.Drawing.Size(29, 28);
             this.btnPrimeiro.TabIndex = 42;
             this.btnPrimeiro.UseVisualStyleBackColor = false;
+            this.btnPrimeiro.Click += new System.EventHandler(this.btnPrimeiro_Click);
             // 
             // btnProximo
             // 
@@ -175,11 +177,12 @@
             this.btnProximo.FlatAppearance.BorderSize = 0;
             this.btnProximo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProximo.Image = global::RNADemo.Properties.Resources.direita;
-            this.btnProximo.Location = new System.Drawing.Point(201, 88);
+            this.btnProximo.Location = new System.Drawing.Point(200, 88);
             this.btnProximo.Name = "btnProximo";
             this.btnProximo.Size = new System.Drawing.Size(29, 28);
             this.btnProximo.TabIndex = 41;
             this.btnProximo.UseVisualStyleBackColor = false;
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
             // btnAnterior
             // 
@@ -192,6 +195,7 @@
             this.btnAnterior.Size = new System.Drawing.Size(29, 28);
             this.btnAnterior.TabIndex = 40;
             this.btnAnterior.UseVisualStyleBackColor = false;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // pb20
             // 
@@ -665,7 +669,6 @@
             this.txtAmostraEnsinada.Size = new System.Drawing.Size(138, 22);
             this.txtAmostraEnsinada.TabIndex = 2;
             this.txtAmostraEnsinada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtAmostraEnsinada.TextChanged += new System.EventHandler(this.txtAmostraEnsinada_TextChanged);
             // 
             // txtQtdAmostrasFornecidas
             // 
@@ -679,7 +682,6 @@
             this.txtQtdAmostrasFornecidas.Size = new System.Drawing.Size(138, 22);
             this.txtQtdAmostrasFornecidas.TabIndex = 3;
             this.txtQtdAmostrasFornecidas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtQtdAmostrasFornecidas.TextChanged += new System.EventHandler(this.txtQtdAmostrasFornecidas_TextChanged);
             // 
             // txtQtdAmostrasRestantes
             // 
@@ -693,7 +695,6 @@
             this.txtQtdAmostrasRestantes.Size = new System.Drawing.Size(138, 22);
             this.txtQtdAmostrasRestantes.TabIndex = 4;
             this.txtQtdAmostrasRestantes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtQtdAmostrasRestantes.TextChanged += new System.EventHandler(this.txtQtdAmostrasRestantes_TextChanged);
             // 
             // label1
             // 
@@ -705,7 +706,6 @@
             this.label1.Size = new System.Drawing.Size(138, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Amostra Ensinada:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -717,7 +717,6 @@
             this.label2.Size = new System.Drawing.Size(159, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Amostras Fornecidas:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -729,7 +728,6 @@
             this.label3.Size = new System.Drawing.Size(151, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Amostras Restantes:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // btnSalvarAmostras
             // 
@@ -909,7 +907,7 @@
         private System.Windows.Forms.Label lblCnt0;
         private System.Windows.Forms.Button btnProximo;
         private System.Windows.Forms.Button btnAnterior;
-        private System.Windows.Forms.Button brnUltimo;
+        private System.Windows.Forms.Button btnUltimo;
         private System.Windows.Forms.Button btnPrimeiro;
         private System.Windows.Forms.Label lblCntPadrao;
     }
