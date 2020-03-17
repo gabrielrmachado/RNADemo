@@ -83,6 +83,16 @@ namespace RNADemo.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap direita {
+            get {
+                object obj = ResourceManager.GetObject("direita", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap disquete {
             get {
                 object obj = ResourceManager.GetObject("disquete", resourceCulture);
@@ -93,9 +103,39 @@ namespace RNADemo.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap double_left {
+            get {
+                object obj = ResourceManager.GetObject("double_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap double_right {
+            get {
+                object obj = ResourceManager.GetObject("double_right", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap engine {
             get {
                 object obj = ResourceManager.GetObject("engine", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap esquerda {
+            get {
+                object obj = ResourceManager.GetObject("esquerda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
