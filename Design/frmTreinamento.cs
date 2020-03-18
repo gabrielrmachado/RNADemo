@@ -9,6 +9,7 @@ namespace RNADemo.Design
     public partial class frmTreinamento : Form
     {
         private MLP _redeNeural;
+        private int indiceAmostraAssociada;
 
         public frmTreinamento(MLP neuralNet, bool carregouAmostras)
         {
@@ -35,6 +36,7 @@ namespace RNADemo.Design
                 txtQtdAmostrasRestantes.Text = "0";
                 btnTreinarRede.Enabled = true;
                 btnAssociar.Enabled = false;
+                indiceAmostraAssociada = 0;
 
                 foreach (var item in grpAmostra.Controls.OfType<PictureBox>())
                     item.Enabled = false;
@@ -42,7 +44,8 @@ namespace RNADemo.Design
                 btnUltimo.Enabled = true;
                 btnProximo.Enabled = true;
 
-                lblCntPadrao.AlterarLabelCntAmostras(0, int.Parse(txtQtdAmostrasFornecidas.Text));
+                grpAmostra.PreencherGrid(_redeNeural.AmostrasTreinamento.Row(indiceAmostraAssociada));
+                lblCntPadrao.AlterarLabelCntAmostras(indiceAmostraAssociada + 1, int.Parse(txtQtdAmostrasFornecidas.Text));
 
                 var query = _redeNeural.ClassesTreinamento.GroupBy(x => x).Where(g => g.Count() >= 1)
                     .Select(y => new { Element = y.Key, Counter = y.Count()}).ToList();
@@ -68,7 +71,7 @@ namespace RNADemo.Design
             int numPadroesRestantes = int.Parse(txtQtdAmostrasRestantes.Text) - 1;
 
             int i = 0;
-            foreach (var pb in grpAmostra.Controls.OfType<PictureBox>())
+            foreach (var pb in grpAmostra.Controls.OfType<PictureBox>().OrderBy((x) => x.Name))
             {
                 _redeNeural.AmostrasTreinamento[numPadroesFornecidos - 1, i] = (pb.BackColor == Color.White ? 0.0 : 1.0);
                 i++;

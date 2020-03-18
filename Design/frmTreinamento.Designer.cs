@@ -46,15 +46,15 @@
             this.pb12 = new System.Windows.Forms.PictureBox();
             this.pb11 = new System.Windows.Forms.PictureBox();
             this.pb10 = new System.Windows.Forms.PictureBox();
-            this.pb9 = new System.Windows.Forms.PictureBox();
-            this.pb4 = new System.Windows.Forms.PictureBox();
-            this.pb3 = new System.Windows.Forms.PictureBox();
-            this.pb2 = new System.Windows.Forms.PictureBox();
-            this.pb1 = new System.Windows.Forms.PictureBox();
-            this.pb8 = new System.Windows.Forms.PictureBox();
-            this.pb7 = new System.Windows.Forms.PictureBox();
-            this.pb6 = new System.Windows.Forms.PictureBox();
-            this.pb5 = new System.Windows.Forms.PictureBox();
+            this.pb09 = new System.Windows.Forms.PictureBox();
+            this.pb04 = new System.Windows.Forms.PictureBox();
+            this.pb03 = new System.Windows.Forms.PictureBox();
+            this.pb02 = new System.Windows.Forms.PictureBox();
+            this.pb01 = new System.Windows.Forms.PictureBox();
+            this.pb08 = new System.Windows.Forms.PictureBox();
+            this.pb07 = new System.Windows.Forms.PictureBox();
+            this.pb06 = new System.Windows.Forms.PictureBox();
+            this.pb05 = new System.Windows.Forms.PictureBox();
             this.grpClasses = new System.Windows.Forms.GroupBox();
             this.lblCnt9 = new System.Windows.Forms.Label();
             this.lblCnt8 = new System.Windows.Forms.Label();
@@ -98,15 +98,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb09)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb04)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb03)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb02)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb01)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb08)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb07)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb06)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb05)).BeginInit();
             this.grpClasses.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,15 +128,15 @@
             this.grpAmostra.Controls.Add(this.pb12);
             this.grpAmostra.Controls.Add(this.pb11);
             this.grpAmostra.Controls.Add(this.pb10);
-            this.grpAmostra.Controls.Add(this.pb9);
-            this.grpAmostra.Controls.Add(this.pb4);
-            this.grpAmostra.Controls.Add(this.pb3);
-            this.grpAmostra.Controls.Add(this.pb2);
-            this.grpAmostra.Controls.Add(this.pb1);
-            this.grpAmostra.Controls.Add(this.pb8);
-            this.grpAmostra.Controls.Add(this.pb7);
-            this.grpAmostra.Controls.Add(this.pb6);
-            this.grpAmostra.Controls.Add(this.pb5);
+            this.grpAmostra.Controls.Add(this.pb09);
+            this.grpAmostra.Controls.Add(this.pb04);
+            this.grpAmostra.Controls.Add(this.pb03);
+            this.grpAmostra.Controls.Add(this.pb02);
+            this.grpAmostra.Controls.Add(this.pb01);
+            this.grpAmostra.Controls.Add(this.pb08);
+            this.grpAmostra.Controls.Add(this.pb07);
+            this.grpAmostra.Controls.Add(this.pb06);
+            this.grpAmostra.Controls.Add(this.pb05);
             this.grpAmostra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpAmostra.Location = new System.Drawing.Point(29, 35);
             this.grpAmostra.Name = "grpAmostra";
@@ -323,95 +323,95 @@
             this.pb10.TabIndex = 29;
             this.pb10.TabStop = false;
             // 
-            // pb9
+            // pb09
             // 
-            this.pb9.BackColor = System.Drawing.Color.White;
-            this.pb9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb9.Location = new System.Drawing.Point(78, 108);
-            this.pb9.Name = "pb9";
-            this.pb9.Size = new System.Drawing.Size(30, 30);
-            this.pb9.TabIndex = 28;
-            this.pb9.TabStop = false;
+            this.pb09.BackColor = System.Drawing.Color.White;
+            this.pb09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb09.Location = new System.Drawing.Point(78, 108);
+            this.pb09.Name = "pb09";
+            this.pb09.Size = new System.Drawing.Size(30, 30);
+            this.pb09.TabIndex = 28;
+            this.pb09.TabStop = false;
             // 
-            // pb4
+            // pb04
             // 
-            this.pb4.BackColor = System.Drawing.Color.White;
-            this.pb4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb4.Location = new System.Drawing.Point(165, 48);
-            this.pb4.Name = "pb4";
-            this.pb4.Size = new System.Drawing.Size(30, 30);
-            this.pb4.TabIndex = 27;
-            this.pb4.TabStop = false;
+            this.pb04.BackColor = System.Drawing.Color.White;
+            this.pb04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb04.Location = new System.Drawing.Point(165, 48);
+            this.pb04.Name = "pb04";
+            this.pb04.Size = new System.Drawing.Size(30, 30);
+            this.pb04.TabIndex = 27;
+            this.pb04.TabStop = false;
             // 
-            // pb3
+            // pb03
             // 
-            this.pb3.BackColor = System.Drawing.Color.White;
-            this.pb3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb3.Location = new System.Drawing.Point(136, 48);
-            this.pb3.Name = "pb3";
-            this.pb3.Size = new System.Drawing.Size(30, 30);
-            this.pb3.TabIndex = 26;
-            this.pb3.TabStop = false;
+            this.pb03.BackColor = System.Drawing.Color.White;
+            this.pb03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb03.Location = new System.Drawing.Point(136, 48);
+            this.pb03.Name = "pb03";
+            this.pb03.Size = new System.Drawing.Size(30, 30);
+            this.pb03.TabIndex = 26;
+            this.pb03.TabStop = false;
             // 
-            // pb2
+            // pb02
             // 
-            this.pb2.BackColor = System.Drawing.Color.White;
-            this.pb2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb2.Location = new System.Drawing.Point(107, 48);
-            this.pb2.Name = "pb2";
-            this.pb2.Size = new System.Drawing.Size(30, 30);
-            this.pb2.TabIndex = 25;
-            this.pb2.TabStop = false;
+            this.pb02.BackColor = System.Drawing.Color.White;
+            this.pb02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb02.Location = new System.Drawing.Point(107, 48);
+            this.pb02.Name = "pb02";
+            this.pb02.Size = new System.Drawing.Size(30, 30);
+            this.pb02.TabIndex = 25;
+            this.pb02.TabStop = false;
             // 
-            // pb1
+            // pb01
             // 
-            this.pb1.BackColor = System.Drawing.Color.White;
-            this.pb1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb1.Location = new System.Drawing.Point(78, 48);
-            this.pb1.Name = "pb1";
-            this.pb1.Size = new System.Drawing.Size(30, 30);
-            this.pb1.TabIndex = 24;
-            this.pb1.TabStop = false;
+            this.pb01.BackColor = System.Drawing.Color.White;
+            this.pb01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb01.Location = new System.Drawing.Point(78, 48);
+            this.pb01.Name = "pb01";
+            this.pb01.Size = new System.Drawing.Size(30, 30);
+            this.pb01.TabIndex = 24;
+            this.pb01.TabStop = false;
             // 
-            // pb8
+            // pb08
             // 
-            this.pb8.BackColor = System.Drawing.Color.White;
-            this.pb8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb8.Location = new System.Drawing.Point(165, 78);
-            this.pb8.Name = "pb8";
-            this.pb8.Size = new System.Drawing.Size(30, 30);
-            this.pb8.TabIndex = 23;
-            this.pb8.TabStop = false;
+            this.pb08.BackColor = System.Drawing.Color.White;
+            this.pb08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb08.Location = new System.Drawing.Point(165, 78);
+            this.pb08.Name = "pb08";
+            this.pb08.Size = new System.Drawing.Size(30, 30);
+            this.pb08.TabIndex = 23;
+            this.pb08.TabStop = false;
             // 
-            // pb7
+            // pb07
             // 
-            this.pb7.BackColor = System.Drawing.Color.White;
-            this.pb7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb7.Location = new System.Drawing.Point(136, 78);
-            this.pb7.Name = "pb7";
-            this.pb7.Size = new System.Drawing.Size(30, 30);
-            this.pb7.TabIndex = 22;
-            this.pb7.TabStop = false;
+            this.pb07.BackColor = System.Drawing.Color.White;
+            this.pb07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb07.Location = new System.Drawing.Point(136, 78);
+            this.pb07.Name = "pb07";
+            this.pb07.Size = new System.Drawing.Size(30, 30);
+            this.pb07.TabIndex = 22;
+            this.pb07.TabStop = false;
             // 
-            // pb6
+            // pb06
             // 
-            this.pb6.BackColor = System.Drawing.Color.White;
-            this.pb6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb6.Location = new System.Drawing.Point(107, 78);
-            this.pb6.Name = "pb6";
-            this.pb6.Size = new System.Drawing.Size(30, 30);
-            this.pb6.TabIndex = 21;
-            this.pb6.TabStop = false;
+            this.pb06.BackColor = System.Drawing.Color.White;
+            this.pb06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb06.Location = new System.Drawing.Point(107, 78);
+            this.pb06.Name = "pb06";
+            this.pb06.Size = new System.Drawing.Size(30, 30);
+            this.pb06.TabIndex = 21;
+            this.pb06.TabStop = false;
             // 
-            // pb5
+            // pb05
             // 
-            this.pb5.BackColor = System.Drawing.Color.White;
-            this.pb5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pb5.Location = new System.Drawing.Point(78, 78);
-            this.pb5.Name = "pb5";
-            this.pb5.Size = new System.Drawing.Size(30, 30);
-            this.pb5.TabIndex = 20;
-            this.pb5.TabStop = false;
+            this.pb05.BackColor = System.Drawing.Color.White;
+            this.pb05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pb05.Location = new System.Drawing.Point(78, 78);
+            this.pb05.Name = "pb05";
+            this.pb05.Size = new System.Drawing.Size(30, 30);
+            this.pb05.TabIndex = 20;
+            this.pb05.TabStop = false;
             // 
             // grpClasses
             // 
@@ -840,15 +840,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb09)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb04)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb03)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb02)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb01)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb08)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb07)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb06)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb05)).EndInit();
             this.grpClasses.ResumeLayout(false);
             this.grpClasses.PerformLayout();
             this.ResumeLayout(false);
@@ -870,15 +870,15 @@
         private System.Windows.Forms.PictureBox pb12;
         private System.Windows.Forms.PictureBox pb11;
         private System.Windows.Forms.PictureBox pb10;
-        private System.Windows.Forms.PictureBox pb9;
-        private System.Windows.Forms.PictureBox pb4;
-        private System.Windows.Forms.PictureBox pb3;
-        private System.Windows.Forms.PictureBox pb2;
-        private System.Windows.Forms.PictureBox pb1;
-        private System.Windows.Forms.PictureBox pb8;
-        private System.Windows.Forms.PictureBox pb7;
-        private System.Windows.Forms.PictureBox pb6;
-        private System.Windows.Forms.PictureBox pb5;
+        private System.Windows.Forms.PictureBox pb09;
+        private System.Windows.Forms.PictureBox pb04;
+        private System.Windows.Forms.PictureBox pb03;
+        private System.Windows.Forms.PictureBox pb02;
+        private System.Windows.Forms.PictureBox pb01;
+        private System.Windows.Forms.PictureBox pb08;
+        private System.Windows.Forms.PictureBox pb07;
+        private System.Windows.Forms.PictureBox pb06;
+        private System.Windows.Forms.PictureBox pb05;
         private System.Windows.Forms.GroupBox grpClasses;
         private System.Windows.Forms.RadioButton radioButton6;
         private System.Windows.Forms.RadioButton radioButton7;

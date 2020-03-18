@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharpLearning.Containers.Matrices;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -98,6 +99,16 @@ namespace RNADemo.Business
         {
             foreach (PictureBox pixel in groupBox.Controls.OfType<PictureBox>())
                 pixel.BackColor = Color.White;
+        }
+
+        public static void PreencherGrid(this GroupBox groupBox, double[] amostras)
+        {
+            int i = 0;
+            foreach (var pb in groupBox.Controls.OfType<PictureBox>().OrderBy(x => x.Name))
+            {
+                pb.BackColor = (amostras[i] == 0.0 ? Color.White : pb.BackColor = Color.Black);
+                i++;
+            }
         }
 
         public static void MudarCorPixel(object sender, EventArgs e)
