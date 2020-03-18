@@ -103,12 +103,17 @@ namespace RNADemo.Business
 
         public static void PreencherGrid(this GroupBox groupBox, double[] amostras)
         {
-            int i = 0;
-            foreach (var pb in groupBox.Controls.OfType<PictureBox>().OrderBy(x => x.Name))
+            if (groupBox.Name == "grpAmostra")
             {
-                pb.BackColor = (amostras[i] == 0.0 ? Color.White : pb.BackColor = Color.Black);
-                i++;
+                int i = 0;
+                foreach (var pb in groupBox.Controls.OfType<PictureBox>().OrderBy(x => x.Name))
+                {
+                    pb.BackColor = (amostras[i] == 0.0 ? Color.White : pb.BackColor = Color.Black);
+                    i++;
+                }
             }
+            else throw new Exception("Esta funcionalidade é destinada apenas para o GroupBox 'grpAmostra', responsável por exibir as amostras de treinamento.");
+
         }
 
         public static void MudarCorPixel(object sender, EventArgs e)
@@ -119,6 +124,24 @@ namespace RNADemo.Business
                 pb.BackColor = Color.White;
             else
                 pb.BackColor = Color.Black;
+        }
+
+        public static void AtualizaClasses(this GroupBox groupBox, double[] classesTreinamento, int indiceClasse = -1)
+        {
+            var query = classesTreinamento.GroupBy(x => x).Where(g => g.Count() >= 1)
+                    .Select(y => new { Element = y.Key, Counter = y.Count() }).ToList();
+
+            int i = 0;
+            foreach (var item in query)
+            {
+                groupBox.Controls.Find("lblCnt" + item.Element.ToString(), true)[0].Text = item.Counter.ToString();
+                i++;
+            }
+
+            if (indiceClasse >= 0)
+            {
+                (groupBox.Controls.Find("rb" + indiceClasse.ToString(), true)[0] as RadioButton).Checked = true;
+            }
         }
     }
 }
