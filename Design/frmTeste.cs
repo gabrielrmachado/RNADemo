@@ -49,7 +49,7 @@ namespace RNADemo.Design
 
             int i = 0;
 
-            foreach (PictureBox pb in grpAmostra.Controls)
+            foreach (PictureBox pb in grpAmostra.Controls.OfType<PictureBox>().OrderBy(x => x.Name))
             {
                 _amostraTeste[i] = (pb.BackColor == Color.White ? 0.0 : 1.0);
                 i++;
