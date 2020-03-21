@@ -21,6 +21,8 @@ namespace RNADemo.Design
             numPadroesRestantes = _redeNeural.NumeroAmostrasTreinamento;
             txtQtdAmostrasRestantes.Text = _redeNeural.NumeroAmostrasTreinamento.ToString();
             txtQtdAmostrasFornecidas.Text = "0";
+            this.ActiveControl = lblCntPadrao;
+            txtIndiceImagem.Enabled = false;
             _editar = false;
 
             txtIndiceImagem.Leave += (s, e) => txtIndiceImagem.Text = "Digite o índice:";
@@ -29,16 +31,24 @@ namespace RNADemo.Design
             {
                 if (e.KeyCode == Keys.Enter)
                 {
+                    int valorAntigoIndice = indiceAmostraAssociada;
                     try
                     {
                         indiceAmostraAssociada = int.Parse(txtIndiceImagem.Text) - 1;
+
                         if (indiceAmostraAssociada == 0)
                         {
                             RealizarCliqueBtnPrimeiro();
                         }
-                        else if (indiceAmostraAssociada == _redeNeural.NumeroAmostrasTreinamento - 1)
+                        else if (indiceAmostraAssociada == numPadroesFornecidos)
                         {
+
                             RealizarCliqueBtnUltimo();
+                        }
+                        else if (indiceAmostraAssociada > numPadroesFornecidos)
+                        {
+                            indiceAmostraAssociada = valorAntigoIndice;
+                            throw new IndexOutOfRangeException();
                         }
                         else
                         {
@@ -48,13 +58,14 @@ namespace RNADemo.Design
                             btnUltimo.Enabled = true;
                             AtualizarControlesClasses(true);
                         }
+                        txtIndiceImagem.Text = "";
                     }
 
                     catch (Exception ex)
                     {
                         if (ex is FormatException || ex is ArgumentNullException || ex is OverflowException || ex is IndexOutOfRangeException)
                         {
-                            MessageBox.Show(string.Format("Digite um índice válido entre 1 e {0}", _redeNeural.NumeroAmostrasTreinamento), "Aviso",
+                            MessageBox.Show(string.Format("Digite um índice válido entre 1 e {0}", numPadroesFornecidos + 1), "Aviso",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             
                             txtIndiceImagem.Text = "";
@@ -89,6 +100,7 @@ namespace RNADemo.Design
                 btnUltimo.Enabled = true;
                 btnProximo.Enabled = true;
                 _editar = true;
+                txtIndiceImagem.Enabled = true;
 
                 indiceAmostraAssociada = 0;
             }
@@ -142,7 +154,6 @@ namespace RNADemo.Design
                 _redeNeural.AmostrasTreinamento[indiceAmostraAssociada, i] = (pb.BackColor == Color.White ? 0.0 : 1.0);
                 i++;
             }
-
             try
             {
                 _redeNeural.ClassesTreinamento[indiceAmostraAssociada] = double.Parse(txtAmostraEnsinada.Text);
@@ -163,6 +174,7 @@ namespace RNADemo.Design
                     txtAmostraEnsinada.Text = "";
                     grpClasses.DesmarcarSelecaoRadioButtonsClasses();
                 }
+                if (!txtIndiceImagem.Enabled) txtIndiceImagem.Enabled = true;
                 RealizarCliqueBtnUltimo();
             }
             catch (FormatException)
@@ -232,6 +244,9 @@ namespace RNADemo.Design
                 btnAnterior.Enabled = false;
                 btnPrimeiro.Enabled = false;
             }
+            else if (indiceAmostraAssociada < 0)
+                RealizarCliqueBtnPrimeiro();
+
             AtualizarControlesClasses();
         }
 
@@ -241,13 +256,15 @@ namespace RNADemo.Design
             btnPrimeiro.Enabled = true;
 
             indiceAmostraAssociada++;
-            if (indiceAmostraAssociada == numPadroesFornecidos)
+            if (indiceAmostraAssociada >= numPadroesFornecidos)
             {
                 btnProximo.Enabled = false;
                 btnUltimo.Enabled = false;
                 _editar = true;
+                RealizarCliqueBtnUltimo();
             }
-            AtualizarControlesClasses();
+
+            else AtualizarControlesClasses();
         }
 
         private void btnUltimo_Click(object sender, EventArgs e)
