@@ -11,7 +11,7 @@ namespace RNADemo.Business
 {
     public static class Utils
     {
-        public static void AlterarLabelCntAmostras(this Label labelCntAmostras, int padraoAtual, int totalPadroes)
+        public static void AlterarLabelNavegacaoAmostras(this Label labelCntAmostras, int padraoAtual, int totalPadroes)
         {
             if (labelCntAmostras.Name == "lblCntPadrao")
             {
@@ -136,18 +136,16 @@ namespace RNADemo.Business
                 label.Text = (int.Parse(label.Text) - 1).ToString();
         }
 
-        public static void AtualizarGroupBoxClasses(this GroupBox groupBox, double[] classesTreinamento)
+        public static void AtualizarContadorAmostrasPorClasse(this GroupBox groupBox, double[] classesTreinamento)
         {
+            foreach (var lbl in groupBox.Controls.OfType<Label>())
+                lbl.Text = "0";
+
             var query = classesTreinamento.GroupBy(x => x).Where(g => g.Count() >= 0)
                     .Select(y => new { Element = y.Key, Counter = y.Count() }).ToList();
 
             foreach (var item in query)
-            {
-                if (item.Element != -1)
-                {
-                    groupBox.Controls.Find("lblCnt" + item.Element.ToString(), true)[0].Text = item.Counter.ToString();
-                }
-            }
+                groupBox.Controls.Find("lblCnt" + item.Element.ToString(), true)[0].Text = item.Counter.ToString();
         }
     }
 }
