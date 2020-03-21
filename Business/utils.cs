@@ -145,7 +145,12 @@ namespace RNADemo.Business
                     .Select(y => new { Element = y.Key, Counter = y.Count() }).ToList();
 
             foreach (var item in query)
-                groupBox.Controls.Find("lblCnt" + item.Element.ToString(), true)[0].Text = item.Counter.ToString();
+            {
+                if (item.Element != -1)
+                {
+                    groupBox.Controls.Find("lblCnt" + item.Element.ToString(), true)[0].Text = item.Counter.ToString();
+                }
+            }                
         }
     }
 }

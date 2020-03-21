@@ -54,9 +54,11 @@ namespace RNADemo.Design
         private void AtualizarControlesClasses()
         {
             grpAmostra.PreencherGrid(_redeNeural.AmostrasTreinamento.Row(indiceAmostraAssociada));
-            grpClasses.Controls.OfType<RadioButton>().First(rb => rb.Name == "rb" + _redeNeural.ClassesTreinamento[indiceAmostraAssociada]).Checked = true;
             lblCntPadrao.AlterarLabelNavegacaoAmostras(indiceAmostraAssociada + 1, _redeNeural.NumeroAmostrasTreinamento);
             grpClasses.AtualizarContadorAmostrasPorClasse(_redeNeural.ClassesTreinamento);
+            var rdButton = grpClasses.Controls.OfType<RadioButton>().First(rb => rb.Name == "rb" + _redeNeural.ClassesTreinamento[indiceAmostraAssociada]);
+            txtAmostraEnsinada.Text = rdButton.Text.Substring(rdButton.Text.IndexOf(' '));
+            rdButton.Checked = true;
         }
 
         private void Radio_Click(object sender, EventArgs e)
@@ -73,7 +75,7 @@ namespace RNADemo.Design
                 numPadroesRestantes--;
                 txtQtdAmostrasFornecidas.Text = numPadroesFornecidos.ToString();
                 txtQtdAmostrasRestantes.Text = numPadroesRestantes.ToString();
-            }            
+            }
 
             int i = 0;
             foreach (var pb in grpAmostra.Controls.OfType<PictureBox>().OrderBy((x) => x.Name))
@@ -83,7 +85,7 @@ namespace RNADemo.Design
             }
 
             _redeNeural.ClassesTreinamento[indiceAmostraAssociada] = double.Parse(txtAmostraEnsinada.Text);
-                        
+
             lblCntPadrao.AlterarLabelNavegacaoAmostras(indiceAmostraAssociada + 1, _redeNeural.NumeroAmostrasTreinamento);
             grpClasses.AtualizarContadorAmostrasPorClasse(_redeNeural.ClassesTreinamento);
 
@@ -101,6 +103,7 @@ namespace RNADemo.Design
                 indiceAmostraAssociada++;
                 grpAmostra.LimparGrid();
             }
+            btnUltimo.PerformClick();
         }
 
         private void btnTreinarRede_Click(object sender, EventArgs e)
@@ -160,7 +163,7 @@ namespace RNADemo.Design
         {
             btnProximo.Enabled = true;
             btnUltimo.Enabled = true;
-            
+
             indiceAmostraAssociada--;
             if (indiceAmostraAssociada == 0)
             {
@@ -184,6 +187,7 @@ namespace RNADemo.Design
             {
                 btnProximo.Enabled = false;
                 btnUltimo.Enabled = false;
+                _editar = true;
             }
         }
 
@@ -194,7 +198,7 @@ namespace RNADemo.Design
             btnProximo.Enabled = false;
             btnUltimo.Enabled = false;
 
-            indiceAmostraAssociada = numPadroesFornecidos - 1;
+            indiceAmostraAssociada = numPadroesRestantes > 0 ? numPadroesFornecidos : numPadroesFornecidos - 1;
             AtualizarControlesClasses();
         }
     }
