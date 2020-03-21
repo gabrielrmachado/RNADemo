@@ -136,6 +136,12 @@ namespace RNADemo.Business
                 label.Text = (int.Parse(label.Text) - 1).ToString();
         }
 
+        public static void DesmarcarSelecaoRadioButtonsClasses(this GroupBox grp)
+        {
+            foreach (var rb in grp.Controls.OfType<RadioButton>())
+                rb.Checked = false;
+        }
+
         public static void AtualizarContadorAmostrasPorClasse(this GroupBox groupBox, double[] classesTreinamento)
         {
             foreach (var lbl in groupBox.Controls.OfType<Label>())
