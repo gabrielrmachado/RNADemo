@@ -9,7 +9,7 @@ namespace RNADemo.Design
     public partial class frmTreinamento : Form
     {
         private MLP _redeNeural;
-        private int indiceAmostraAssociada;
+        private int indiceAmostraAssociada, numPadroesFornecidos, numPadroesRestantes;
 
         public frmTreinamento(MLP neuralNet, bool carregouAmostras)
         {
@@ -17,6 +17,7 @@ namespace RNADemo.Design
             _redeNeural = neuralNet;
             this.FormClosing += Utils.FecharFormulario;
 
+            numPadroesRestantes = _redeNeural.NumeroAmostrasTreinamento;
             txtQtdAmostrasRestantes.Text = _redeNeural.NumeroAmostrasTreinamento.ToString();
             txtQtdAmostrasFornecidas.Text = "0";
 
@@ -34,22 +35,21 @@ namespace RNADemo.Design
             {
                 txtQtdAmostrasFornecidas.Text = _redeNeural.AmostrasTreinamento.RowCount.ToString();
                 txtQtdAmostrasRestantes.Text = "0";
+                numPadroesFornecidos = _redeNeural.NumeroAmostrasTreinamento;
+                
                 btnTreinarRede.Enabled = true;
-                indiceAmostraAssociada = 0;
-
                 btnUltimo.Enabled = true;
                 btnProximo.Enabled = true;
 
-                AtualizarControlesClasses();
-            }
-        }
+                indiceAmostraAssociada = 0;
+                grpAmostra.PreencherGrid(_redeNeural.AmostrasTreinamento.Row(indiceAmostraAssociada));
+                grpClasses.Controls.OfType<RadioButton>().First(rb => rb.Name == "rb" + _redeNeural.ClassesTreinamento[indiceAmostraAssociada]).Checked = true;
 
-        private void AtualizarControlesClasses()
-        {
-            grpAmostra.PreencherGrid(_redeNeural.AmostrasTreinamento.Row(indiceAmostraAssociada));
-            lblCntPadrao.AlterarLabelCntAmostras(indiceAmostraAssociada + 1, int.Parse(txtQtdAmostrasFornecidas.Text));
-            grpClasses.AtualizaClasses(_redeNeural.ClassesTreinamento, (int)_redeNeural.ClassesTreinamento[indiceAmostraAssociada]);
-            txtAmostraEnsinada.Text = ((int)_redeNeural.ClassesTreinamento[indiceAmostraAssociada]).ToString();
+                txtQtdAmostrasFornecidas.Text = numPadroesFornecidos.ToString();
+                txtQtdAmostrasRestantes.Text = numPadroesRestantes.ToString();
+                lblCntPadrao.AlterarLabelCntAmostras(indiceAmostraAssociada + 1, _redeNeural.NumeroAmostrasTreinamento);
+                grpClasses.AtualizarGroupBoxClasses(_redeNeural.ClassesTreinamento);
+            }
         }
 
         private void Radio_Click(object sender, EventArgs e)
@@ -60,32 +60,36 @@ namespace RNADemo.Design
 
         private void btnAssociar_Click(object sender, EventArgs e)
         {
-            int numPadroesFornecidos = int.Parse(txtQtdAmostrasFornecidas.Text) + 1;
-            int numPadroesRestantes = int.Parse(txtQtdAmostrasRestantes.Text) - 1;
+            numPadroesFornecidos++;
+            numPadroesRestantes--;
 
             int i = 0;
             foreach (var pb in grpAmostra.Controls.OfType<PictureBox>().OrderBy((x) => x.Name))
             {
-                _redeNeural.AmostrasTreinamento[numPadroesFornecidos - 1, i] = (pb.BackColor == Color.White ? 0.0 : 1.0);
+                _redeNeural.AmostrasTreinamento[indiceAmostraAssociada, i] = (pb.BackColor == Color.White ? 0.0 : 1.0);
                 i++;
             }
 
-            _redeNeural.ClassesTreinamento[numPadroesFornecidos - 1] = double.Parse(txtAmostraEnsinada.Text);
-
-            if (numPadroesFornecidos == _redeNeural.NumeroAmostrasTreinamento)
-            {
-                btnAssociar.Enabled = false;
-                btnTreinarRede.Enabled = true;
-                btnSalvarAmostras.Enabled = true;
-            }
-            var label = grpClasses.Controls.Find("lblCnt" + txtAmostraEnsinada.Text.Trim(), true)[0];
-            label.Text = (int.Parse(label.Text) + 1).ToString();
+            _redeNeural.ClassesTreinamento[indiceAmostraAssociada] = double.Parse(txtAmostraEnsinada.Text);
 
             txtQtdAmostrasFornecidas.Text = numPadroesFornecidos.ToString();
             txtQtdAmostrasRestantes.Text = numPadroesRestantes.ToString();
-            grpAmostra.LimparGrid();
-            rb0.Checked = true;
-            txtAmostraEnsinada.Text = "0";
+            lblCntPadrao.AlterarLabelCntAmostras(indiceAmostraAssociada + 1, _redeNeural.NumeroAmostrasTreinamento);
+            grpClasses.AtualizarGroupBoxClasses(_redeNeural.ClassesTreinamento);
+
+            btnAnterior.Enabled = true;
+            btnPrimeiro.Enabled = true;
+
+            if (numPadroesFornecidos == _redeNeural.NumeroAmostrasTreinamento)
+            {
+                btnSalvarAmostras.Enabled = true;
+                btnTreinarRede.Enabled = true;
+            }
+            else
+            {
+                indiceAmostraAssociada++;
+                grpAmostra.LimparGrid();
+            }
         }
 
         private void btnTreinarRede_Click(object sender, EventArgs e)
@@ -130,7 +134,6 @@ namespace RNADemo.Design
             this.Hide();
         }
 
-
         private void btnPrimeiro_Click(object sender, EventArgs e)
         {
             btnProximo.Enabled = true;
@@ -139,7 +142,10 @@ namespace RNADemo.Design
             btnAnterior.Enabled = false;
 
             indiceAmostraAssociada = 0;
-            AtualizarControlesClasses();
+            grpAmostra.PreencherGrid(_redeNeural.AmostrasTreinamento.Row(indiceAmostraAssociada));
+            grpClasses.AtualizarGroupBoxClasses(_redeNeural.ClassesTreinamento);
+            grpClasses.Controls.OfType<RadioButton>().First(rb => rb.Name == "rb" + _redeNeural.ClassesTreinamento[indiceAmostraAssociada]).Checked = true;
+            lblCntPadrao.AlterarLabelCntAmostras(indiceAmostraAssociada + 1, _redeNeural.NumeroAmostrasTreinamento);
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
@@ -153,8 +159,10 @@ namespace RNADemo.Design
                 btnAnterior.Enabled = false;
                 btnPrimeiro.Enabled = false;
             }
-
-            AtualizarControlesClasses();
+            grpAmostra.PreencherGrid(_redeNeural.AmostrasTreinamento.Row(indiceAmostraAssociada));
+            grpClasses.AtualizarGroupBoxClasses(_redeNeural.ClassesTreinamento);
+            grpClasses.Controls.OfType<RadioButton>().First(rb => rb.Name == "rb" + _redeNeural.ClassesTreinamento[indiceAmostraAssociada]).Checked = true;
+            lblCntPadrao.AlterarLabelCntAmostras(indiceAmostraAssociada + 1, _redeNeural.NumeroAmostrasTreinamento);
         }
 
         private void btnProximo_Click(object sender, EventArgs e)
@@ -163,13 +171,18 @@ namespace RNADemo.Design
             btnPrimeiro.Enabled = true;
 
             indiceAmostraAssociada++;
-            if (indiceAmostraAssociada == _redeNeural.AmostrasTreinamento.RowCount-1)
+            if (indiceAmostraAssociada < numPadroesFornecidos)
+            {
+                grpAmostra.PreencherGrid(_redeNeural.AmostrasTreinamento.Row(indiceAmostraAssociada));
+                grpClasses.AtualizarGroupBoxClasses(_redeNeural.ClassesTreinamento);
+                grpClasses.Controls.OfType<RadioButton>().First(rb => rb.Name == "rb" + _redeNeural.ClassesTreinamento[indiceAmostraAssociada]).Checked = true;
+                lblCntPadrao.AlterarLabelCntAmostras(indiceAmostraAssociada + 1, _redeNeural.NumeroAmostrasTreinamento);
+            }
+            else
             {
                 btnProximo.Enabled = false;
                 btnUltimo.Enabled = false;
             }
-
-            AtualizarControlesClasses();
         }
 
         private void btnUltimo_Click(object sender, EventArgs e)
@@ -179,8 +192,11 @@ namespace RNADemo.Design
             btnProximo.Enabled = false;
             btnUltimo.Enabled = false;
 
-            indiceAmostraAssociada = _redeNeural.AmostrasTreinamento.RowCount - 1;
-            AtualizarControlesClasses();
+            indiceAmostraAssociada = numPadroesFornecidos - 1;
+            grpAmostra.PreencherGrid(_redeNeural.AmostrasTreinamento.Row(indiceAmostraAssociada));
+            grpClasses.AtualizarGroupBoxClasses(_redeNeural.ClassesTreinamento);
+            grpClasses.Controls.OfType<RadioButton>().First(rb => rb.Name == "rb" + _redeNeural.ClassesTreinamento[indiceAmostraAssociada]).Checked = true;
+            lblCntPadrao.AlterarLabelCntAmostras(indiceAmostraAssociada + 1, _redeNeural.NumeroAmostrasTreinamento);
         }
     }
 }

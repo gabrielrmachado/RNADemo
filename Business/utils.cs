@@ -126,21 +126,27 @@ namespace RNADemo.Business
                 pb.BackColor = Color.Black;
         }
 
-        public static void AtualizaClasses(this GroupBox groupBox, double[] classesTreinamento, int indiceClasse = -1)
+        public static void AtualizarContadorAmostrasPorClasse(this GroupBox groupBox, string amostraEnsinada, bool inc)
         {
-            var query = classesTreinamento.GroupBy(x => x).Where(g => g.Count() >= 1)
+            var label = groupBox.Controls.Find("lblCnt" + amostraEnsinada.Trim(), true)[0];
+
+            if (inc) 
+                label.Text = (int.Parse(label.Text) + 1).ToString();
+            else 
+                label.Text = (int.Parse(label.Text) - 1).ToString();
+        }
+
+        public static void AtualizarGroupBoxClasses(this GroupBox groupBox, double[] classesTreinamento)
+        {
+            var query = classesTreinamento.GroupBy(x => x).Where(g => g.Count() >= 0)
                     .Select(y => new { Element = y.Key, Counter = y.Count() }).ToList();
 
-            int i = 0;
             foreach (var item in query)
             {
-                groupBox.Controls.Find("lblCnt" + item.Element.ToString(), true)[0].Text = item.Counter.ToString();
-                i++;
-            }
-
-            if (indiceClasse >= 0)
-            {
-                (groupBox.Controls.Find("rb" + indiceClasse.ToString(), true)[0] as RadioButton).Checked = true;
+                if (item.Element != -1)
+                {
+                    groupBox.Controls.Find("lblCnt" + item.Element.ToString(), true)[0].Text = item.Counter.ToString();
+                }
             }
         }
     }

@@ -23,6 +23,7 @@ namespace RNADemo.Business
     public class MLP
     {
         private List<int> _numProcessadoresPorCamada;
+        private int _numAmostrasTreinamento;
         private NeuralNet _net;
         public ClassificationNeuralNetModel Modelo;
         public F64Matrix AmostrasTreinamento, AmostrasTeste;
@@ -39,15 +40,27 @@ namespace RNADemo.Business
         }
 
         public short NumCamadasEscondidas { get; set; }
-        public int NumeroAmostrasTreinamento { get; set; }
         public short NumEpocas { get; set; }
         public double TaxaAprendizado { get; set; }
         public double TaxaMomento { get; set; }
         public short AlgoritmoOtimizador { get; set; }
+        public int NumeroAmostrasTreinamento
+        {
+            get
+            {
+                if (_numAmostrasTreinamento == -1)
+                {
+                    return AmostrasTreinamento.RowCount;
+                }
+                else return _numAmostrasTreinamento;
+            }
+            set { _numAmostrasTreinamento = value; }
+        }
 
         public MLP()
         {
             _numProcessadoresPorCamada = new List<int>();
+            _numAmostrasTreinamento = -1;
             _net = new NeuralNet();
         }
 
@@ -56,7 +69,7 @@ namespace RNADemo.Business
             if (!carregouAmostras)
             {
                 AmostrasTreinamento = new F64Matrix(NumeroAmostrasTreinamento, 20);
-                ClassesTreinamento = new double[NumeroAmostrasTreinamento];
+                ClassesTreinamento = Enumerable.Repeat(-1d, NumeroAmostrasTreinamento).ToArray();                
             }
 
             _net.Add(new InputLayer(20));
