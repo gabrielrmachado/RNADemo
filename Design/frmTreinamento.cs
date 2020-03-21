@@ -23,6 +23,50 @@ namespace RNADemo.Design
             txtQtdAmostrasFornecidas.Text = "0";
             _editar = false;
 
+            txtIndiceImagem.Leave += (s, e) => txtIndiceImagem.Text = "Digite o índice:";
+            txtIndiceImagem.Enter += (s, e) => txtIndiceImagem.Text = "";
+            txtIndiceImagem.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    try
+                    {
+                        indiceAmostraAssociada = int.Parse(txtIndiceImagem.Text) - 1;
+                        if (indiceAmostraAssociada == 0)
+                        {
+                            RealizarCliqueBtnPrimeiro();
+                        }
+                        else if (indiceAmostraAssociada == _redeNeural.NumeroAmostrasTreinamento - 1)
+                        {
+                            RealizarCliqueBtnUltimo();
+                        }
+                        else
+                        {
+                            btnPrimeiro.Enabled = true;
+                            btnProximo.Enabled = true;
+                            btnAnterior.Enabled = true;
+                            btnUltimo.Enabled = true;
+                            AtualizarControlesClasses(true);
+                        }
+                    }
+
+                    catch (Exception ex)
+                    {
+                        if (ex is FormatException || ex is ArgumentNullException || ex is OverflowException || ex is IndexOutOfRangeException)
+                        {
+                            MessageBox.Show(string.Format("Digite um índice válido entre 1 e {0}", _redeNeural.NumeroAmostrasTreinamento), "Aviso",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            
+                            txtIndiceImagem.Text = "";
+                        }
+                        else
+                        {
+                            MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    } 
+                }
+            };
+
             foreach (PictureBox pixel in grpAmostra.Controls.OfType<PictureBox>())
             {
                 pixel.Click += Utils.MudarCorPixel;
@@ -51,7 +95,7 @@ namespace RNADemo.Design
             AtualizarControlesClasses();
         }
 
-        private void AtualizarControlesClasses()
+        private void AtualizarControlesClasses(bool txtIndiceAmostras = false)
         {
             try
             {
@@ -69,7 +113,10 @@ namespace RNADemo.Design
             }
             catch (IndexOutOfRangeException)
             {
-                RealizarCliqueBtnUltimo();
+                if (!txtIndiceAmostras)
+                    RealizarCliqueBtnUltimo();
+                
+                else throw;
             }
         }
 
@@ -170,14 +217,7 @@ namespace RNADemo.Design
 
         private void btnPrimeiro_Click(object sender, EventArgs e)
         {
-            btnProximo.Enabled = true;
-            btnUltimo.Enabled = true;
-            btnPrimeiro.Enabled = false;
-            btnAnterior.Enabled = false;
-            _editar = true;
-
-            indiceAmostraAssociada = 0;
-            AtualizarControlesClasses();
+            RealizarCliqueBtnPrimeiro();
         }
 
         private void btnAnterior_Click(object sender, EventArgs e)
@@ -213,6 +253,18 @@ namespace RNADemo.Design
         private void btnUltimo_Click(object sender, EventArgs e)
         {
             RealizarCliqueBtnUltimo();
+        }
+
+        private void RealizarCliqueBtnPrimeiro()
+        {
+            btnProximo.Enabled = true;
+            btnUltimo.Enabled = true;
+            btnPrimeiro.Enabled = false;
+            btnAnterior.Enabled = false;
+            _editar = true;
+
+            indiceAmostraAssociada = 0;
+            AtualizarControlesClasses();
         }
 
         private void RealizarCliqueBtnUltimo()
