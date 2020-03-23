@@ -14,20 +14,10 @@ namespace RNADemo.Design
     public partial class frmArquitetura : Form
     {
         private MLP _redeNeural;
-        private void IniciarSplash()
-        {
-            Application.Run(new frmSplash());
-        }
 
         public frmArquitetura()
         {
-            var thread = new Thread(new ThreadStart(() => Application.Run(new frmSplash())));
-            thread.Start();
-            Thread.Sleep(5000);
-            
             InitializeComponent();
-            thread.Abort();
-
             cmbNumCamadas.Items.AddRange(new object[] { 1, 2, 3, 4 });
             cmbOtimizacao.Items.AddRange(new object[] { "SGD", "Adam", "AdaMax", "Nadam", "Adagrad", "Adadelta", "Netsterov", "RMSProp" });
             cmbNumCamadas.SelectedIndex = 0;
@@ -35,6 +25,26 @@ namespace RNADemo.Design
             this.FormClosing += Utils.FecharFormulario;
 
             _redeNeural = new MLP();
+        }
+
+        private void frmArquitetura_Load(object sender, EventArgs e)
+        {
+            this.Hide();
+            bool done = false;
+            ThreadPool.QueueUserWorkItem((x) =>
+            {
+                using (var splashForm = new frmSplash())
+                {
+                    splashForm.Show();
+                    while (!done)
+                        Application.DoEvents();
+                    splashForm.Close();
+                }
+            });
+
+            Thread.Sleep(4000);
+            done = true;
+            Activate();
         }
 
         private void cmbNumCamadas_SelectedIndexChanged(object sender, EventArgs e)
@@ -122,7 +132,7 @@ namespace RNADemo.Design
 
         private void txtEpocas_Leave(object sender, EventArgs e)
         {
-            (sender as TextBox).MensagemErro(10, 1000);
+            (sender as TextBox).MensagemErro(100);
         }
 
         private void txtAprendizado_Leave(object sender, EventArgs e)

@@ -314,7 +314,7 @@
             this.txtEpocas.Name = "txtEpocas";
             this.txtEpocas.Size = new System.Drawing.Size(91, 24);
             this.txtEpocas.TabIndex = 6;
-            this.txtEpocas.Text = "10";
+            this.txtEpocas.Text = "100";
             this.txtEpocas.Leave += new System.EventHandler(this.txtEpocas_Leave);
             // 
             // frmArquitetura
@@ -333,6 +333,7 @@
             this.Name = "frmArquitetura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Arquitetura da Rede Neural";
+            this.Load += new System.EventHandler(this.frmArquitetura_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
