@@ -16,12 +16,12 @@ namespace RNADemo.Design
         {
             InitializeComponent();
             _redeNeural = neuralNet;
-            this.FormClosing += Utils.FecharFormulario;
+            FormClosing += Utils.FecharFormulario;
 
             numPadroesRestantes = _redeNeural.NumeroAmostrasTreinamento;
             txtQtdAmostrasRestantes.Text = _redeNeural.NumeroAmostrasTreinamento.ToString();
             txtQtdAmostrasFornecidas.Text = "0";
-            this.ActiveControl = lblCntPadrao;
+            ActiveControl = lblCntPadrao;
             txtIndiceImagem.Enabled = false;
             _editar = false;
 
@@ -58,7 +58,7 @@ namespace RNADemo.Design
                             btnUltimo.Enabled = true;
                             AtualizarControlesClasses(true);
                         }
-                        txtIndiceImagem.Text = "";
+                        txtIndiceImagem.Text = "Digite o índice:";
                     }
 
                     catch (Exception ex)
@@ -67,14 +67,14 @@ namespace RNADemo.Design
                         {
                             MessageBox.Show(string.Format("Digite um índice válido entre 1 e {0}", numPadroesFornecidos + 1), "Aviso",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            
-                            txtIndiceImagem.Text = "";
                         }
                         else
                         {
                             MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                    } 
+                        txtIndiceImagem.Text = "";
+                        txtIndiceImagem.Focus();
+                    }
                 }
             };
 
@@ -117,11 +117,13 @@ namespace RNADemo.Design
                 var rdButton = grpClasses.Controls.OfType<RadioButton>().First(rb => rb.Name == "rb" + _redeNeural.ClassesTreinamento[indiceAmostraAssociada]);
                 txtAmostraEnsinada.Text = rdButton.Text.Substring(rdButton.Text.IndexOf(' '));
                 rdButton.Checked = true;
+                ActiveControl = lblCntPadrao;
             }
             catch (InvalidOperationException)
             {
                 grpClasses.DesmarcarSelecaoRadioButtonsClasses();
                 txtAmostraEnsinada.Text = "";
+                ActiveControl = lblCntPadrao;
             }
             catch (IndexOutOfRangeException)
             {
@@ -129,6 +131,7 @@ namespace RNADemo.Design
                     RealizarCliqueBtnUltimo();
                 
                 else throw;
+                ActiveControl = lblCntPadrao;
             }
         }
 
@@ -224,7 +227,7 @@ namespace RNADemo.Design
         private void btnProsseguirTeste_Click(object sender, EventArgs e)
         {
             new frmTeste(_redeNeural).Show();
-            this.Hide();
+            Hide();
         }
 
         private void btnPrimeiro_Click(object sender, EventArgs e)

@@ -36,7 +36,7 @@ namespace RNADemo.Design
                 using (var splashForm = new frmSplash())
                 {
                     splashForm.Show();
-                    while (!done)
+                    while (!done) 
                         Application.DoEvents();
                     splashForm.Close();
                 }
