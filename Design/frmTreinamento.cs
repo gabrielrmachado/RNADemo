@@ -3,6 +3,10 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using System.Threading;
 
 namespace RNADemo.Design
 {
@@ -11,6 +15,7 @@ namespace RNADemo.Design
         private MLP _redeNeural;
         private int indiceAmostraAssociada, numPadroesFornecidos, numPadroesRestantes;
         private bool _editar;
+        string pathLogTreinamento = Path.Combine(Environment.CurrentDirectory, "training.log");
 
         public frmTreinamento(MLP neuralNet, bool carregouAmostras)
         {
@@ -185,21 +190,58 @@ namespace RNADemo.Design
                 MessageBox.Show("Atribua uma classe para a amostra!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 numPadroesFornecidos--;
                 numPadroesRestantes++;
-            }           
+            }
+        }
+
+        private void LerArquivoLog()
+        {
+            long posicao = 0;
+
+            FileStream fs = File.Open(pathLogTreinamento, FileMode.Open, FileAccess.Read, FileShare.Write);
+            StreamReader sr = new StreamReader(fs);
+            while (true)
+            {
+                fs.Seek(posicao, SeekOrigin.Begin);
+
+                if (!sr.EndOfStream)
+                {
+                    do
+                    {
+                        var linha = sr.ReadLine();
+                        if (linha.StartsWith("Iteration"))
+                        {
+                            MessageBox.Show(linha);
+                        }
+                    } 
+                    while (!sr.EndOfStream);
+                    posicao = fs.Position;
+                }
+            }
         }
 
         private void btnTreinarRede_Click(object sender, EventArgs e)
         {
             btnProsseguirTeste.Enabled = true;
+            
+            Trace.Listeners.Add(new TextWriterTraceListener(pathLogTreinamento));
             try
             {
+                new Thread(() => LerArquivoLog()).Start();
+                Trace.AutoFlush = true;
+                Trace.WriteLine(DateTime.Now);
                 _redeNeural.TreinarRede();
+                Trace.Flush();
                 MessageBox.Show("Rede treinada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(string.Format("Ocorreu o seguinte erro ao treinar a rede neural: {0}", ex.Message), "Erro",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Trace.Close();
+                //File.Delete(pathLogTreinamento);
             }
         }
 

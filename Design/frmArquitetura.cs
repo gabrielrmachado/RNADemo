@@ -45,6 +45,7 @@ namespace RNADemo.Design
             Thread.Sleep(4000);
             done = true;
             Activate();
+            this.Show();
         }
 
         private void cmbNumCamadas_SelectedIndexChanged(object sender, EventArgs e)
