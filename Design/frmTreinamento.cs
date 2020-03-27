@@ -17,6 +17,8 @@ namespace RNADemo.Design
         private bool _editar;
         string pathLogTreinamento = Path.Combine(Environment.CurrentDirectory, "training.log");
 
+        delegate void SetDadosProgressoTreinamento(ProgressBar bar, Label lblProgress);
+
         public frmTreinamento(MLP neuralNet, bool carregouAmostras)
         {
             InitializeComponent();
@@ -195,41 +197,48 @@ namespace RNADemo.Design
 
         private void LerArquivoLog()
         {
-            long posicao = 0;
-
-            FileStream fs = File.Open(pathLogTreinamento, FileMode.Open, FileAccess.Read, FileShare.Write);
-            StreamReader sr = new StreamReader(fs);
-            while (true)
+            lock (this)
             {
-                fs.Seek(posicao, SeekOrigin.Begin);
+                FileStream fs = File.Open(pathLogTreinamento, FileMode.Open, FileAccess.Read, FileShare.Write);
+                StreamReader sr = new StreamReader(fs);
+                string iteracao = "";
 
-                if (!sr.EndOfStream)
+                while (true)
                 {
-                    do
+                    string linha = sr.ReadLine().Replace(" ", "");
+
+                    if (linha == "END") break;
+
+                    if (linha.StartsWith("Iteration"))
                     {
-                        var linha = sr.ReadLine();
-                        if (linha.StartsWith("Iteration"))
+                        int i1 = linha.IndexOf(':') + 1;
+                        int i2 = linha.IndexOf('-');
+                        iteracao = linha.Substring(i1, i2 - i1);
+
+                        var dadosPT = new SetDadosProgressoTreinamento((progressBar, lblProgresso) =>
                         {
-                            MessageBox.Show(linha);
-                        }
-                    } 
-                    while (!sr.EndOfStream);
-                    posicao = fs.Position;
-                }
+                            progressBar.Value = int.Parse(iteracao);
+                            lblProgresso.Text = lblProgresso.Text = string.Format("{0}/{1}", int.Parse(iteracao), _redeNeural.NumEpocas);
+                        });
+
+                        this.Invoke(dadosPT);                        
+                    }
+                } 
             }
         }
 
         private void btnTreinarRede_Click(object sender, EventArgs e)
         {
             btnProsseguirTeste.Enabled = true;
-            
+            progressBar.Maximum = _redeNeural.NumEpocas;
+
             Trace.Listeners.Add(new TextWriterTraceListener(pathLogTreinamento));
             try
             {
                 new Thread(() => LerArquivoLog()).Start();
                 Trace.AutoFlush = true;
-                Trace.WriteLine(DateTime.Now);
                 _redeNeural.TreinarRede();
+                Trace.WriteLine("END");
                 Trace.Flush();
                 MessageBox.Show("Rede treinada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -241,7 +250,7 @@ namespace RNADemo.Design
             finally
             {
                 Trace.Close();
-                //File.Delete(pathLogTreinamento);
+                File.Delete(pathLogTreinamento);
             }
         }
 

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTreinamento));
             this.grpAmostra = new System.Windows.Forms.GroupBox();
+            this.txtIndiceImagem = new System.Windows.Forms.TextBox();
             this.lblCntPadrao = new System.Windows.Forms.Label();
             this.btnUltimo = new System.Windows.Forms.Button();
             this.btnPrimeiro = new System.Windows.Forms.Button();
@@ -86,7 +87,9 @@
             this.btnTreinarRede = new System.Windows.Forms.Button();
             this.btnProsseguirTeste = new System.Windows.Forms.Button();
             this.btnAssociar = new System.Windows.Forms.Button();
-            this.txtIndiceImagem = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.lblProgresso = new System.Windows.Forms.Label();
             this.grpAmostra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb19)).BeginInit();
@@ -109,6 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb06)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb05)).BeginInit();
             this.grpClasses.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpAmostra
@@ -146,6 +150,17 @@
             this.grpAmostra.TabIndex = 0;
             this.grpAmostra.TabStop = false;
             this.grpAmostra.Text = "Padrão para Treinamento";
+            // 
+            // txtIndiceImagem
+            // 
+            this.txtIndiceImagem.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIndiceImagem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.txtIndiceImagem.Location = new System.Drawing.Point(63, 40);
+            this.txtIndiceImagem.Name = "txtIndiceImagem";
+            this.txtIndiceImagem.Size = new System.Drawing.Size(145, 22);
+            this.txtIndiceImagem.TabIndex = 45;
+            this.txtIndiceImagem.Text = "Digite o índice:";
+            this.txtIndiceImagem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblCntPadrao
             // 
@@ -746,7 +761,7 @@
             this.btnSalvarAmostras.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalvarAmostras.Image = global::RNADemo.Properties.Resources.disquete;
             this.btnSalvarAmostras.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSalvarAmostras.Location = new System.Drawing.Point(29, 334);
+            this.btnSalvarAmostras.Location = new System.Drawing.Point(27, 402);
             this.btnSalvarAmostras.Name = "btnSalvarAmostras";
             this.btnSalvarAmostras.Size = new System.Drawing.Size(130, 56);
             this.btnSalvarAmostras.TabIndex = 13;
@@ -761,7 +776,7 @@
             this.btnTreinarRede.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTreinarRede.Image = ((System.Drawing.Image)(resources.GetObject("btnTreinarRede.Image")));
             this.btnTreinarRede.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTreinarRede.Location = new System.Drawing.Point(309, 334);
+            this.btnTreinarRede.Location = new System.Drawing.Point(343, 402);
             this.btnTreinarRede.Name = "btnTreinarRede";
             this.btnTreinarRede.Size = new System.Drawing.Size(130, 56);
             this.btnTreinarRede.TabIndex = 10;
@@ -776,7 +791,7 @@
             this.btnProsseguirTeste.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProsseguirTeste.Image = global::RNADemo.Properties.Resources.check;
             this.btnProsseguirTeste.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnProsseguirTeste.Location = new System.Drawing.Point(627, 334);
+            this.btnProsseguirTeste.Location = new System.Drawing.Point(630, 402);
             this.btnProsseguirTeste.Name = "btnProsseguirTeste";
             this.btnProsseguirTeste.Size = new System.Drawing.Size(130, 56);
             this.btnProsseguirTeste.TabIndex = 9;
@@ -799,22 +814,54 @@
             this.btnAssociar.UseVisualStyleBackColor = true;
             this.btnAssociar.Click += new System.EventHandler(this.btnAssociar_Click);
             // 
-            // txtIndiceImagem
+            // tableLayoutPanel1
             // 
-            this.txtIndiceImagem.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIndiceImagem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.txtIndiceImagem.Location = new System.Drawing.Point(63, 40);
-            this.txtIndiceImagem.Name = "txtIndiceImagem";
-            this.txtIndiceImagem.Size = new System.Drawing.Size(145, 22);
-            this.txtIndiceImagem.TabIndex = 45;
-            this.txtIndiceImagem.Text = "Digite o índice:";
-            this.txtIndiceImagem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.progressBar, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblProgresso, 0, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(138, 331);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.65574F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.34426F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(532, 53);
+            this.tableLayoutPanel1.TabIndex = 15;
+            // 
+            // progressBar
+            // 
+            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar.Location = new System.Drawing.Point(3, 3);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(526, 26);
+            this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar.TabIndex = 15;
+            // 
+            // lblProgresso
+            // 
+            this.lblProgresso.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblProgresso.AutoSize = true;
+            this.lblProgresso.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProgresso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lblProgresso.Location = new System.Drawing.Point(3, 32);
+            this.lblProgresso.Name = "lblProgresso";
+            this.lblProgresso.Size = new System.Drawing.Size(526, 21);
+            this.lblProgresso.TabIndex = 16;
+            this.lblProgresso.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmTreinamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 402);
+            this.ClientSize = new System.Drawing.Size(772, 470);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnSalvarAmostras);
             this.Controls.Add(this.btnTreinarRede);
             this.Controls.Add(this.btnProsseguirTeste);
@@ -857,6 +904,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb05)).EndInit();
             this.grpClasses.ResumeLayout(false);
             this.grpClasses.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -922,6 +971,9 @@
         private System.Windows.Forms.Button btnPrimeiro;
         private System.Windows.Forms.Label lblCntPadrao;
         private System.Windows.Forms.TextBox txtIndiceImagem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ProgressBar progressBar;
+        private System.Windows.Forms.Label lblProgresso;
     }
 }
 
