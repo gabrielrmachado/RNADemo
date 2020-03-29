@@ -16,6 +16,7 @@ namespace RNADemo.Design
         private int indiceAmostraAssociada, numPadroesFornecidos, numPadroesRestantes;
         private bool _editar;
         string pathLogTreinamento = Path.Combine(Environment.CurrentDirectory, "training.log");
+        ReaderWriterLock rwl;
 
         delegate void SetDadosProgressoTreinamento(ProgressBar bar, Label lblProgress);
 
@@ -24,6 +25,7 @@ namespace RNADemo.Design
             InitializeComponent();
             _redeNeural = neuralNet;
             FormClosing += Utils.FecharFormulario;
+            rwl = new ReaderWriterLock();
 
             numPadroesRestantes = _redeNeural.NumeroAmostrasTreinamento;
             txtQtdAmostrasRestantes.Text = _redeNeural.NumeroAmostrasTreinamento.ToString();
@@ -197,34 +199,35 @@ namespace RNADemo.Design
 
         private void LerArquivoLog()
         {
-            lock (this)
+            FileStream fs = File.Open(pathLogTreinamento, FileMode.Open, FileAccess.Read, FileShare.Write);
+            StreamReader sr = new StreamReader(fs);
+            string iteracao = "";
+            rwl.AcquireReaderLock(Timeout.Infinite);
+
+            while (true)
             {
-                FileStream fs = File.Open(pathLogTreinamento, FileMode.Open, FileAccess.Read, FileShare.Write);
-                StreamReader sr = new StreamReader(fs);
-                string iteracao = "";
+                string linha = sr.ReadLine().Replace(" ", "");
 
-                while (true)
+                if (linha == "END") break;
+
+                if (linha.StartsWith("Iteration"))
                 {
-                    string linha = sr.ReadLine().Replace(" ", "");
+                    int i1 = linha.IndexOf(':') + 1;
+                    int i2 = linha.IndexOf('-');
+                    iteracao = linha.Substring(i1, i2 - i1);
 
-                    if (linha == "END") break;
-
-                    if (linha.StartsWith("Iteration"))
+                    var dadosPT = new SetDadosProgressoTreinamento((progressBar, lblProgresso) =>
                     {
-                        int i1 = linha.IndexOf(':') + 1;
-                        int i2 = linha.IndexOf('-');
-                        iteracao = linha.Substring(i1, i2 - i1);
+                        progressBar.Value = int.Parse(iteracao);
+                        lblProgresso.Text = lblProgresso.Text = string.Format("{0}/{1}", int.Parse(iteracao), _redeNeural.NumEpocas);
+                    });
 
-                        var dadosPT = new SetDadosProgressoTreinamento((progressBar, lblProgresso) =>
-                        {
-                            progressBar.Value = int.Parse(iteracao);
-                            lblProgresso.Text = lblProgresso.Text = string.Format("{0}/{1}", int.Parse(iteracao), _redeNeural.NumEpocas);
-                        });
-
-                        this.Invoke(dadosPT);                        
-                    }
-                } 
+                    this.Invoke(dadosPT, progressBar, lblProgresso);
+                }
             }
+            rwl.ReleaseReaderLock();
+            sr.Close();
+            fs.Close();
         }
 
         private void btnTreinarRede_Click(object sender, EventArgs e)
@@ -232,15 +235,25 @@ namespace RNADemo.Design
             btnProsseguirTeste.Enabled = true;
             progressBar.Maximum = _redeNeural.NumEpocas;
 
+            if (!File.Exists(pathLogTreinamento))
+                File.Create(pathLogTreinamento);
+
             Trace.Listeners.Add(new TextWriterTraceListener(pathLogTreinamento));
             try
             {
-                new Thread(() => LerArquivoLog()).Start();
+                var thread = new Thread(new ThreadStart(() => LerArquivoLog()));
+                thread.Start();
+
                 Trace.AutoFlush = true;
+
+                rwl.AcquireWriterLock(Timeout.Infinite);
                 _redeNeural.TreinarRede();
                 Trace.WriteLine("END");
+                rwl.ReleaseWriterLock();
+
                 Trace.Flush();
                 MessageBox.Show("Rede treinada com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                thread.Abort();
             }
             catch (Exception ex)
             {
